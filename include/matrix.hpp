@@ -228,6 +228,14 @@ Matrix& extract_column(Matrix &m, int col);
  */
 Matrix& extract_row(Matrix &m, int row);
 
+/**
+ * @brief Checks whether two matrices are equal or not.
+ * @param m1 First matrix
+ * @param m2 Second matrix
+ * @return True if they're equal, false otherwise
+ */
+bool equals(Matrix m1, Matrix m2);
+
 // --------------------------------------------------------------------------------
 // Methods - Vector
 // --------------------------------------------------------------------------------

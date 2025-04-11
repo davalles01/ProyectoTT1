@@ -357,6 +357,27 @@ Matrix& extract_row(Matrix &m, int row) {
 	return *result;
 }
 
+// equals
+bool equals(Matrix m1, Matrix m2) {
+    // Verificar que las matrices tengan el mismo tamaño
+    if (m1.n_row != m2.n_row || m1.n_column != m2.n_column) {
+        return false;
+    }
+
+    const double tolerance = 1e-6; // Define tolerance for floating point comparison
+    // Comparar cada elemento de las matrices
+    for (int i = 1; i <= m1.n_row; i++) {
+        for (int j = 1; j <= m1.n_column; j++) {
+            if (std::abs(m1(i, j) - m2(i, j)) > tolerance) {
+                return false;
+            }
+        }
+    }
+
+    // Si no hay diferencias, las matrices son iguales dentro de la tolerancia
+    return true;
+}
+
 // ------------------- Methods ------------------- //
 // ------------------- Vector ------------------- //
 

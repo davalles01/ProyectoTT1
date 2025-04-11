@@ -1,6 +1,21 @@
+// $Source$
+// --------------------------------------------------------------------------------------------------------
+// R_x.cpp
+// --------------------------------------------------------------------------------------------------------
+//
+// Created: 2025/04/09
+//
+/** @file R_x.cpp
+ *  @brief R_x function implementation.
+ *
+ *  @author Daniel Vallés Belloso.
+ *  @bug No known bugs.
+ */
+// --------------------------------------------------------------------------------------------------------
+
 #include "../include/R_x.hpp"
 
-Matrix& R_x(double angle){
+Matrix R_x(double angle){
 
   double C = cos(angle);
   double S = sin(angle);

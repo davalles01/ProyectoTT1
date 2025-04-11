@@ -1,28 +1,31 @@
-// $Header$
+// $Source$
 // --------------------------------------------------------------------------------------------------------
-// R_x.hpp
+// AccelPointMass_test.cpp
 // --------------------------------------------------------------------------------------------------------
 //
-// Created: 2025/04/09
+// Created: 2025/04/11
 //
-/** @file R_x.hpp
- *  @brief R_x function declaration.
+/** @file AccelPointMass_test.cpp
+ *  @brief Test for the AccelPointMass function
  *
  *  @author Daniel Vallés Belloso.
  *  @bug No known bugs.
  */
 // --------------------------------------------------------------------------------------------------------
-#ifndef _R_X_
-#define _R_X_
 
-#include "./matrix.hpp"
-#include <cmath>
+#include "../include/AccelPointMass.hpp"
 
-/**
- * @brief Computes the vector from a given angle of rotation.
- * @param a Angle of rotation 
- * @return Vector result
- */
-Matrix R_x(double angle);
+/** @brief AccelPointMass test */
+void AccelPointMass_test(){
+    
 
-#endif
+
+}
+
+int main(){
+
+    AccelPointMass_test();
+
+    cout << "AccelPointMass test passed successfully.\n";
+    return 0;
+}

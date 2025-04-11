@@ -1,28 +1,31 @@
-// $Header$
+// $Source$
 // --------------------------------------------------------------------------------------------------------
-// R_x.hpp
+// Cheb3D.cpp
 // --------------------------------------------------------------------------------------------------------
 //
-// Created: 2025/04/09
+// Created: 2025/04/11
 //
-/** @file R_x.hpp
- *  @brief R_x function declaration.
+/** @file Cheb3D.cpp
+ *  @brief Test for the Cheb3D function
  *
  *  @author Daniel Vallés Belloso.
  *  @bug No known bugs.
  */
 // --------------------------------------------------------------------------------------------------------
-#ifndef _R_X_
-#define _R_X_
 
-#include "./matrix.hpp"
-#include <cmath>
+#include "../include/Cheb3D.hpp"
 
-/**
- * @brief Computes the vector from a given angle of rotation.
- * @param a Angle of rotation 
- * @return Vector result
- */
-Matrix R_x(double angle);
+/** @brief Cheb3D test */
+void Cheb3D_test(){
+    
 
-#endif
+
+}
+
+int main(){
+
+    Cheb3D_test();
+
+    cout << "Cheb3D test passed successfully.\n";
+    return 0;
+}
