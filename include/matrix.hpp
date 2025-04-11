@@ -7,7 +7,7 @@
 // Created: 2025/03/19
 //
 /** @file matrix.hpp
- *  @brief Matrix and vector class implementation with basic operations.
+ *  @brief Matrix and vector class declaration with basic operations.
  *
  *  @author Daniel Vallés Belloso.
  *  @bug No known bugs.

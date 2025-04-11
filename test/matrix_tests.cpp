@@ -33,7 +33,7 @@ void test_constructor_and_operator_parentheses() {
     assert(m(2, 2) == 4.0);
 }
 
-/** @brief Tests the Matrix + Matrix operation */
+/** @brief Tests the Matrix '+' Matrix operation */
 void test_addition() {
     Matrix a(2, 2);
     Matrix b(2, 2);
@@ -45,7 +45,7 @@ void test_addition() {
     assert(result(2, 2) == 12);
 }
 
-/** @brief Tests the Matrix - Matrix operation */
+/** @brief Tests the Matrix '-' Matrix operation */
 void test_subtraction() {
     Matrix a(2, 2);
     Matrix b(2, 2);
@@ -57,7 +57,7 @@ void test_subtraction() {
     assert(result(2, 2) == 4);
 }
 
-/** @brief Tests the Matrix * Matrix operation */
+/** @brief Tests the Matrix '*' Matrix operation */
 void test_multiplication_matrix() {
     Matrix a(2, 2);
     Matrix b(2, 2);
@@ -71,7 +71,7 @@ void test_multiplication_matrix() {
     assert(result(2, 2) == 8);
 }
 
-/** @brief Tests the Matrix / Matrix operation */
+/** @brief Tests the Matrix '/' Matrix operation */
 void test_division_matrix() {
     Matrix a = eye(2);
     Matrix b = eye(2);
@@ -81,7 +81,7 @@ void test_division_matrix() {
     assert(result(2, 2) == 1);
 }
 
-/** @brief Tests the Matrix = Matrix assignment */
+/** @brief Tests the Matrix '=' Matrix assignment */
 void test_assignment() {
     Matrix a(2, 2);
     Matrix b(2, 2);
