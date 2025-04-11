@@ -198,31 +198,35 @@ Matrix& inv(Matrix &m);
 
 /**
  * @brief Assigns a vector to a specific column of the matrix.
+ * @param m Matrix to assign the column to
  * @param col Column index (1-based).
  * @param v Vector to assign.
  */
-void assign_column(int col, Matrix &v);
+void assign_column(Matrix &m, int col, Matrix &v);
 
 /**
  * @brief Assigns a vector to a specific row of the matrix.
+ * @param m Matrix to assign the row to
  * @param row Row index (1-based).
  * @param v Vector to assign.
  */
-void assign_row(int row, Matrix &v);
+void assign_row(Matrix &m, int row, Matrix &v);
 
 /**
  * @brief Extracts a specific column from the matrix as a vector.
+ * @param m Matrix to extract the column from
  * @param col Column index (1-based).
  * @return Reference to the extracted column vector.
  */
-Matrix& extract_column(int col);
+Matrix& extract_column(Matrix &m, int col);
 
 /**
  * @brief Extracts a specific row from the matrix as a vector.
+ * @param m Matrix to extract the row from
  * @param row Row index (1-based).
  * @return Reference to the extracted row vector.
  */
-Matrix& extract_row(int row);
+Matrix& extract_row(Matrix &m, int row);
 
 // --------------------------------------------------------------------------------
 // Methods - Vector
@@ -237,31 +241,35 @@ Matrix& zeros(const int n);
 
 /**
  * @brief Computes the norm of the vector.
+ * @param v Vector to compute the norm of
  * @return Norm of the vector.
  */
-double norm();
+double norm(Matrix &v);
 
 /**
  * @brief Computes the dot product with another vector.
- * @param v Vector to compute dot product with.
+ * @param v First vector to compute dot product with.
+ * @param w Second vector to compute dot product with.
  * @return Scalar dot product.
  */
-double dot(Matrix &v);
+double dot(Matrix &v, Matrix &w);
 
 /**
- * @brief Computes the cross product with another vector (only valid for size 3).
- * @param v Vector to compute cross product with.
+ * @brief Computes the cross product between 2 vectors (only valid for size 3).
+ * @param v First vector to compute cross product with.
+ * @param w Second vector to compute cross product with.
  * @return Reference to the resulting vector.
  */
-Matrix& cross(Matrix &v);
+Matrix& cross(Matrix &v, Matrix &w);
 
 /**
  * @brief Extracts a subvector between given indices (inclusive).
+ * @param v Vector to extract from 
  * @param start Start index (1-based).
  * @param end End index (1-based).
  * @return Reference to the resulting subvector.
  */
-Matrix& extract_vector(const int start, const int end);
+Matrix& extract_vector(Matrix &v, const int start, const int end);
 
 /**
  * @brief Concatenates two vectors into one.

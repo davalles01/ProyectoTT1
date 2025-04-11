@@ -1,6 +1,6 @@
 #!/bin/bash
 
-g++ test/main.cpp src/*.cpp -lm -o bin/main
+g++ test/matrix_tests.cpp src/*.cpp -lm -o bin/matrix_tests
 
 cd bin
-./main
+./matrix_tests

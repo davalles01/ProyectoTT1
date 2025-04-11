@@ -6,7 +6,7 @@
 // Created: 2025/03/19
 //
 /** @file matrix.cpp
- *  @brief 
+ *  @brief Matrix and vector class implementation with basic operations.
  *
  *  @author Daniel Vallés Belloso.
  *  @bug No known bugs.

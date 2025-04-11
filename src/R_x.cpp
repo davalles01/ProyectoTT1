@@ -1,7 +1,6 @@
 #include "../include/R_x.hpp"
 
 Matrix& R_x(double angle){
-  function [rotmat] = R_x(angle)
 
   double C = cos(angle);
   double S = sin(angle);
