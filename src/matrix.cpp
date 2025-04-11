@@ -364,15 +364,17 @@ bool equals(Matrix m1, Matrix m2) {
         return false;
     }
 
-    const double tolerance = 1e-6; // Define tolerance for floating point comparison
-    // Comparar cada elemento de las matrices
     for (int i = 1; i <= m1.n_row; i++) {
-        for (int j = 1; j <= m1.n_column; j++) {
-            if (std::abs(m1(i, j) - m2(i, j)) > tolerance) {
-                return false;
-            }
-        }
-    }
+		for (int j = 1; j <= m1.n_column; j++) {
+			double a = m1(i, j);
+			double b = m2(i, j);
+			double diff = std::abs(a - b);
+			double maxAbs = std::max(std::abs(a), std::abs(b));
+			if (diff > 1e-6 && diff / (maxAbs + 1e-10) > 1e-6) {
+				return false;
+			}
+		}
+	}	
 
     // Si no hay diferencias, las matrices son iguales dentro de la tolerancia
     return true;

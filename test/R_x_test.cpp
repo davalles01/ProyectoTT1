@@ -33,11 +33,3 @@ void R_x_test(){
     assert(equals(R_x(-5.2),R_x2));
 
 }
-
-int main(){
-
-    R_x_test();
-
-    cout << "R_x tests passed successfully.\n";
-    return 0;
-}

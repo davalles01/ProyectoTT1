@@ -14,18 +14,22 @@
 // --------------------------------------------------------------------------------------------------------
 
 #include "../include/AccelPointMass.hpp"
+#include <assert.h>
 
 /** @brief AccelPointMass test */
 void AccelPointMass_test(){
     
+    Matrix r(3);
+    r(1) = 7000000.0; r(2) = 0.0; r(3) = 0.0;
 
+    Matrix s(3);
+    s(1) = 6371000.0; s(2) = 0.0; s(3) = 0.0;
 
-}
+    double GM = 3.986e14;
 
-int main(){
+    Matrix result(3);
+    result(1) = -1017.3; result(2) = 0.0; result(3) = 0.0;
 
-    AccelPointMass_test();
+    assert(equals(AccelPointMass(r,s,GM), result));
 
-    cout << "AccelPointMass test passed successfully.\n";
-    return 0;
 }

@@ -21,11 +21,3 @@ void Cheb3D_test(){
 
 
 }
-
-int main(){
-
-    Cheb3D_test();
-
-    cout << "Cheb3D test passed successfully.\n";
-    return 0;
-}
