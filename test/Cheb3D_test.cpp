@@ -37,17 +37,6 @@ void Cheb3D_test(){
     expected(1) = 0.936; expected(2) = -0.604; expected(3) = 2.132;
 
     Matrix result = Cheb3D(t, N, Ta, Tb, Cx, Cy, Cz);
-    
-    std::cout << "Resultado:\n";
-    for (int i = 1; i <= 3; ++i) {
-        std::cout << result(i) << " ";
-    }
-    std::cout << "\nEsperado:\n";
-    for (int i = 1; i <= 3; ++i) {
-        std::cout << expected(i) << " ";
-    }
-    std::cout << std::endl;
-    
 
     assert(equals(expected, result));
 

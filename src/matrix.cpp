@@ -121,10 +121,20 @@ Matrix& Matrix::operator / (Matrix &m) {
 Matrix& Matrix::operator = (Matrix &m) {
 	if (this == &m) return *this; // Evita autoasignación
 
-	if (this->n_row != m.n_row || this->n_column != m.n_column) {
-		cout << "Matrix assignment: Error, dimension mismatch\n";
+	this->n_row = m.n_row;
+	this->n_column = m.n_column;
+
+	delete[] this->data; // Liberamos memoria
+
+	this->data = (double**)malloc(n_row*sizeof(double*));
+	
+	if(this->data == NULL){
+		cout << "Matrix: Error in data\n";
 		exit(EXIT_FAILURE);
 	}
+	
+	for(int i = 0; i < n_row; i++)
+		this->data[i] = (double*)malloc(n_column*sizeof(double));
 
 	for (int i = 1; i <= n_row; i++) {
 		for (int j = 1; j <= n_column; j++) {

@@ -33,13 +33,15 @@ Matrix Cheb3D(double t, int N, double Ta, double Tb, Matrix Cx, Matrix Cy, Matri
 
     Matrix aux(3);
 
+    Matrix old_f1(3);
+
     for (int i = N; i >= 2; i--) {
 
         aux(1) = Cx(i);
         aux(2) = Cy(i);
         aux(3) = Cz(i);
 
-        Matrix old_f1 = f1;
+        old_f1 = f1;
         f1 = f1 * (2 * tau) - f2 + aux;
         f2 = old_f1;
 
