@@ -27,10 +27,10 @@ void Mjday_test() {
     int minute = 0;
     double second = 0.0;
     
-    double expected_MJD = 60384.5;  // Expected MJD for this date
+    double expected_MJD = 6.038450000000000e+04;  // Expected MJD for this date
 
     double result = Mjday(year, month, day, hour, minute, second);
 
     // Comprobar que el resultado está dentro de un margen de error
-    assert(std::abs(result - expected_MJD) < 1e-5);
+    assert(std::abs(result - expected_MJD) < 1e-10);
 }

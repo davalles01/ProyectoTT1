@@ -4,6 +4,8 @@
 #include "Frac_test.cpp"
 #include "MeanObliquity_test.cpp"
 #include "Mjday_test.cpp"
+#include "Mjday_TDB_test.cpp"
+#include "Position_test.cpp"
 #include "R_x_test.cpp"
 
 
@@ -16,7 +18,9 @@ int main(){
     //EccAnom_test();
     //Frac_test();
     //MeanObliquity_test();
-    Mjday_test();
+    //Mjday_test();
+    //Mjday_TDB_test();
+    //Position_test();
     //R_x_test();
 
     cout << "All tests passed successfully.\n";
