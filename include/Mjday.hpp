@@ -15,8 +15,8 @@
  */
 // --------------------------------------------------------------------------------------------------------
 
-#ifndef _MJDAY_HPP
-#define _MJDAY_HPP
+#ifndef _MJDAY_
+#define _MJDAY_
 
 /**
  * @brief Computes the Modified Julian Date (MJD) from calendar date and time.
@@ -31,4 +31,4 @@
  */
 double Mjday(int year, int mon, int day, int hr = 0, int min = 0, double sec = 0.0);
 
-#endif // _MJDAY_HPP
+#endif // _MJDAY_

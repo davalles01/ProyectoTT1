@@ -13,8 +13,8 @@
  */
 // --------------------------------------------------------------------------------------------------------
 
-#ifndef _MEANOBLIQUITY_HPP
-#define _MEANOBLIQUITY_HPP
+#ifndef _MEANOBLIQUITY_
+#define _MEANOBLIQUITY_
 
 /** 
  * @brief Computes the mean obliquity of the ecliptic.
@@ -24,4 +24,4 @@
  */
 double MeanObliquity(double Mjd_TT);
 
-#endif // MEANOBLIQUITY_HPP
+#endif // MEANOBLIQUITY_

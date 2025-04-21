@@ -13,8 +13,8 @@
  */
 // --------------------------------------------------------------------------------------------------------
 
-#ifndef _ECCANOM_HPP
-#define _ECCANOM_HPP
+#ifndef _ECCANOM_
+#define _ECCANOM_
 
 #include "./matrix.hpp"
 
@@ -25,4 +25,4 @@
  */
 double EccAnom(double M, double e);
 
-#endif // ECCANOM_HPP
+#endif // ECCANOM_

@@ -1,27 +1,29 @@
 // $Header$
 // --------------------------------------------------------------------------------------------------------
-// Mjday_TDB.hpp
+// R_z.hpp
 // --------------------------------------------------------------------------------------------------------
 //
 // Created: 2025/04/20
 //
-/** @file Mjday_TDB.hpp
- *  @brief Computes the Modified Julian Date for barycentric dynamical time (TDB).
+/** @file R_z.hpp
+ *  @brief R_z function declaration.
  *
  *  @author Daniel Vallés Belloso.
  *  @bug No known bugs.
  */
 // --------------------------------------------------------------------------------------------------------
 
-#ifndef _MJDAY_TDB_
-#define _MJDAY_TDB_
+#ifndef _R_Z_
+#define _R_Z_
+
+#include "matrix.hpp"
 
 /**
- * @brief Computes the Modified Julian Date for barycentric dynamical time.
+ * @brief Computes the rotation matrix around the Z-axis.
  * 
- * @param Mjd_TT Modified Julian Date in Terrestrial Time (TT)
- * @return Modified Julian Date in Barycentric Dynamical Time (TDB)
+ * @param angle Rotation angle in radians.
+ * @return A 3x3 rotation matrix.
  */
-double Mjday_TDB(double Mjd_TT);
+Matrix R_z(double angle);
 
-#endif // _MJDAY_TDB_
+#endif // _R_Z_

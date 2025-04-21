@@ -16,8 +16,8 @@
  */
 // --------------------------------------------------------------------------------------------------------
 
-#ifndef _FRAC_HPP
-#define _FRAC_HPP
+#ifndef _FRAC_
+#define _FRAC_
 
 #include <cmath>
 
@@ -29,4 +29,4 @@
  */
 double Frac(double x);
 
-#endif // FRAC_HPP
+#endif // FRAC_

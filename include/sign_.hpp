@@ -1,27 +1,28 @@
 // $Header$
 // --------------------------------------------------------------------------------------------------------
-// Mjday_TDB.hpp
+// sign_.hpp
 // --------------------------------------------------------------------------------------------------------
 //
 // Created: 2025/04/20
 //
-/** @file Mjday_TDB.hpp
- *  @brief Computes the Modified Julian Date for barycentric dynamical time (TDB).
+/** @file sign_.hpp
+ *  @brief Declaration of the sign_ function.
  *
  *  @author Daniel Vallés Belloso.
  *  @bug No known bugs.
  */
 // --------------------------------------------------------------------------------------------------------
 
-#ifndef _MJDAY_TDB_
-#define _MJDAY_TDB_
+#ifndef _SIGN__
+#define _SIGN__
 
 /**
- * @brief Computes the Modified Julian Date for barycentric dynamical time.
+ * @brief Returns the absolute value of `a` with the sign of `b`.
  * 
- * @param Mjd_TT Modified Julian Date in Terrestrial Time (TT)
- * @return Modified Julian Date in Barycentric Dynamical Time (TDB)
+ * @param a Input value whose absolute value is taken.
+ * @param b Input value whose sign is applied to `a`.
+ * @return Resulting value with sign of `b`.
  */
-double Mjday_TDB(double Mjd_TT);
+double sign_(double a, double b);
 
-#endif // _MJDAY_TDB_
+#endif // _SIGN__

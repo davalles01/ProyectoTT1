@@ -16,8 +16,8 @@
  */
 // --------------------------------------------------------------------------------------------------------
 
-#ifndef _POSITION_HPP
-#define _POSITION_HPP
+#ifndef _POSITION_
+#define _POSITION_
 
 #include "matrix.hpp"
 
@@ -31,4 +31,4 @@
  */
 Matrix Position(double lon, double lat, double h);
 
-#endif // _POSITION_HPP
+#endif // _POSITION_
