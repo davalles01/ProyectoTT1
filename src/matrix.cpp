@@ -42,6 +42,12 @@ Matrix::Matrix(const int n) : Matrix(1,n){
 	
 }
 
+Matrix::Matrix(){
+	this->n_row = 0;
+	this->n_column = 0;
+	this->data = nullptr;
+}
+
 // ------------------- Member operators ------------------- //
 // ------------------- Matrix ------------------- //
 

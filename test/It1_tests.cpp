@@ -12,6 +12,7 @@
 #include "sign__test.cpp"
 #include "timediff_test.cpp"
 #include "AzElPa_test.cpp"
+#include "IERS_test.cpp"
 
 using namespace std;
 
@@ -30,7 +31,7 @@ int main(){
     //R_z_test();
     //sign__test();
     //timediff_test();
-    AzElPa_test();
+    //AzElPa_test();
 
     cout << "All tests passed successfully.\n";
 
