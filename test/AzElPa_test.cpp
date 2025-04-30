@@ -34,7 +34,7 @@ void AzElPa_test() {
     double Az, El;
     Matrix dAds(3), dEds(3);
 
-    AzElPa(s, Az, El, dAds, dEds);
+    tie(Az, El, dAds, dEds) = AzElPa(s);
 
     // Expected values based on the input (1,1,1)
     assert(fabs(Az - 0.785398163397448) < 1e-7);

@@ -24,11 +24,9 @@
  * @brief Computes azimuth, elevation and partial derivatives from local tangent coordinates.
  *
  * @param s     Topocentric local tangent coordinates (East-North-Zenith)
- * @param Az    Azimuth [rad]
- * @param El    Elevation [rad]
- * @param dAds  Partials of azimuth w.r.t. s
- * @param dEds  Partials of elevation w.r.t. s
+ * @return tuple<> A tuple with the values of azimuth, elevation and partial derivatives coordinates
  */
-void AzElPa(Matrix& s, double& Az, double& El, Matrix& dAds, Matrix& dEds);
+ 
+tuple<double, double, Matrix&, Matrix&> AzElPa(Matrix& s);
 
 #endif // _AZELPA_

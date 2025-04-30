@@ -12,7 +12,7 @@
  *  @bug No known bugs.
  */
 // --------------------------------------------------------------------------------------------------------
-
+/*
 #include "../include/IERS.hpp"
 #include "../include/SAT_Const.hpp"
 
@@ -93,4 +93,4 @@ void IERS(Matrix& eop, double Mjd_UTC, char interp,
         dy_pole = eop_col(12) / Arcs;  // Convert to rad
         TAI_UTC = eop_col(13);  // TAI-UTC time difference [s]
     }
-}
+}*/
