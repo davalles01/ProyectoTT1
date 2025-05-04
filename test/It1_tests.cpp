@@ -32,6 +32,7 @@ int main(){
     //sign__test();
     //timediff_test();
     //AzElPa_test();
+    IERS_test();
 
     cout << "All tests passed successfully.\n";
 

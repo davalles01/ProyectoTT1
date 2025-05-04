@@ -12,32 +12,34 @@
  *  @bug No known bugs.
  */
 // --------------------------------------------------------------------------------------------------------
-/*
+
 #include "../include/IERS.hpp"
 #include "../include/SAT_Const.hpp"
 
 using namespace consts;
 
-void IERS(Matrix& eop, double Mjd_UTC, char interp,
-          double& x_pole, double& y_pole, double& UT1_UTC, double& LOD, 
-          double& dpsi, double& deps, double& dx_pole, double& dy_pole, double& TAI_UTC) {
+tuple<double, double, double, double, double, double, double, double, double> IERS(Matrix& eop, double Mjd_UTC, char interp) {
+
+    double x_pole, y_pole, UT1_UTC, LOD, dpsi, deps, dx_pole, dy_pole, TAI_UTC;
+
+    double mjd = floor(Mjd_UTC);
+    int i = -1;
+
+    for (int j = 1; j <= eop.n_column; j++) {
+        if (std::abs(mjd - eop(4, j)) < 1e-6) {
+            i = j;
+            break;
+        }
+    }
+
+    if (i == -1) {
+        cout << "MJD not found in the EOP matrix." << endl;
+        exit(EXIT_FAILURE);
+    }
+
 
     if (interp == 'l') {
         // Linear interpolation
-        double mjd = floor(Mjd_UTC);
-        int i = -1;
-
-        for (int j = 0; j < eop.n_column; ++j) {
-            if (mjd == eop(4, j)) {
-                i = j;
-                break;
-            }
-        }
-
-        if (i == -1) {
-            cout << "MJD not found in the EOP matrix." << endl;
-            exit(EXIT_FAILURE);
-        }
 
         Matrix preeop = extract_column(eop, i);
         Matrix nexteop = extract_column(eop, i+1);
@@ -65,21 +67,7 @@ void IERS(Matrix& eop, double Mjd_UTC, char interp,
 
     } else if (interp == 'n') {
         // No interpolation
-        double mjd = floor(Mjd_UTC);
-        int i = -1;
-
-        for (int j = 0; j < eop.n_column; ++j) {
-            if (mjd == eop(4, j)) {
-                i = j;
-                break;
-            }
-        }
-
-        if (i == -1) {
-            cout << "MJD not found in the EOP matrix." << endl;
-            exit(EXIT_FAILURE);
-        }
-
+        
         Matrix eop_col = extract_column(eop,i);
 
         // Setting of IERS Earth rotation parameters
@@ -93,4 +81,6 @@ void IERS(Matrix& eop, double Mjd_UTC, char interp,
         dy_pole = eop_col(12) / Arcs;  // Convert to rad
         TAI_UTC = eop_col(13);  // TAI-UTC time difference [s]
     }
-}*/
+
+    return tie(x_pole, y_pole, UT1_UTC, LOD, dpsi, deps, dx_pole, dy_pole, TAI_UTC);
+}
