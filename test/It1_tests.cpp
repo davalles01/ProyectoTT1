@@ -13,6 +13,7 @@
 #include "timediff_test.cpp"
 #include "AzElPa_test.cpp"
 #include "IERS_test.cpp"
+#include "Legendre_test.cpp"
 
 using namespace std;
 
@@ -33,7 +34,8 @@ int main(){
     //timediff_test();
     //AzElPa_test();
     //IERS_test();
-    IERS_interp_test();
+    //IERS_interp_test();
+    Legendre_test();
 
     cout << "All tests passed successfully.\n";
 
