@@ -28,4 +28,14 @@ extern Matrix eopdata;
  */
 void eop19620101(int c);
 
+typedef struct{
+    double Mjd_UTC, Mjd_TT;
+    int n, m, sum, moon, planets;
+} Param;
+
+extern Param AuxParam;
+extern Matrix Cnm;
+extern Matrix Snm;
+extern Matrix PC;
+
 #endif

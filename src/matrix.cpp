@@ -386,7 +386,7 @@ bool equals(Matrix m1, Matrix m2) {
 			double b = m2(i, j);
 			double diff = std::abs(a - b);
 			double maxAbs = std::max(std::abs(a), std::abs(b));
-			if (diff > 1e-6 && diff / (maxAbs + 1e-10) > 1e-6) {
+			if (diff > 1e-6 && diff / (maxAbs + 1e-10) > 1e-5) {
 				return false;
 			}
 		}

@@ -17,6 +17,11 @@
 
 Matrix eopdata;
 
+Param AuxParam;
+Matrix Cnm;
+Matrix Snm;
+Matrix PC;
+
 void eop19620101(int c){
     eopdata = zeros(13,c);
 

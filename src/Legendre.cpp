@@ -26,14 +26,14 @@ tuple<Matrix&, Matrix&> Legendre(int n, int m, double fi) {
  
     // Diagonal coefficients
     for (int i = 2; i <= n; i++) {
-        pnm(i+1, i+1) = sqrt((2*i + 1) / (2*i)) * cos(fi) * pnm(i, i);
-        dpnm(i+1, i+1) = sqrt((2*i + 1) / (2*i)) * (cos(fi) * dpnm(i, i) - sin(fi) * pnm(i, i));
+        pnm(i+1, i+1) = sqrt((2.0*i + 1.0) / (2.0*i)) * cos(fi) * pnm(i, i);
+        dpnm(i+1, i+1) = sqrt((2.0*i + 1.0) / (2.0*i)) * (cos(fi) * dpnm(i, i) - sin(fi) * pnm(i, i));
     }
 
     // Horizontal first step coefficients
     for (int i = 1; i <= n; i++) {
-        pnm(i+1,i)= sqrt(2*i+1)*sin(fi)*pnm(i,i);
-        dpnm(i+1,i)= sqrt(2*i+1)*((cos(fi)*pnm(i,i))+(sin(fi)*dpnm(i,i)));
+        pnm(i+1,i)= sqrt(2.0*i+1.0)*sin(fi)*pnm(i,i);
+        dpnm(i+1,i)= sqrt(2.0*i+1.0)*((cos(fi)*pnm(i,i))+(sin(fi)*dpnm(i,i)));
     }
     
     // Horizontal second step coefficients
@@ -41,11 +41,11 @@ tuple<Matrix&, Matrix&> Legendre(int n, int m, double fi) {
     while (j <= m) {
         for (int i = k; i <= n; i++) {
 
-            pnm(i+1,j+1)=sqrt((2*i+1)/((i-j)*(i+j)))*((sqrt(2*i-1)*sin(fi)*pnm(i,j+1))
-            -(sqrt(((i+j-1)*(i-j-1))/(2*i-3))*pnm(i-1,j+1)));
+            pnm(i+1,j+1)=sqrt((2.0*i+1.0)/((i-j)*(i+j)))*((sqrt(2.0*i-1.0)*sin(fi)*pnm(i,j+1))
+            -(sqrt(((i+j-1.0)*(i-j-1.0))/(2.0*i-3.0))*pnm(i-1,j+1)));
 
-            dpnm(i+1,j+1)=sqrt((2*i+1)/((i-j)*(i+j)))*((sqrt(2*i-1)*sin(fi)*dpnm(i,j+1))
-            +(sqrt(2*i-1)*cos(fi)*pnm(i,j+1))-(sqrt(((i+j-1)*(i-j-1))/(2*i-3))*dpnm(i-1,j+1)));
+            dpnm(i+1,j+1)=sqrt((2.0*i+1.0)/((i-j)*(i+j)))*((sqrt(2.0*i-1.0)*sin(fi)*dpnm(i,j+1))
+            +(sqrt(2.0*i-1.0)*cos(fi)*pnm(i,j+1))-(sqrt(((i+j-1.0)*(i-j-1.0))/(2.0*i-3.0))*dpnm(i-1,j+1)));
         }
         j++;
         k++;

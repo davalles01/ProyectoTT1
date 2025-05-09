@@ -14,28 +14,32 @@
 #include "AzElPa_test.cpp"
 #include "IERS_test.cpp"
 #include "Legendre_test.cpp"
+#include "NutAngles_test.cpp"
+#include "TimeUpdate_test.cpp"
 
 using namespace std;
 
 int main(){
     
-    //AccelPointMass_test();
-    //Cheb3D_test();
-    //EccAnom_test();
-    //Frac_test();
-    //MeanObliquity_test();
-    //Mjday_test();
-    //Mjday_TDB_test();
-    //Position_test();
-    //R_x_test();
-    //R_y_test();
-    //R_z_test();
-    //sign__test();
-    //timediff_test();
-    //AzElPa_test();
-    //IERS_test();
-    //IERS_interp_test();
+    AccelPointMass_test();
+    Cheb3D_test();
+    EccAnom_test();
+    Frac_test();
+    MeanObliquity_test();
+    Mjday_test();
+    Mjday_TDB_test();
+    Position_test();
+    R_x_test();
+    R_y_test();
+    R_z_test();
+    sign__test();
+    timediff_test();
+    AzElPa_test();
+    IERS_test();
+    IERS_interp_test();
     Legendre_test();
+    NutAngles_test();
+    TimeUpdate_test();
 
     cout << "All tests passed successfully.\n";
 

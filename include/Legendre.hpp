@@ -9,6 +9,7 @@
  *  @author Daniel Vallés Belloso.
  *  @bug No known bugs.
  */
+// --------------------------------------------------------------------------------------------------------
 
  #ifndef _LEGENDRE_
  #define _LEGENDRE_
