@@ -17,17 +17,8 @@
  #include <iostream>
  #include "../include/Legendre.hpp"
  #include "../include/matrix.hpp"
+ #include <assert.h>
 
- void printMatrix(Matrix& mat, const std::string& name) {
-    std::cout << name << ":\n";
-    for (int i = 1; i <= mat.n_row; ++i) {
-        for (int j = 1; j <= mat.n_column; ++j) {
-            std::cout << mat(i, j) << "\t";
-        }
-        std::cout << "\n";
-    }
-}
- 
  void Legendre_test() {
      // Parámetros de entrada
      int n = 5;
