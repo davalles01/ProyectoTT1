@@ -19,8 +19,8 @@
 /** @brief AccelHarmonic test */
 void AccelHarmonic_test(){
 
-    Matrix r = zeros(3,1);
-    r(1,1) = 7000e3;
+    Matrix r = zeros(3);
+    r(1) = 7000e3;
 
     Matrix E = eye(3);
 
@@ -29,5 +29,8 @@ void AccelHarmonic_test(){
 
     Matrix a = AccelHarmonic(r, E, n_max, m_max);
 
-    cout << "a: \n" << a(1,1) << endl << a(2,1) << endl << a(3,1) << endl;
+    Matrix expected_a(3,1);
+    expected_a(1,1) = -8.14571105963231; expected_a(2,1) = 1.8418953912846e-05; expected_a(3,1) = 6.13947378070986e-05;
+
+    assert(equals(a,expected_a));
 }

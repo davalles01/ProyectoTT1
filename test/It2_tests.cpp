@@ -5,6 +5,7 @@
 #include "PrecMatrix_test.cpp"
 #include "gmst_test.cpp"
 #include "AccelHarmonic_test.cpp"
+#include "JPL_Eph_DE430_test.cpp"
 
 using namespace std;
 
@@ -16,7 +17,8 @@ int main(){
     //PoleMatrix_test();
     //PrecMatrix_test();
     //gmst_test();
-    AccelHarmonic_test();
+    //AccelHarmonic_test();
+    JPL_Eph_DE430_test();
 
     cout << "All tests passed successfully.\n";
 

@@ -42,4 +42,10 @@ void eop19620101(int c);
  */
 void GGM03S();
 
+/**
+ * @brief Extracts data from the DE430Coeff matrix
+ */
+void DE430Coeff();
+
+
 #endif

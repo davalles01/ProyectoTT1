@@ -52,8 +52,28 @@ void GGM03S(){
     double aux;
     for(int i = i; i <= 181; i++){
         for(int j = 1; j <= i; j++){
-            fscanf(fp, "%lf %lf %lf %lf %lf %lf", &aux, &aux, &Cnm(i,j), &Snm(i,j), &aux);
+            fscanf(fp, "%lf %lf %lf %lf %lf %lf", &aux, &aux, &Cnm(i,j), &Snm(i,j), &aux, &aux);
         }
+    }
+
+    fclose(fp);
+}
+
+void DE430Coeff(){
+
+    PC = zeros(2285, 1020);
+    FILE *fp = fopen("../data/DE430Coeff.txt","r");
+    
+    if(fp == NULL){
+        printf("Failed to open DE430Coeff.txt file\n");
+        exit(EXIT_FAILURE);
+    }
+
+    for(int i = 1; i <= 2285; i++){
+        
+       for(int j = 1; j <= 1020; j++){
+            fscanf(fp, "%lf", &PC(i,j));
+       }
     }
 
     fclose(fp);
