@@ -18,6 +18,8 @@
 
 Matrix AccelHarmonic(Matrix r, Matrix E, int n_max, int m_max){
 
+    GGM03S(); // Cargamos las matrices Cnm y Snm
+
     double r_ref = 6378.1363e3;   
     double gm    = 398600.4415e9; 
 
@@ -44,7 +46,7 @@ Matrix AccelHarmonic(Matrix r, Matrix E, int n_max, int m_max){
         for (int m = 0; m <= m_max; m++) {
             double cosmlon = cos(m * lon);
             double sinmlon = sin(m * lon);
-            double C = Cnm(n + 1, m + 1);  // Asumiendo que Cnm y Snm son funciones o matrices accesibles
+            double C = Cnm(n + 1, m + 1);  
             double S = Snm(n + 1, m + 1);
             double P = pnm(n + 1, m + 1);
             double dP = dpnm(n + 1, m + 1);

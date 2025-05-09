@@ -4,6 +4,7 @@
 #include "PoleMatrix_test.cpp"
 #include "PrecMatrix_test.cpp"
 #include "gmst_test.cpp"
+#include "AccelHarmonic_test.cpp"
 
 using namespace std;
 
@@ -14,7 +15,8 @@ int main(){
     //NutMatrix_test();
     //PoleMatrix_test();
     //PrecMatrix_test();
-    gmst_test();
+    //gmst_test();
+    AccelHarmonic_test();
 
     cout << "All tests passed successfully.\n";
 

@@ -17,6 +17,7 @@
 #define _GMST_
 
 #include "SAT_Const.hpp"
+#include "Frac.hpp"
 
 using namespace consts;
 

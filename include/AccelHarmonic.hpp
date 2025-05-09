@@ -32,7 +32,7 @@ using namespace consts;
  * and a transformation to the body-fixed frame.
  *
  * @param r      Satellite position vector in the inertial system (3x1)
- * @param E      Transformation matrix to the body-fixed system (3x1)
+ * @param E      Transformation matrix to the body-fixed system
  * @param n_max  Maximum degree of spherical harmonics.
  * @param m_max  Maximum order of spherical harmonics (m_max ≤ n_max; m_max = 0 for zonal terms only).
  * @return       Acceleration vector, representing d²r/dt².
