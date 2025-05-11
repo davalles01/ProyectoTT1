@@ -1,3 +1,18 @@
+// $Source$
+// --------------------------------------------------------------------------------------------------------
+// It2_tests.cpp
+// --------------------------------------------------------------------------------------------------------
+//
+// Created: 2025/05/09
+//
+/** @file It2_tests.cpp
+ *  @brief Tests for all iteration 2 functions
+ *
+ *  @author Daniel Vallés Belloso.
+ *  @bug No known bugs.
+ */
+// --------------------------------------------------------------------------------------------------------
+
 #include <assert.h>
 #include <cmath>
 
@@ -106,11 +121,11 @@ void AccelHarmonic_test(){
 
     int n_max = 4;
     int m_max = 4;
-
+    
     Matrix a = AccelHarmonic(r, E, n_max, m_max);
-
-    Matrix expected_a(3,1);
-    expected_a(1,1) = -8.14571105963231; expected_a(2,1) = 1.8418953912846e-05; expected_a(3,1) = 6.13947378070986e-05;
+    
+    Matrix expected_a(3);
+    expected_a(1) = -8.14571105963231; expected_a(2) = 1.8418953912846e-05; expected_a(3) = 6.13947378070986e-05;
 
     assert(equals(a,expected_a));
 }
@@ -118,63 +133,63 @@ void AccelHarmonic_test(){
 void JPL_Eph_DE430_test(){
 
     double Mjd_TDB = 60000;
-
+    
     auto [r_Mercury,r_Venus,r_Earth,r_Mars,r_Jupiter,r_Saturn,r_Uranus, r_Neptune,r_Pluto,r_Moon,r_Sun] = JPL_Eph_DE430(Mjd_TDB);
+    
+    Matrix expected_r_Mercury(3);
+    expected_r_Mercury(1) = 1.502618241473265e+11;
+    expected_r_Mercury(2) = -1.135593797769126e+11;
+    expected_r_Mercury(3) = -0.566320982961168e+11;
 
-    Matrix expected_r_Mercury(3,1);
-    expected_r_Mercury(1,1) = 1.502618241473265e+11;
-    expected_r_Mercury(2,1) = -1.135593797769126e+11;
-    expected_r_Mercury(3,1) = -0.566320982961168e+11;
+    Matrix expected_r_Venus(3);
+    expected_r_Venus(1) = 2.072590904061893e+11;
+    expected_r_Venus(2) = 0.192804446325880e+11;
+    expected_r_Venus(3) = 0.050227573779507e+11;
 
-    Matrix expected_r_Venus(3,1);
-    expected_r_Venus(1,1) = 2.072590904061893e+11;
-    expected_r_Venus(2,1) = 0.192804446325880e+11;
-    expected_r_Venus(3,1) = 0.050227573779507e+11;
+    Matrix expected_r_Earth(3);
+    expected_r_Earth(1) = -1.363821272400698e+11;
+    expected_r_Earth(2) = 0.556380040694172e+11;
+    expected_r_Earth(3) = 0.241540011325855e+11;
 
-    Matrix expected_r_Earth(3,1);
-    expected_r_Earth(1,1) = -1.363821272400698e+11;
-    expected_r_Earth(2,1) = 0.556380040694172e+11;
-    expected_r_Earth(3,1) = 0.241540011325855e+11;
+    Matrix expected_r_Mars(3);
+    expected_r_Mars(1) = 0.364744403728041e+11;
+    expected_r_Mars(2) = 1.449205970590066e+11;
+    expected_r_Mars(3) = 0.705336620405834e+11;
 
-    Matrix expected_r_Mars(3,1);
-    expected_r_Mars(1,1) = 0.364744403728041e+11;
-    expected_r_Mars(2,1) = 1.449205970590066e+11;
-    expected_r_Mars(3,1) = 0.705336620405834e+11;
+    Matrix expected_r_Jupiter(3);
+    expected_r_Jupiter(1) = 8.423233002541687e+11;
+    expected_r_Jupiter(2) = 1.522290815774233e+11;
+    expected_r_Jupiter(3) = 0.477613125702783e+11;
 
-    Matrix expected_r_Jupiter(3,1);
-    expected_r_Jupiter(1,1) = 8.423233002541687e+11;
-    expected_r_Jupiter(2,1) = 1.522290815774233e+11;
-    expected_r_Jupiter(3,1) = 0.477613125702783e+11;
+    Matrix expected_r_Saturn(3);
+    expected_r_Saturn(1) = 1.376430326229193e+12;
+    expected_r_Saturn(2) = -0.761859711270959e+12;
+    expected_r_Saturn(3) = -0.369270130577088e+12;
 
-    Matrix expected_r_Saturn(3,1);
-    expected_r_Saturn(1,1) = 1.376430326229193e+12;
-    expected_r_Saturn(2,1) = -0.761859711270959e+12;
-    expected_r_Saturn(3,1) = -0.369270130577088e+12;
+    Matrix expected_r_Uranus(3);
+    expected_r_Uranus(1) = 2.111014392571797e+12;
+    expected_r_Uranus(2) = 1.950168917610262e+12;
+    expected_r_Uranus(3) = 0.826406534869188e+12;
 
-    Matrix expected_r_Uranus(3,1);
-    expected_r_Uranus(1,1) = 2.111014392571797e+12;
-    expected_r_Uranus(2,1) = 1.950168917610262e+12;
-    expected_r_Uranus(3,1) = 0.826406534869188e+12;
+    Matrix expected_r_Neptune(3);
+    expected_r_Neptune(1) = 4.589485406921574e+12;
+    expected_r_Neptune(2) = -0.398378369693727e+12;
+    expected_r_Neptune(3) = -0.275306002090044e+12;
 
-    Matrix expected_r_Neptune(3,1);
-    expected_r_Neptune(1,1) = 4.589485406921574e+12;
-    expected_r_Neptune(2,1) = -0.398378369693727e+12;
-    expected_r_Neptune(3,1) = -0.275306002090044e+12;
+    Matrix expected_r_Pluto(3);
+    expected_r_Pluto(1) = 2.578504106591563e+12;
+    expected_r_Pluto(2) = -4.169133059035141e+12;
+    expected_r_Pluto(3) = -2.043654392630608e+12;
 
-    Matrix expected_r_Pluto(3,1);
-    expected_r_Pluto(1,1) = 2.578504106591563e+12;
-    expected_r_Pluto(2,1) = -4.169133059035141e+12;
-    expected_r_Pluto(3,1) = -2.043654392630608e+12;
+    Matrix expected_r_Moon(3);
+    expected_r_Moon(1) = 2.996603981031958e+08;
+    expected_r_Moon(2) = 2.166072808518809e+08;
+    expected_r_Moon(3) = 0.956951641762235e+08;
 
-    Matrix expected_r_Moon(3,1);
-    expected_r_Moon(1,1) = 2.996603981031958e+08;
-    expected_r_Moon(2,1) = 2.166072808518809e+08;
-    expected_r_Moon(3,1) = 0.956951641762235e+08;
-
-    Matrix expected_r_Sun(3,1);
-    expected_r_Sun(1,1) = 1.350382278564808e+11;
-    expected_r_Sun(2,1) = -0.557048751597339e+11;
-    expected_r_Sun(3,1) = -0.241483564602141e+11;
+    Matrix expected_r_Sun(3);
+    expected_r_Sun(1) = 1.350382278564808e+11;
+    expected_r_Sun(2) = -0.557048751597339e+11;
+    expected_r_Sun(3) = -0.241483564602141e+11;
 
     assert(equals(r_Mercury, expected_r_Mercury));
     assert(equals(r_Venus, expected_r_Venus));

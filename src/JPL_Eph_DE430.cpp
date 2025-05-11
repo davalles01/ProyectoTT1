@@ -59,8 +59,7 @@ tuple<Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Ma
         }
     }
 
-    Matrix r_Earth_aux = Cheb3D(Mjd_TDB, 13, Mjd0, Mjd0+16.0, extract_vector(Cx_Earth, 13*j+1,13*j+13),extract_vector(Cy_Earth, 13*j+1,13*j+13), extract_vector(Cz_Earth, 13*j+1,13*j+13))*1e3;
-    Matrix r_Earth = transpose(r_Earth_aux);
+    Matrix r_Earth = Cheb3D(Mjd_TDB, 13, Mjd0, Mjd0+16.0, extract_vector(Cx_Earth, 13*j+1,13*j+13),extract_vector(Cy_Earth, 13*j+1,13*j+13), extract_vector(Cz_Earth, 13*j+1,13*j+13))*1e3;
     
     /*--------------------- MOON ---------------------*/
 
@@ -106,8 +105,7 @@ tuple<Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Ma
         Mjd0 = t1 + 4 * j;
     }
     
-    Matrix r_Moon_aux = Cheb3D(Mjd_TDB, 13, Mjd0, Mjd0+4.0, extract_vector(Cx_Moon, 13*j+1,13*j+13),extract_vector(Cy_Moon, 13*j+1,13*j+13), extract_vector(Cz_Moon, 13*j+1,13*j+13))*1e3;
-    Matrix r_Moon = transpose(r_Moon_aux);
+    Matrix r_Moon = Cheb3D(Mjd_TDB, 13, Mjd0, Mjd0+4.0, extract_vector(Cx_Moon, 13*j+1,13*j+13),extract_vector(Cy_Moon, 13*j+1,13*j+13), extract_vector(Cz_Moon, 13*j+1,13*j+13))*1e3;
     
     /*--------------------- SUN ---------------------*/
 
@@ -134,8 +132,7 @@ tuple<Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Ma
         }
     }
 
-    Matrix r_Sun_aux = Cheb3D(Mjd_TDB, 11, Mjd0, Mjd0+16.0, extract_vector(Cx_Sun, 11*j+1,11*j+11),extract_vector(Cy_Sun, 11*j+1,11*j+11), extract_vector(Cz_Sun, 11*j+1,11*j+11))*1e3;
-    Matrix r_Sun = transpose(r_Sun_aux);
+    Matrix r_Sun = Cheb3D(Mjd_TDB, 11, Mjd0, Mjd0+16.0, extract_vector(Cx_Sun, 11*j+1,11*j+11),extract_vector(Cy_Sun, 11*j+1,11*j+11), extract_vector(Cz_Sun, 11*j+1,11*j+11))*1e3;
     
     /*--------------------- MERCURY ---------------------*/
 
@@ -167,8 +164,7 @@ tuple<Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Ma
         j = 3;
         Mjd0 = t1 + 8 * j;
     }
-    Matrix r_Mercury_aux = Cheb3D(Mjd_TDB, 14, Mjd0, Mjd0+8.0, extract_vector(Cx_Mercury, 14*j+1,14*j+14),extract_vector(Cy_Mercury, 14*j+1,14*j+14), extract_vector(Cz_Mercury, 14*j+1,14*j+14))*1e3;
-    Matrix r_Mercury = transpose(r_Mercury_aux);    
+    Matrix r_Mercury = Cheb3D(Mjd_TDB, 14, Mjd0, Mjd0+8.0, extract_vector(Cx_Mercury, 14*j+1,14*j+14),extract_vector(Cy_Mercury, 14*j+1,14*j+14), extract_vector(Cz_Mercury, 14*j+1,14*j+14))*1e3;    
     
     /*--------------------- VENUS ---------------------*/
 
@@ -194,8 +190,7 @@ tuple<Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Ma
             Mjd0 = t1+16.0*j;
         }
     }
-    Matrix r_Venus_aux = Cheb3D(Mjd_TDB, 10, Mjd0, Mjd0+16.0, extract_vector(Cx_Venus, 10*j+1,10*j+10),extract_vector(Cy_Venus, 10*j+1,10*j+10), extract_vector(Cz_Venus, 10*j+1,10*j+10))*1e3;
-    Matrix r_Venus = transpose(r_Venus_aux);
+    Matrix r_Venus = Cheb3D(Mjd_TDB, 10, Mjd0, Mjd0+16.0, extract_vector(Cx_Venus, 10*j+1,10*j+10),extract_vector(Cy_Venus, 10*j+1,10*j+10), extract_vector(Cz_Venus, 10*j+1,10*j+10))*1e3;
     
     /*--------------------- MARS ---------------------*/
 
@@ -207,8 +202,7 @@ tuple<Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Ma
     Matrix Cz_Mars = extract_vector(PCtemp,temp(3),temp(4)-1);
     j = 0;
     Mjd0 = t1;
-    Matrix r_Mars_aux = Cheb3D(Mjd_TDB, 11, Mjd0, Mjd0+32.0, extract_vector(Cx_Mars, 11*j+1,11*j+11),extract_vector(Cy_Mars, 11*j+1,11*j+11), extract_vector(Cz_Mars, 11*j+1,11*j+11))*1e3;
-    Matrix r_Mars = transpose(r_Mars_aux);
+    Matrix r_Mars = Cheb3D(Mjd_TDB, 11, Mjd0, Mjd0+32.0, extract_vector(Cx_Mars, 11*j+1,11*j+11),extract_vector(Cy_Mars, 11*j+1,11*j+11), extract_vector(Cz_Mars, 11*j+1,11*j+11))*1e3;
 
     /*--------------------- JUPITER ---------------------*/
 
@@ -220,8 +214,7 @@ tuple<Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Ma
     Matrix Cz_Jupiter = extract_vector(PCtemp,temp(3),temp(4)-1);
     j = 0;
     Mjd0 = t1;
-    Matrix r_Jupiter_aux = Cheb3D(Mjd_TDB, 8, Mjd0, Mjd0+32.0, extract_vector(Cx_Jupiter, 8*j+1,8*j+8),extract_vector(Cy_Jupiter, 8*j+1,8*j+8), extract_vector(Cz_Jupiter, 8*j+1,8*j+8))*1e3;
-    Matrix r_Jupiter = transpose(r_Jupiter_aux);
+    Matrix r_Jupiter = Cheb3D(Mjd_TDB, 8, Mjd0, Mjd0+32.0, extract_vector(Cx_Jupiter, 8*j+1,8*j+8),extract_vector(Cy_Jupiter, 8*j+1,8*j+8), extract_vector(Cz_Jupiter, 8*j+1,8*j+8))*1e3;
     
     /*--------------------- SATURN ---------------------*/
 
@@ -233,8 +226,7 @@ tuple<Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Ma
     Matrix Cz_Saturn = extract_vector(PCtemp,temp(3),temp(4)-1);
     j = 0;
     Mjd0 = t1;
-    Matrix r_Saturn_aux = Cheb3D(Mjd_TDB, 7, Mjd0, Mjd0+32.0, extract_vector(Cx_Saturn, 7*j+1,7*j+7),extract_vector(Cy_Saturn, 7*j+1,7*j+7), extract_vector(Cz_Saturn, 7*j+1,7*j+7))*1e3;
-    Matrix r_Saturn = transpose(r_Saturn_aux);
+    Matrix r_Saturn = Cheb3D(Mjd_TDB, 7, Mjd0, Mjd0+32.0, extract_vector(Cx_Saturn, 7*j+1,7*j+7),extract_vector(Cy_Saturn, 7*j+1,7*j+7), extract_vector(Cz_Saturn, 7*j+1,7*j+7))*1e3;
 
     /*--------------------- URANUS ---------------------*/
 
@@ -246,8 +238,7 @@ tuple<Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Ma
     Matrix Cz_Uranus = extract_vector(PCtemp,temp(3),temp(4)-1);
     j = 0;
     Mjd0 = t1;
-    Matrix r_Uranus_aux = Cheb3D(Mjd_TDB, 6, Mjd0, Mjd0+32.0, extract_vector(Cx_Uranus, 6*j+1,6*j+6),extract_vector(Cy_Uranus, 6*j+1,6*j+6), extract_vector(Cz_Uranus, 6*j+1,6*j+6))*1e3;
-    Matrix r_Uranus = transpose(r_Uranus_aux);
+    Matrix r_Uranus = Cheb3D(Mjd_TDB, 6, Mjd0, Mjd0+32.0, extract_vector(Cx_Uranus, 6*j+1,6*j+6),extract_vector(Cy_Uranus, 6*j+1,6*j+6), extract_vector(Cz_Uranus, 6*j+1,6*j+6))*1e3;
     
     /*--------------------- NEPTUNE ---------------------*/
 
@@ -259,8 +250,7 @@ tuple<Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Ma
     Matrix Cz_Neptune = extract_vector(PCtemp,temp(3),temp(4)-1);
     j = 0;
     Mjd0 = t1;
-    Matrix r_Neptune_aux = Cheb3D(Mjd_TDB, 6, Mjd0, Mjd0+32.0, extract_vector(Cx_Neptune, 6*j+1,6*j+6),extract_vector(Cy_Neptune, 6*j+1,6*j+6), extract_vector(Cz_Neptune, 6*j+1,6*j+6))*1e3;
-    Matrix r_Neptune = transpose(r_Neptune_aux);
+    Matrix r_Neptune = Cheb3D(Mjd_TDB, 6, Mjd0, Mjd0+32.0, extract_vector(Cx_Neptune, 6*j+1,6*j+6),extract_vector(Cy_Neptune, 6*j+1,6*j+6), extract_vector(Cz_Neptune, 6*j+1,6*j+6))*1e3;
     
     /*--------------------- PLUTO ---------------------*/
 
@@ -272,8 +262,7 @@ tuple<Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Ma
     Matrix Cz_Pluto = extract_vector(PCtemp,temp(3),temp(4)-1);
     j = 0;
     Mjd0 = t1;
-    Matrix r_Pluto_aux = Cheb3D(Mjd_TDB, 6, Mjd0, Mjd0+32.0, extract_vector(Cx_Pluto, 6*j+1,6*j+6),extract_vector(Cy_Pluto, 6*j+1,6*j+6), extract_vector(Cz_Pluto, 6*j+1,6*j+6))*1e3;
-    Matrix r_Pluto = transpose(r_Pluto_aux);
+    Matrix r_Pluto = Cheb3D(Mjd_TDB, 6, Mjd0, Mjd0+32.0, extract_vector(Cx_Pluto, 6*j+1,6*j+6),extract_vector(Cy_Pluto, 6*j+1,6*j+6), extract_vector(Cz_Pluto, 6*j+1,6*j+6))*1e3;
     
     /*--------------------- NUTATIONS ---------------------*/
 
@@ -303,8 +292,7 @@ tuple<Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Ma
         Mjd0 = t1 + 8 * j;
     }
 
-    Matrix r_Nutations_aux = Cheb3D(Mjd_TDB, 10, Mjd0, Mjd0+8.0, extract_vector(Cx_Nutations, 10*j+1,10*j+10),extract_vector(Cy_Nutations, 10*j+1,10*j+10), zeros(10));
-    Matrix r_Nutations = transpose(r_Nutations_aux);
+    Matrix r_Nutations = Cheb3D(Mjd_TDB, 10, Mjd0, Mjd0+8.0, extract_vector(Cx_Nutations, 10*j+1,10*j+10),extract_vector(Cy_Nutations, 10*j+1,10*j+10), zeros(10));
     
     /*--------------------- LIBRATIONS ---------------------*/
 
@@ -337,8 +325,7 @@ tuple<Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Ma
         Mjd0 = t1 + 8 * j;
     }
     
-    Matrix r_Librations_aux = Cheb3D(Mjd_TDB, 10, Mjd0, Mjd0+8.0, extract_vector(Cx_Librations, 10*j+1,10*j+10),extract_vector(Cy_Librations, 10*j+1,10*j+10), extract_vector(Cz_Librations, 10*j+1,10*j+10));
-    Matrix r_Librations = transpose(r_Librations_aux);
+    Matrix r_Librations = Cheb3D(Mjd_TDB, 10, Mjd0, Mjd0+8.0, extract_vector(Cx_Librations, 10*j+1,10*j+10),extract_vector(Cy_Librations, 10*j+1,10*j+10), extract_vector(Cz_Librations, 10*j+1,10*j+10));
     
     double EMRAT = 81.30056907419062;
     double EMRAT1 = 1/(1+EMRAT);

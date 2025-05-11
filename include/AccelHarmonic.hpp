@@ -35,7 +35,7 @@ using namespace consts;
  * @param E      Transformation matrix to the body-fixed system
  * @param n_max  Maximum degree of spherical harmonics.
  * @param m_max  Maximum order of spherical harmonics (m_max ≤ n_max; m_max = 0 for zonal terms only).
- * @return       Acceleration vector, representing d²r/dt² (3x1)
+ * @return       Acceleration vector, representing d²r/dt² (1x3)
  */
 Matrix AccelHarmonic(Matrix r, Matrix E, int n_max, int m_max);
 

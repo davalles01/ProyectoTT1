@@ -1,0 +1,39 @@
+// $Source$
+// --------------------------------------------------------------------------------------------------------
+// MeasUpdate.cpp
+// --------------------------------------------------------------------------------------------------------
+//
+// Created: 2025/05/11
+//
+/** @file MeasUpdate.cpp
+ *  @brief Source file for the MeasUpdate function implementation
+ *
+ *  Performs a Kalman measurement update for the state vector and its covariance.
+ *
+ *  This function computes the Kalman gain, updates the state estimate based on the measurement residual,
+ *  and adjusts the covariance matrix accordingly. The measurement noise is assumed to be diagonal.
+ *
+ *  @author Daniel Vallés Belloso.
+ *  @bug No known bugs.
+ */
+// --------------------------------------------------------------------------------------------------------
+
+#include "../include/MeasUpdate.hpp"
+
+tuple<Matrix, Matrix, Matrix> MeasUpdate(Matrix prior_x, Matrix z, Matrix g, Matrix s, Matrix G, Matrix prior_P, int n){
+
+    int m = z.n_row;
+    Matrix Inv_W = zeros(m,m);
+
+    for(int i = 1; i<=m; i++){
+        Inv_W(i,i) = s(i,1)*s(i,1);
+    }
+    
+    Matrix K = prior_P*transpose(G)*inv(Inv_W+G*prior_P*transpose(G));
+
+    Matrix x = prior_x + K*(z-g);
+
+    Matrix P = (eye(n)-K*G)*prior_P;
+
+    return tie(K,x,P);
+}

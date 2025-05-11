@@ -17,7 +17,7 @@
 #include <cmath>
 
 Matrix AccelHarmonic(Matrix r, Matrix E, int n_max, int m_max){
-
+    
     double r_ref = 6378.1363e3;   
     double gm    = 398600.4415e9; 
 
@@ -70,5 +70,5 @@ Matrix AccelHarmonic(Matrix r, Matrix E, int n_max, int m_max){
     a_bf(2,1) = (1.0/d*dUdr-r_bf(3)/(pow(d,2)*sqrt(r2xy))*dUdlatgc)*r_bf(2)+(1/r2xy*dUdlon)*r_bf(1);
     a_bf(3,1) =  1.0/d*dUdr*r_bf(3)+sqrt(r2xy)/pow(d,2)*dUdlatgc;
 
-    return transpose(E)*a_bf;
+    return transpose(transpose(E)*a_bf); // Lo trasponemos para devolver un vector fila, en lugar de columna
 }

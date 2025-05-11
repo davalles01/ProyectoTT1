@@ -1,3 +1,18 @@
+// $Source$
+// --------------------------------------------------------------------------------------------------------
+// It1_tests.cpp
+// --------------------------------------------------------------------------------------------------------
+//
+// Created: 2025/04/11
+//
+/** @file It1_tests.cpp
+ *  @brief Tests for all iteration 1 functions
+ *
+ *  @author Daniel Vallés Belloso.
+ *  @bug No known bugs.
+ */
+// --------------------------------------------------------------------------------------------------------
+
 #include <assert.h>
 #include <cmath>
 #include "../include/SAT_Const.hpp"
@@ -217,8 +232,7 @@ void timediff_test() {
     double UT1_UTC = 0.3341;
     double TAI_UTC = 37.0;
 
-    double UT1_TAI, UTC_GPS, UT1_GPS, TT_UTC, GPS_UTC;
-    timediff(UT1_UTC, TAI_UTC, UT1_TAI, UTC_GPS, UT1_GPS, TT_UTC, GPS_UTC);
+    auto [UT1_TAI, UTC_GPS, UT1_GPS, TT_UTC, GPS_UTC] = timediff(UT1_UTC, TAI_UTC);
 
     assert(std::abs(UT1_TAI - (-36.6659)) < 1e-10);
     assert(std::abs(UTC_GPS - (-18.0)) < 1e-10);

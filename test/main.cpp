@@ -2,12 +2,13 @@
 #include "../include/global.hpp"
 #include "It1_tests.cpp"
 #include "It2_tests.cpp"
+#include "It3_tests.cpp"
 #include <iostream>
 
 int main(){
 
 	// Carga de archivos
-    eop19620101(4); // Cargar solo las primeras 4 líneas del archivo eop19620101.txt
+    eop19620101(21413); // Cargar solo las primeras c líneas del archivo eop19620101.txt
 	GGM03S(); // Cargamos las matrices Cnm y Snm
 	DE430Coeff(); // Cargamos la matriz PC
 
@@ -20,8 +21,9 @@ int main(){
 	AuxParam.moon = 1;
 	AuxParam.planets = 1;
 
-	It1_tests();
+	//It1_tests();
 	//It2_tests();
+	It3_tests();
 	
 	return 0;
 }
