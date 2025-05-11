@@ -19,7 +19,7 @@
 
 using namespace std;
 
-int main(){
+void It1_tests(){
     
     AccelPointMass_test();
     Cheb3D_test();
@@ -42,6 +42,4 @@ int main(){
     TimeUpdate_test();
 
     cout << "All tests passed successfully.\n";
-
-    return 0;
 }

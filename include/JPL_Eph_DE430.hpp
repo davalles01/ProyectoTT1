@@ -32,7 +32,6 @@ using namespace consts;
  *   r_Sun(geocentric equatorial position ([m]) referred to the
  *   International Celestial Reference Frame (ICRF))     
  */
-//tuple<Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix> 
-Matrix JPL_Eph_DE430(double Mjd_TDB);
+tuple<Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix, Matrix> JPL_Eph_DE430(double Mjd_TDB);
 
 #endif
