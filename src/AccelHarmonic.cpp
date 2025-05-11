@@ -18,8 +18,6 @@
 
 Matrix AccelHarmonic(Matrix r, Matrix E, int n_max, int m_max){
 
-    GGM03S(); // Cargamos las matrices Cnm y Snm
-
     double r_ref = 6378.1363e3;   
     double gm    = 398600.4415e9; 
 

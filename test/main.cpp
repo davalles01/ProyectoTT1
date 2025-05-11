@@ -6,11 +6,22 @@
 
 int main(){
 
-	// Carga de matrices
+	// Carga de archivos
+    eop19620101(4); // Cargar solo las primeras 4 líneas del archivo eop19620101.txt
+	GGM03S(); // Cargamos las matrices Cnm y Snm
 	DE430Coeff(); // Cargamos la matriz PC
 
-	//It1_tests();
-	It2_tests();
+	// AuxParam
+	AuxParam.Mjd_UTC = 49746.1112847221;
+	AuxParam.Mjd_TT = 49746.1108586111;
+	AuxParam.n = 20;
+	AuxParam.m = 20;
+	AuxParam.sun = 1;
+	AuxParam.moon = 1;
+	AuxParam.planets = 1;
+
+	It1_tests();
+	//It2_tests();
 	
 	return 0;
 }

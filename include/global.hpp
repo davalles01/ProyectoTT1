@@ -21,7 +21,7 @@
 
 typedef struct{
     double Mjd_UTC, Mjd_TT;
-    int n, m, sum, moon, planets;
+    int n, m, sun, moon, planets;
 } Param;
 
 extern Param AuxParam;

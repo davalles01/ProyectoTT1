@@ -16,8 +16,10 @@
 // --------------------------------------------------------------------------------------------------------
 
 #include "../include/MeanObliquity.hpp"
+#include "../include/SAT_Const.hpp"
 #include "../include/constants.hpp"
 
+using namespace consts;
 using namespace constants;
 
 double MeanObliquity(double Mjd_TT) {

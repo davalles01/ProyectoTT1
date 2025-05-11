@@ -26,9 +26,6 @@ namespace constants {
     /// @brief Machine epsilon for double precision
     inline constexpr double eps = std::numeric_limits<double>::epsilon();
 
-    /// @brief Modified Julian Date at J2000.0 epoch
-    inline constexpr double MJD_J2000 = 51544.5;
-
     /// @brief Equatorial radius of Earth in meters (WGS-84)
     inline constexpr double R_Earth = 6378137.0;
 
