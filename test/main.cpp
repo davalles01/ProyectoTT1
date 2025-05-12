@@ -13,8 +13,8 @@ int main(){
 	DE430Coeff(); // Cargamos la matriz PC
 
 	// AuxParam
-	AuxParam.Mjd_UTC = 49746.1112847221;
-	AuxParam.Mjd_TT = 49746.1108586111;
+	AuxParam.Mjd_UTC = 49746.1163541665;//49746.1112847221;
+	AuxParam.Mjd_TT = 49746.1170623147;//49746.1108586111;
 	AuxParam.n = 20;
 	AuxParam.m = 20;
 	AuxParam.sun = 1;
