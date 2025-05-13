@@ -130,6 +130,27 @@ void AccelHarmonic_test(){
     assert(equals(a,expected_a));
 }
 
+void AccelHarmonic_test2(){
+
+    Matrix r = zeros(3);
+    r(1) = 7000000;
+
+    Matrix E(3,3);
+    E(1,1) = -0.984320311916434;   E(1,2) =  0.17638970834414;    E(1,3) = -0.000440838975649208;
+    E(2,1) = -0.176389673442133;   E(2,2) = -0.984320409917682;   E(2,3) = -0.000117142922139399;
+    E(3,1) = -0.000454589607089469; E(3,2) = -3.75467147037462e-05; E(3,3) =  0.999999895969261;
+
+    int n_max = 20;
+    int m_max = 20;
+    
+    Matrix a = AccelHarmonic(r, E, n_max, m_max);
+    
+    Matrix expected_a(3);
+    expected_a(1) = -8.14573205034458; expected_a(2) = -2.73247143907085e-05; expected_a(3) = -1.83315389744748e-05;
+
+    assert(equals(a,expected_a));
+}
+
 void JPL_Eph_DE430_test(){
 
     double Mjd_TDB = 60000;
@@ -214,6 +235,7 @@ void It2_tests(){
     PrecMatrix_test();
     gmst_test();
     AccelHarmonic_test();
+    AccelHarmonic_test2();
     JPL_Eph_DE430_test();
 
     cout << "All Iteration 2 tests passed successfully.\n";

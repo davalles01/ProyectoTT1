@@ -21,7 +21,8 @@ Matrix AccelHarmonic(Matrix r, Matrix E, int n_max, int m_max){
     double r_ref = 6378.1363e3;   
     double gm    = 398600.4415e9; 
 
-    Matrix r_bf = r * E; 
+    Matrix r_bf_aux = E * transpose(r); 
+    Matrix r_bf = transpose(r_bf_aux); 
 
     double d = norm(r_bf);
     double latgc = asin(r_bf(3)/d);
