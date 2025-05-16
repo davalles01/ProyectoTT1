@@ -26,9 +26,9 @@
  * @param day   Day of the month (1-31)
  * @param hr    Hour (default = 0)
  * @param min   Minute (default = 0)
- * @param sec   Second (default = 0.0)
+ * @param sec   Second (default = 0)
  * @return Modified Julian Date (MJD)
  */
-double Mjday(int year, int mon, int day, int hr = 0, int min = 0, double sec = 0.0);
+double Mjday(int year, int mon, int day, int hr = 0, int min = 0, int sec = 0);
 
 #endif // _MJDAY_

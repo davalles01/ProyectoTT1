@@ -16,7 +16,7 @@
 #include "../include/Mjday.hpp"
 #include <cmath>
 
-double Mjday(int year, int mon, int day, int hr, int min, double sec) {
+double Mjday(int year, int mon, int day, int hr, int min, int sec) {
 
     double jd = 367.0 * year
               - std::floor((7 * (year + std::floor((mon + 9) / 12.0))) * 0.25)

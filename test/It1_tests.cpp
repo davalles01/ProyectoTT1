@@ -130,12 +130,29 @@ void MeanObliquity_test() {
 
 void Mjday_test() {
     // Test input: 2024, 3, 15, 12, 0, 0 (March 15, 2024, at 12:00:00)
+    int year = 1995;
+    int month = 01;
+    int day = 29;
+    int hour = 02;
+    int minute = 38;
+    int second = 49;
+    
+    double expected_MJD = 49746.110289352;  // Expected MJD for this date
+
+    double result = Mjday(year, month, day, hour, minute, second);
+
+    // Comprobar que el resultado está dentro de un margen de error
+    assert(std::abs(result - expected_MJD) < 1e-10);
+}
+
+void Mjday_test2() {
+    // Test input: 2024, 3, 15, 12, 0, 0 (March 15, 2024, at 12:00:00)
     int year = 2024;
     int month = 3;
     int day = 15;
     int hour = 12;
     int minute = 0;
-    double second = 0.0;
+    int second = 0;
     
     double expected_MJD = 6.038450000000000e+04;  // Expected MJD for this date
 
@@ -144,6 +161,7 @@ void Mjday_test() {
     // Comprobar que el resultado está dentro de un margen de error
     assert(std::abs(result - expected_MJD) < 1e-10);
 }
+
 
 void Mjday_TDB_test() {
     double Mjd_TT = 60384.0;       // 2024-03-15 12:00:00 TT
@@ -389,6 +407,7 @@ void It1_tests(){
     Frac_test();
     MeanObliquity_test();
     Mjday_test();
+    Mjday_test2();
     Mjday_TDB_test();
     Position_test();
     R_x_test();

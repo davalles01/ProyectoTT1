@@ -20,13 +20,13 @@
 
 #include "../include/MeasUpdate.hpp"
 
-tuple<Matrix, Matrix, Matrix> MeasUpdate(Matrix prior_x, Matrix z, Matrix g, Matrix s, Matrix G, Matrix prior_P, int n){
+tuple<Matrix&, Matrix&, Matrix&> MeasUpdate(Matrix& prior_x, double z, double g, double s, Matrix& G, Matrix& prior_P, int n){
 
-    int m = z.n_row;
+    int m = 1;
     Matrix Inv_W = zeros(m,m);
 
     for(int i = 1; i<=m; i++){
-        Inv_W(i,i) = s(i,1)*s(i,1);
+        Inv_W(i,i) = s*s;
     }
     
     Matrix K = prior_P*transpose(G)*inv(Inv_W+G*prior_P*transpose(G));
