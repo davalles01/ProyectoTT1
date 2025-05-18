@@ -29,11 +29,11 @@ tuple<Matrix&, Matrix&, Matrix&> MeasUpdate(Matrix& prior_x, double z, double g,
         Inv_W(i,i) = s*s;
     }
     
-    Matrix K = prior_P*transpose(G)*inv(Inv_W+G*prior_P*transpose(G));
-
-    Matrix x = prior_x + K*(z-g);
-
-    Matrix P = (eye(n)-K*G)*prior_P;
-
+    Matrix &K = prior_P*transpose(G)*inv(G*prior_P*transpose(G) + Inv_W);
+    
+    Matrix &x = prior_x + K*(z-g);
+    
+    Matrix &P = (eye(n)-K*G)*prior_P;
+    
     return tie(K,x,P);
 }

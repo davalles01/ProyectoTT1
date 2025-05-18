@@ -92,10 +92,10 @@ void GEOS3(int f){
 
     int Y, MO, D, H, MI, S;
     double AZ, EL, DIST;
-    char line[57], y[5], mo[3], d[3], h[3], mi[3], s[7], az[9], el[9], dist[10];
+    char line[55], y[5], mo[3], d[3], h[3], mi[3], s[7], az[9], el[9], dist[10];
 
     for(int i = 1; i <= f; i++){
-        fgets(line, sizeof(line), fp);
+        fgets(line, sizeof(line)+2, fp);
 
         strncpy(y, &(line[0]),4);
         y[4] = '\0';

@@ -20,7 +20,7 @@ int main(){
 	GGM03S(); // Cargamos las matrices Cnmusing namespace consts; y Snm
 	DE430Coeff(); // Cargamos la matriz PC
 	GEOS3(nobs);
-
+	
 	// AuxParam
 	AuxParam.Mjd_UTC = 49746.1163541665;
 	AuxParam.Mjd_TT = 49746.1170623147;
@@ -29,9 +29,9 @@ int main(){
 	AuxParam.sun = 1;
 	AuxParam.moon = 1;
 	AuxParam.planets = 1;
-	It3_tests();
+	
 	//EKF_GEOS3
-
+	
 	double sigma_range = 92.5;
 	double sigma_az = 0.0224*Rad;
 	double sigma_el = 0.0139*Rad;
@@ -60,7 +60,7 @@ int main(){
 
 	int n_eqn  = 6;
 
-	Matrix Y_aux = DEInteg(Accel,0,-(Mjd_UTC-Mjd0)*86400.0,1e-13,1e-6,6,transpose(Y0_apr));
+	Matrix Y_aux = DEInteg(Accel,0,-(obs(9,1)-Mjd0)*86400.0,1e-13,1e-6,6,transpose(Y0_apr));
 	Matrix Y = transpose(Y_aux);
 
 	Matrix P_0 = zeros(6,6);
@@ -127,17 +127,18 @@ int main(){
 		s = LT*(U*transpose(r)-Rs);           // 3x1               
 		
 		Matrix P = TimeUpdate(P_0, Phi);
-			
+		
 		tie(Azim, Elev, dAds, dEds) = AzElPa(transpose(s));     
 		Matrix dAdY = union_vector(dAds*LT*U,zeros(3));
-		tie(K,Y,P) = MeasUpdate (transpose(Y), obs(i,2), Azim, sigma_az, dAdY, P, 6 );
+		
+		tie(K,Y,P) = MeasUpdate (Y, obs(i,2), Azim, sigma_az, dAdY, P, 6 );
 		
 		r = extract_vector(transpose(Y), 1,3);
 		s = LT*(U*transpose(r)-Rs);                          
 		tie(Azim, Elev, dAds, dEds) = AzElPa(transpose(s));      
 		Matrix dEdY = union_vector(dEds*LT*U,zeros(3));
 
-		tie(K,Y,P) = MeasUpdate (transpose(Y), obs(i,3), Elev, sigma_el, dEdY, P, 6 );
+		tie(K,Y,P) = MeasUpdate (Y, obs(i,3), Elev, sigma_el, dEdY, P, 6 );
 		
 		r = extract_vector(transpose(Y), 1,3); // 1x3
 		s = LT*(U*transpose(r)-Rs);        // 3x1                 
@@ -145,12 +146,12 @@ int main(){
 		Matrix dDds = (transpose(s)/Dist); // 1x3        
 		Matrix dDdY = union_vector(dDds*LT*U,zeros(3));
 		
-		tie(K,Y,P)  = MeasUpdate (transpose(Y), obs(i,4), Dist, sigma_range, dDdY, P, 6 );
+		tie(K,Y,P)  = MeasUpdate (Y, obs(i,4), Dist, sigma_range, dDdY, P, 6 );
 	}
 	
 	auto [x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC] = IERS(eopdata,obs(46,1),'l');
 	auto [UT1_TAI,UTC_GPS,UT1_GPS,TT_UTC,GPS_UTC] = timediff(UT1_UTC,TAI_UTC);
-	Mjd_TT = Mjd_UTC + TT_UTC/86400;
+	Mjd_TT = Mjd_UTC + TT_UTC/86400.0;
 	AuxParam.Mjd_UTC = Mjd_UTC;
 	AuxParam.Mjd_TT = Mjd_TT;
 	
@@ -168,7 +169,7 @@ int main(){
     printf("dVx%8.1f [m/s]\n", Y0(4) - Y_true(4));
     printf("dVy%8.1f [m/s]\n", Y0(5) - Y_true(5));
     printf("dVz%8.1f [m/s]\n", Y0(6) - Y_true(6));
-
+	
 	//It1_tests();
 	//It2_tests();
 	//It3_tests();
