@@ -43,5 +43,5 @@ void It4_tests(){
     
     DEInteg_test();
 
-    cout << "All Iteration 4 tests passed succesfully." << endl;
+    cout << "All Iteration 4 tests passed successfully." << endl;
 }

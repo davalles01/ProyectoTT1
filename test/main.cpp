@@ -17,7 +17,7 @@ int main(){
 
 	// Carga de archivos
     eop19620101(21413); // Cargar solo las primeras c líneas del archivo eop19620101.txt
-	GGM03S(); // Cargamos las matrices Cnmusing namespace consts; y Snm
+	GGM03S(); // Cargamos las matrices Cnm y Snm
 	DE430Coeff(); // Cargamos la matriz PC
 	GEOS3(nobs);
 	
@@ -120,6 +120,14 @@ int main(){
 		
 		Matrix Y_aux1 = DEInteg (Accel,0,t-t_old,1e-13,1e-6,6,Y_old);
 		Y = transpose(Y_aux1);
+
+		cout << "Y: " << endl;
+		for(int i = 1; i <= Y.n_row; i++){
+			for(int j = 1; j <= Y.n_column; j++){
+				cout << Y(i,j) << " ";
+			}
+			cout << endl;
+		}
 		
 		double theta = gmst(Mjd_UT1);                    
 		Matrix U = R_z(theta); // 3x3		
