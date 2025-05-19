@@ -29,7 +29,7 @@ int main(){
 	AuxParam.sun = 1;
 	AuxParam.moon = 1;
 	AuxParam.planets = 1;
-	
+
 	//EKF_GEOS3
 	
 	double sigma_range = 92.5;
