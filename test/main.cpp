@@ -84,6 +84,9 @@ int main(){
 	Matrix r(3), s(3,1);
 	Matrix dAds(3), dEds(3);
 	Matrix K;
+	double x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC;
+	double UT1_TAI,UTC_GPS,UT1_GPS,TT_UTC,GPS_UTC;
+	double theta;
 
 	for(int i = 1; i <= nobs; i++){    
 		
@@ -93,9 +96,9 @@ int main(){
 		Mjd_UTC = obs(i,1);                      
 		t       = (Mjd_UTC-Mjd0)*86400.0;         
 		
-		auto [x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC] = IERS(eopdata,Mjd_UTC,'l');
-		auto [UT1_TAI,UTC_GPS,UT1_GPS,TT_UTC,GPS_UTC] = timediff(UT1_UTC,TAI_UTC);
-		Mjd_TT = Mjd_UTC + TT_UTC/86400;
+		tie(x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC) = IERS(eopdata,Mjd_UTC,'l');
+		tie(UT1_TAI,UTC_GPS,UT1_GPS,TT_UTC,GPS_UTC) = timediff(UT1_UTC,TAI_UTC);
+		Mjd_TT = Mjd_UTC + TT_UTC/86400.0;
 		Mjd_UT1 = Mjd_TT + (UT1_UTC-TT_UTC)/86400.0;
 		AuxParam.Mjd_UTC = Mjd_UTC;
 		AuxParam.Mjd_TT = Mjd_TT;
@@ -117,20 +120,12 @@ int main(){
 		for(int j = 1; j <= 6; j++){
 			assign_column(Phi,j,extract_vector(transpose(yPhi),6*j+1,6*j+6));
 		}
-		
+
 		Matrix Y_aux1 = DEInteg (Accel,0,t-t_old,1e-13,1e-6,6,Y_old);
 		Y = transpose(Y_aux1);
 
-		cout << "Y: " << endl;
-		for(int i = 1; i <= Y.n_row; i++){
-			for(int j = 1; j <= Y.n_column; j++){
-				cout << Y(i,j) << " ";
-			}
-			cout << endl;
-		}
-		
-		double theta = gmst(Mjd_UT1);                    
-		Matrix U = R_z(theta); // 3x3		
+		theta = gmst(Mjd_UT1);                    
+		Matrix U = R_z(theta); // 3x3
 		r = extract_vector(transpose(Y), 1,3);// 1x3
 		s = LT*(U*transpose(r)-Rs);           // 3x1               
 		
@@ -157,8 +152,8 @@ int main(){
 		tie(K,Y,P)  = MeasUpdate (Y, obs(i,4), Dist, sigma_range, dDdY, P, 6 );
 	}
 	
-	auto [x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC] = IERS(eopdata,obs(46,1),'l');
-	auto [UT1_TAI,UTC_GPS,UT1_GPS,TT_UTC,GPS_UTC] = timediff(UT1_UTC,TAI_UTC);
+	tie(x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC) = IERS(eopdata,obs(46,1),'l');
+	tie(UT1_TAI,UTC_GPS,UT1_GPS,TT_UTC,GPS_UTC) = timediff(UT1_UTC,TAI_UTC);
 	Mjd_TT = Mjd_UTC + TT_UTC/86400.0;
 	AuxParam.Mjd_UTC = Mjd_UTC;
 	AuxParam.Mjd_TT = Mjd_TT;
