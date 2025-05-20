@@ -1,6 +1,6 @@
 #!/bin/bash
 
-g++ test/matrix_tests.cpp src/*.cpp -lm -o bin/matrix_tests
+g++ src/*.cpp -lm -o bin/EKF_GEOS3
 
 cd bin
-./matrix_tests
+./EKF_GEOS3

@@ -27,7 +27,7 @@ namespace constants {
     inline constexpr double eps = std::numeric_limits<double>::epsilon();
 
     /// @brief Equatorial radius of Earth in meters (WGS-84)
-    inline constexpr double R_Earth = 6378137.0;
+    inline constexpr double R_Earth = 6378136.3;
 
     /// @brief Flattening of the Earth (WGS-84)
     inline constexpr double f_Earth = 1.0 / 298.257223563;

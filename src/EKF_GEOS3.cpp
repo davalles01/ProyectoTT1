@@ -2,10 +2,13 @@
 #include "../include/global.hpp"
 #include "../include/SAT_Const.hpp"
 #include "../include/MeasUpdate.hpp"
-#include "It1_tests.cpp"
-#include "It2_tests.cpp"
-#include "It3_tests.cpp"
-#include "It4_tests.cpp"
+#include "../include/Position.hpp"
+#include "../include/DEInteg.hpp"
+#include "../include/LTC.hpp"
+#include "../include/Accel.hpp"
+#include "../include/VarEqn.hpp"
+#include "../include/TimeUpdate.hpp"
+#include "../include/AzElPa.hpp"
 #include <iostream>
 
 using namespace std;
@@ -22,7 +25,7 @@ int main(){
 	GEOS3(nobs);
 	
 	// AuxParam
-	AuxParam.Mjd_UTC = 49746.1163541665;
+	AuxParam.Mjd_UTC = obs(9,1);
 	AuxParam.Mjd_TT = 49746.1170623147;
 	AuxParam.n = 20;
 	AuxParam.m = 20;
@@ -150,6 +153,8 @@ int main(){
 		Matrix dDdY = union_vector(dDds*LT*U,zeros(3));
 		
 		tie(K,Y,P)  = MeasUpdate (Y, obs(i,4), Dist, sigma_range, dDdY, P, 6 );
+		
+		P_0 = P;
 	}
 	
 	tie(x_pole,y_pole,UT1_UTC,LOD,dpsi,deps,dx_pole,dy_pole,TAI_UTC) = IERS(eopdata,obs(46,1),'l');
@@ -172,11 +177,6 @@ int main(){
     printf("dVx%8.1f [m/s]\n", Y0(4) - Y_true(4));
     printf("dVy%8.1f [m/s]\n", Y0(5) - Y_true(5));
     printf("dVz%8.1f [m/s]\n", Y0(6) - Y_true(6));
-	
-	//It1_tests();
-	//It2_tests();
-	//It3_tests();
-	//It4_tests();
 	
 	return 0;
 }
