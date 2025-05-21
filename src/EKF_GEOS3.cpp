@@ -10,11 +10,15 @@
 #include "../include/TimeUpdate.hpp"
 #include "../include/AzElPa.hpp"
 #include <iostream>
+#include <chrono> // Para medir el tiempo
 
 using namespace std;
 using namespace consts;
+using namespace std::chrono;
 
 int main(){
+
+	//auto start = high_resolution_clock::now();
 
 	int nobs = 46;
 
@@ -177,6 +181,11 @@ int main(){
     printf("dVx%8.1f [m/s]\n", Y0(4) - Y_true(4));
     printf("dVy%8.1f [m/s]\n", Y0(5) - Y_true(5));
     printf("dVz%8.1f [m/s]\n", Y0(6) - Y_true(6));
+
+	//auto stop = high_resolution_clock::now();
+    //auto duration = duration_cast<milliseconds>(stop - start); 
+
+    //cout << "Duración: " << duration.count() << " milisegundos" << endl;
 	
 	return 0;
 }
