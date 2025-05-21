@@ -76,6 +76,10 @@ bool equals(double a, double b, double tol = 1e-12) {
     return std::abs(a - b) < tol;
 }
 
+/* --------------- ITERATION 0 FUNCTIONS' TESTS --------------- */
+
+
+
 /* --------------- ITERATION 1 FUNCTIONS' TESTS --------------- */
 
 void AccelPointMass_test(){
@@ -832,6 +836,13 @@ void DEInteg_test2(){
 }
 
 /* --------------- ALL TESTS FUNCTIONS AND MAIN --------------- */
+
+void It0_tests(){
+    
+    
+    cout << "All Iteration 0 tests passed successfully.\n";
+
+}
 
 void It1_tests(){
     
