@@ -1,0 +1,1039 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 14.42      0.48     0.15     5265     0.03     0.07  IERS(Matrix&, double, char)
+ 10.58      0.72     0.11    19462     0.01     0.01  Legendre(int, int, double)
+  4.81      0.85     0.05    63256     0.00     0.00  zeros(int, int)
+  3.85      0.89     0.04    19462     0.00     0.02  AccelHarmonic(Matrix, Matrix, int, int)
+  1.92      0.91     0.02   394814     0.00     0.00  extract_vector(Matrix&, int, int)
+  1.92      0.95     0.02                             _init
+  0.96      0.99     0.01    90493     0.00     0.00  transpose(Matrix&)
+  0.96      1.01     0.01    36972     0.00     0.00  Cheb3D(double, int, double, double, Matrix, Matrix, Matrix)
+  0.96      1.02     0.01    11011     0.00     0.00  extract_column(Matrix&, int)
+  0.96      1.03     0.01     2844     0.00     0.01  extract_row(Matrix&, int)
+  0.96      1.04     0.01     2844     0.00     0.18  Accel(double, Matrix)
+  0.00      1.04     0.00   156559     0.00     0.00  union_vector(Matrix&, Matrix&)
+  0.00      1.04     0.00    89452     0.00     0.00  zeros(int)
+  0.00      1.04     0.00    76388     0.00     0.00  norm(Matrix&)
+  0.00      1.04     0.00    28440     0.00     0.00  AccelPointMass(Matrix&, Matrix&, double)
+  0.00      1.04     0.00    21642     0.00     0.00  assign_column(Matrix&, int, Matrix&)
+  0.00      1.04     0.00    20919     0.00     0.00  R_z(double)
+  0.00      1.04     0.00    15654     0.00     0.00  R_x(double)
+  0.00      1.04     0.00    10437     0.00     0.00  R_y(double)
+  0.00      1.04     0.00    10436     0.00     0.00  MeanObliquity(double)
+  0.00      1.04     0.00    10436     0.00     0.00  NutAngles(double)
+  0.00      1.04     0.00     5265     0.00     0.00  timediff(double, double)
+  0.00      1.04     0.00     5264     0.00     0.00  Frac(double)
+  0.00      1.04     0.00     5264     0.00     0.00  gmst(double)
+  0.00      1.04     0.00     5218     0.00     0.00  EqnEquinox(double)
+  0.00      1.04     0.00     5218     0.00     0.00  PoleMatrix(double, double)
+  0.00      1.04     0.00     5218     0.00     0.00  PrecMatrix(double, double)
+  0.00      1.04     0.00     5218     0.00     0.00  gast(double)
+  0.00      1.04     0.00     5218     0.00     0.00  GHAMatrix(double)
+  0.00      1.04     0.00     5218     0.00     0.00  NutMatrix(double)
+  0.00      1.04     0.00     2844     0.00     0.08  JPL_Eph_DE430(double)
+  0.00      1.04     0.00     2844     0.00     0.00  sign_(double, double)
+  0.00      1.04     0.00     2844     0.00     0.00  Mjday_TDB(double)
+  0.00      1.04     0.00     2374     0.00     0.11  G_AccelHarmonic(Matrix, Matrix, int, int)
+  0.00      1.04     0.00     2374     0.00     0.21  VarEqn(double, Matrix)
+  0.00      1.04     0.00      138     0.00     0.00  MeasUpdate(Matrix&, double, double, double, Matrix&, Matrix&, int)
+  0.00      1.04     0.00      138     0.00     0.00  eye(int)
+  0.00      1.04     0.00      138     0.00     0.00  inv(Matrix&)
+  0.00      1.04     0.00       94     0.00    10.77  DEInteg(Matrix (*)(double, Matrix), double, double, double, double, int, Matrix)
+  0.00      1.04     0.00       92     0.00     0.00  dot(Matrix&, Matrix&)
+  0.00      1.04     0.00       92     0.00     0.00  AzElPa(Matrix&)
+  0.00      1.04     0.00       47     0.00     0.00  Mjday(int, int, int, int, int, int)
+  0.00      1.04     0.00       46     0.00     0.00  TimeUpdate(Matrix, Matrix, double)
+  0.00      1.04     0.00        1     0.00     3.30  DE430Coeff()
+  0.00      1.04     0.00        1     0.00     0.40  eop19620101(int)
+  0.00      1.04     0.00        1     0.00     0.00  LTC(double, double)
+  0.00      1.04     0.00        1     0.00     0.02  __static_initialization_and_destruction_0()
+  0.00      1.04     0.00        1     0.00     0.00  GEOS3(int)
+  0.00      1.04     0.00        1     0.00     0.05  GGM03S()
+  0.00      1.04     0.00        1     0.00     0.00  Position(double, double, double)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2025 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.96% of 1.04 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     98.1    0.00    1.02                 main [1]
+                0.00    1.01      94/94          DEInteg(Matrix (*)(double, Matrix), double, double, double, double, int, Matrix) [2]
+                0.00    0.00      47/5265        IERS(Matrix&, double, char) [5]
+                0.00    0.00       1/1           DE430Coeff() [32]
+                0.00    0.00     138/138         MeasUpdate(Matrix&, double, double, double, Matrix&, Matrix&, int) [38]
+                0.00    0.00       1/1           eop19620101(int) [39]
+                0.00    0.00     831/90493       transpose(Matrix&) [24]
+                0.00    0.00       1/1           GGM03S() [45]
+                0.00    0.00     414/394814      extract_vector(Matrix&, int, int) [15]
+                0.00    0.00      46/46          TimeUpdate(Matrix, Matrix, double) [49]
+                0.00    0.00     139/156559      union_vector(Matrix&, Matrix&) [18]
+                0.00    0.00      92/92          AzElPa(Matrix&) [57]
+                0.00    0.00     276/21642       assign_column(Matrix&, int, Matrix&) [41]
+                0.00    0.00       3/63256       zeros(int, int) [14]
+                0.00    0.00       1/1           GEOS3(int) [62]
+                0.00    0.00     140/89452       zeros(int) [35]
+                0.00    0.00      46/20919       R_z(double) [40]
+                0.00    0.00      46/76388       norm(Matrix&) [37]
+                0.00    0.00       1/1           LTC(double, double) [64]
+                0.00    0.00       1/1           Position(double, double, double) [65]
+                0.00    0.00      47/5265        timediff(double, double) [175]
+                0.00    0.00      46/5264        gmst(double) [215]
+                0.00    0.00       1/47          Mjday(int, int, int, int, int, int) [400]
+-----------------------------------------------
+                0.00    1.01      94/94          main [1]
+[2]     97.3    0.00    1.01      94         DEInteg(Matrix (*)(double, Matrix), double, double, double, double, int, Matrix) [2]
+                0.01    0.50    2844/2844        Accel(double, Matrix) [3]
+                0.00    0.49    2374/2374        VarEqn(double, Matrix) [4]
+                0.00    0.00    1410/63256       zeros(int, int) [14]
+                0.00    0.00   11492/90493       transpose(Matrix&) [24]
+                0.00    0.00     481/11011       extract_column(Matrix&, int) [25]
+                0.00    0.00    2844/2844        sign_(double, double) [60]
+-----------------------------------------------
+                0.01    0.50    2844/2844        DEInteg(Matrix (*)(double, Matrix), double, double, double, double, int, Matrix) [2]
+[3]     49.2    0.01    0.50    2844         Accel(double, Matrix) [3]
+                0.00    0.22    2844/2844        JPL_Eph_DE430(double) [9]
+                0.08    0.12    2844/5265        IERS(Matrix&, double, char) [5]
+                0.01    0.04    2844/19462       AccelHarmonic(Matrix, Matrix, int, int) [7]
+                0.00    0.01    2844/5218        NutMatrix(double) [23]
+                0.00    0.00    2844/5218        PoleMatrix(double, double) [28]
+                0.00    0.00   28440/28440       AccelPointMass(Matrix&, Matrix&, double) [31]
+                0.00    0.00    2844/5218        PrecMatrix(double, double) [33]
+                0.00    0.00    5688/394814      extract_vector(Matrix&, int, int) [15]
+                0.00    0.00    2844/156559      union_vector(Matrix&, Matrix&) [18]
+                0.00    0.00    2844/5218        GHAMatrix(double) [44]
+                0.00    0.00    2844/5265        timediff(double, double) [175]
+                0.00    0.00    2844/2844        Mjday_TDB(double) [250]
+-----------------------------------------------
+                0.00    0.49    2374/2374        DEInteg(Matrix (*)(double, Matrix), double, double, double, double, int, Matrix) [2]
+[4]     47.2    0.00    0.49    2374         VarEqn(double, Matrix) [4]
+                0.00    0.26    2374/2374        G_AccelHarmonic(Matrix, Matrix, int, int) [8]
+                0.07    0.10    2374/5265        IERS(Matrix&, double, char) [5]
+                0.00    0.03    2374/19462       AccelHarmonic(Matrix, Matrix, int, int) [7]
+                0.00    0.01    2374/5218        NutMatrix(double) [23]
+                0.00    0.00    4748/63256       zeros(int, int) [14]
+                0.00    0.00    2374/5218        PoleMatrix(double, double) [28]
+                0.00    0.00   18992/394814      extract_vector(Matrix&, int, int) [15]
+                0.00    0.00    2374/5218        PrecMatrix(double, double) [33]
+                0.00    0.00   14244/21642       assign_column(Matrix&, int, Matrix&) [41]
+                0.00    0.00    2374/5218        GHAMatrix(double) [44]
+                0.00    0.00    2374/89452       zeros(int) [35]
+                0.00    0.00    2374/5265        timediff(double, double) [175]
+-----------------------------------------------
+                0.00    0.00      47/5265        main [1]
+                0.07    0.10    2374/5265        VarEqn(double, Matrix) [4]
+                0.08    0.12    2844/5265        Accel(double, Matrix) [3]
+[5]     36.5    0.15    0.23    5265         IERS(Matrix&, double, char) [5]
+                0.01    0.00   10530/11011       extract_column(Matrix&, int) [25]
+-----------------------------------------------
+                0.00    0.00      18/233120459     LTC(double, double) [64]
+                0.00    0.00     138/233120459     MeasUpdate(Matrix&, double, double, double, Matrix&, Matrix&, int) [38]
+                0.00    0.00     184/233120459     GEOS3(int) [62]
+                0.00    0.00     552/233120459     dot(Matrix&, Matrix&) [63]
+                0.00    0.00    1518/233120459     inv(Matrix&) [61]
+                0.00    0.00    2407/233120459     main [1]
+                0.00    0.00    4968/233120459     eye(int) [59]
+                0.00    0.00   32942/233120459     GGM03S() [45]
+                0.00    0.00   93933/233120459     R_y(double) [43]
+                0.00    0.00  140886/233120459     R_x(double) [20]
+                0.00    0.00  188271/233120459     R_z(double) [40]
+                0.00    0.00  192294/233120459     VarEqn(double, Matrix) [4]
+                0.00    0.00  216972/233120459     assign_column(Matrix&, int, Matrix&) [41]
+                0.00    0.00  278369/233120459     eop19620101(int) [39]
+                0.00    0.00  296184/233120459     extract_column(Matrix&, int) [25]
+                0.00    0.00  383694/233120459     zeros(int) [35]
+                0.00    0.00  458328/233120459     norm(Matrix&) [37]
+                0.00    0.00 1254810/233120459     transpose(Matrix&) [24]
+                0.00    0.00 2330700/233120459     DE430Coeff() [32]
+                0.00    0.00 2933932/233120459     DEInteg(Matrix (*)(double, Matrix), double, double, double, double, int, Matrix) [2]
+                0.00    0.00 2935008/233120459     JPL_Eph_DE430(double) [9]
+                0.01    0.00 5801760/233120459     extract_row(Matrix&, int) [21]
+                0.01    0.00 8092812/233120459     extract_vector(Matrix&, int, int) [15]
+                0.02    0.00 13669932/233120459     union_vector(Matrix&, Matrix&) [18]
+                0.03    0.00 20234809/233120459     zeros(int, int) [14]
+                0.04    0.00 29757398/233120459     Legendre(int, int, double) [10]
+                0.05    0.00 34389354/233120459     AccelHarmonic(Matrix, Matrix, int, int) [7]
+                0.09    0.00 63611730/233120459     IERS(Matrix&, double, char) [5]
+-----------------------------------------------
+                0.00    0.03    2374/19462       VarEqn(double, Matrix) [4]
+                0.01    0.04    2844/19462       Accel(double, Matrix) [3]
+                0.03    0.20   14244/19462       G_AccelHarmonic(Matrix, Matrix, int, int) [8]
+[7]     30.7    0.04    0.28   19462         AccelHarmonic(Matrix, Matrix, int, int) [7]
+                0.11    0.09   19462/19462       Legendre(int, int, double) [10]
+                0.01    0.00   77848/90493       transpose(Matrix&) [24]
+                0.00    0.00   19462/76388       norm(Matrix&) [37]
+-----------------------------------------------
+                0.00    0.26    2374/2374        VarEqn(double, Matrix) [4]
+[8]     24.9    0.00    0.26    2374         G_AccelHarmonic(Matrix, Matrix, int, int) [8]
+                0.03    0.20   14244/19462       AccelHarmonic(Matrix, Matrix, int, int) [7]
+                0.00    0.00    2374/63256       zeros(int, int) [14]
+                0.00    0.00    7122/21642       assign_column(Matrix&, int, Matrix&) [41]
+                0.00    0.00    7122/89452       zeros(int) [35]
+-----------------------------------------------
+                0.00    0.22    2844/2844        Accel(double, Matrix) [3]
+[9]     21.6    0.00    0.22    2844         JPL_Eph_DE430(double) [9]
+                0.01    0.10   36972/36972       Cheb3D(double, int, double, double, Matrix, Matrix, Matrix) [13]
+                0.02    0.01  369720/394814      extract_vector(Matrix&, int, int) [15]
+                0.00    0.02  153576/156559      union_vector(Matrix&, Matrix&) [18]
+                0.01    0.01    2844/2844        extract_row(Matrix&, int) [21]
+                0.00    0.00    5688/89452       zeros(int) [35]
+-----------------------------------------------
+                0.11    0.09   19462/19462       AccelHarmonic(Matrix, Matrix, int, int) [7]
+[10]    19.3    0.11    0.09   19462         Legendre(int, int, double) [10]
+                0.03    0.02   38924/63256       zeros(int, int) [14]
+-----------------------------------------------
+                0.00    0.00    2844/63687786     sign_(double, double) [60]
+                0.00    0.00   73212/63687786     DEInteg(Matrix (*)(double, Matrix), double, double, double, double, int, Matrix) [2]
+                0.13    0.00 63611730/63687786     IERS(Matrix&, double, char) [5]
+-----------------------------------------------
+                0.00    0.00       1/1071015     eop19620101(int) [39]
+                0.00    0.00       1/1071015     DE430Coeff() [32]
+                0.00    0.00       1/1071015     GEOS3(int) [62]
+                0.00    0.00       2/1071015     GGM03S() [45]
+                0.00    0.00      92/1071015     AzElPa(Matrix&) [57]
+                0.00    0.00     460/1071015     main [1]
+                0.00    0.00    9024/1071015     DEInteg(Matrix (*)(double, Matrix), double, double, double, double, int, Matrix) [2]
+                0.00    0.00   14244/1071015     G_AccelHarmonic(Matrix, Matrix, int, int) [8]
+                0.00    0.00   28440/1071015     Accel(double, Matrix) [3]
+                0.03    0.01  381096/1071015     JPL_Eph_DE430(double) [9]
+                0.05    0.02  637056/1071015     Cheb3D(double, int, double, double, Matrix, Matrix, Matrix) [13]
+-----------------------------------------------
+                0.01    0.10   36972/36972       JPL_Eph_DE430(double) [9]
+[13]    10.3    0.01    0.10   36972         Cheb3D(double, int, double, double, Matrix, Matrix, Matrix) [13]
+                0.00    0.00   73944/89452       zeros(int) [35]
+-----------------------------------------------
+                0.00    0.00       1/63256       eop19620101(int) [39]
+                0.00    0.00       1/63256       DE430Coeff() [32]
+                0.00    0.00       1/63256       GEOS3(int) [62]
+                0.00    0.00       2/63256       GGM03S() [45]
+                0.00    0.00       3/63256       main [1]
+                0.00    0.00     138/63256       MeasUpdate(Matrix&, double, double, double, Matrix&, Matrix&, int) [38]
+                0.00    0.00    1410/63256       DEInteg(Matrix (*)(double, Matrix), double, double, double, double, int, Matrix) [2]
+                0.00    0.00    2374/63256       G_AccelHarmonic(Matrix, Matrix, int, int) [8]
+                0.00    0.00    4748/63256       VarEqn(double, Matrix) [4]
+                0.01    0.01   15654/63256       R_x(double) [20]
+                0.03    0.02   38924/63256       Legendre(int, int, double) [10]
+[14]     7.6    0.05    0.03   63256         zeros(int, int) [14]
+-----------------------------------------------
+                0.00    0.00     414/394814      main [1]
+                0.00    0.00    5688/394814      Accel(double, Matrix) [3]
+                0.00    0.00   18992/394814      VarEqn(double, Matrix) [4]
+                0.02    0.01  369720/394814      JPL_Eph_DE430(double) [9]
+[15]     3.2    0.02    0.01  394814         extract_vector(Matrix&, int, int) [15]
+-----------------------------------------------
+                0.00    0.00       2/4755        main [1]
+                0.00    0.00       5/4755        __static_initialization_and_destruction_0() [50]
+                0.02    0.00    4748/4755        G_AccelHarmonic(Matrix, Matrix, int, int) [8]
+-----------------------------------------------
+                                                 <spontaneous>
+[17]     1.9    0.02    0.00                 _init [17]
+-----------------------------------------------
+                0.00    0.00     139/156559      main [1]
+                0.00    0.00    2844/156559      Accel(double, Matrix) [3]
+                0.00    0.02  153576/156559      JPL_Eph_DE430(double) [9]
+[18]     1.9    0.00    0.02  156559         union_vector(Matrix&, Matrix&) [18]
+-----------------------------------------------
+                0.00    0.00       1/84515       LTC(double, double) [64]
+                0.00    0.00      92/84515       TimeUpdate(Matrix, Matrix, double) [49]
+                0.00    0.00     552/84515       main [1]
+                0.00    0.00     828/84515       MeasUpdate(Matrix&, double, double, double, Matrix&, Matrix&, int) [38]
+                0.00    0.00    5218/84515       PoleMatrix(double, double) [28]
+                0.00    0.00    8532/84515       Accel(double, Matrix) [3]
+                0.00    0.00    9496/84515       VarEqn(double, Matrix) [4]
+                0.00    0.00   10436/84515       NutMatrix(double) [23]
+                0.00    0.00   10436/84515       PrecMatrix(double, double) [33]
+                0.00    0.00   38924/84515       AccelHarmonic(Matrix, Matrix, int, int) [7]
+-----------------------------------------------
+                0.00    0.01    5218/15654       PoleMatrix(double, double) [28]
+                0.00    0.01   10436/15654       NutMatrix(double) [23]
+[20]     1.9    0.00    0.02   15654         R_x(double) [20]
+                0.01    0.01   15654/63256       zeros(int, int) [14]
+-----------------------------------------------
+                0.01    0.01    2844/2844        JPL_Eph_DE430(double) [9]
+[21]     1.8    0.01    0.01    2844         extract_row(Matrix&, int) [21]
+-----------------------------------------------
+                0.00    0.00     276/423396      MeasUpdate(Matrix&, double, double, double, Matrix&, Matrix&, int) [38]
+                0.00    0.00    3618/423396      DEInteg(Matrix (*)(double, Matrix), double, double, double, double, int, Matrix) [2]
+                0.00    0.00    7122/423396      G_AccelHarmonic(Matrix, Matrix, int, int) [8]
+                0.00    0.00   28440/423396      Accel(double, Matrix) [3]
+                0.00    0.00   28440/423396      AccelPointMass(Matrix&, Matrix&, double) [31]
+                0.01    0.01  355500/423396      Cheb3D(double, int, double, double, Matrix, Matrix, Matrix) [13]
+-----------------------------------------------
+                0.00    0.01    2374/5218        VarEqn(double, Matrix) [4]
+                0.00    0.01    2844/5218        Accel(double, Matrix) [3]
+[23]     1.5    0.00    0.02    5218         NutMatrix(double) [23]
+                0.00    0.01   10436/15654       R_x(double) [20]
+                0.00    0.00    5218/20919       R_z(double) [40]
+                0.00    0.00    5218/10436       MeanObliquity(double) [105]
+                0.00    0.00    5218/10436       NutAngles(double) [106]
+-----------------------------------------------
+                0.00    0.00      46/90493       TimeUpdate(Matrix, Matrix, double) [49]
+                0.00    0.00     276/90493       MeasUpdate(Matrix&, double, double, double, Matrix&, Matrix&, int) [38]
+                0.00    0.00     831/90493       main [1]
+                0.00    0.00   11492/90493       DEInteg(Matrix (*)(double, Matrix), double, double, double, double, int, Matrix) [2]
+                0.01    0.00   77848/90493       AccelHarmonic(Matrix, Matrix, int, int) [7]
+[24]     1.2    0.01    0.00   90493         transpose(Matrix&) [24]
+-----------------------------------------------
+                0.00    0.00     481/11011       DEInteg(Matrix (*)(double, Matrix), double, double, double, double, int, Matrix) [2]
+                0.01    0.00   10530/11011       IERS(Matrix&, double, char) [5]
+[25]     1.0    0.01    0.00   11011         extract_column(Matrix&, int) [25]
+-----------------------------------------------
+                0.00    0.00   56880/1380296     AccelPointMass(Matrix&, Matrix&, double) [31]
+                0.01    0.00 1323416/1380296     AccelHarmonic(Matrix, Matrix, int, int) [7]
+-----------------------------------------------
+                0.00    0.00       1/2422900     main [1]
+                0.00    0.00     138/2422900     eye(int) [59]
+                0.00    0.00     276/2422900     inv(Matrix&) [61]
+                0.00    0.00    2844/2422900     extract_row(Matrix&, int) [21]
+                0.00    0.00   10437/2422900     R_y(double) [43]
+                0.00    0.00   11011/2422900     extract_column(Matrix&, int) [25]
+                0.00    0.00   19462/2422900     AccelHarmonic(Matrix, Matrix, int, int) [7]
+                0.00    0.00   20919/2422900     R_z(double) [40]
+                0.00    0.00   63256/2422900     zeros(int, int) [14]
+                0.00    0.00   89452/2422900     zeros(int) [35]
+                0.00    0.00   90493/2422900     transpose(Matrix&) [24]
+                0.00    0.00  156559/2422900     union_vector(Matrix&, Matrix&) [18]
+                0.00    0.00  394814/2422900     extract_vector(Matrix&, int, int) [15]
+-----------------------------------------------
+                0.00    0.00    2374/5218        VarEqn(double, Matrix) [4]
+                0.00    0.00    2844/5218        Accel(double, Matrix) [3]
+[28]     0.8    0.00    0.01    5218         PoleMatrix(double, double) [28]
+                0.00    0.01    5218/15654       R_x(double) [20]
+                0.00    0.00    5218/10437       R_y(double) [43]
+-----------------------------------------------
+                0.00    0.00     138/426900      main [1]
+                0.00    0.00     138/426900      MeasUpdate(Matrix&, double, double, double, Matrix&, Matrix&, int) [38]
+                0.00    0.00   14244/426900      G_AccelHarmonic(Matrix, Matrix, int, int) [8]
+                0.00    0.00   28440/426900      AccelPointMass(Matrix&, Matrix&, double) [31]
+                0.00    0.00   28440/426900      JPL_Eph_DE430(double) [9]
+                0.00    0.01  355500/426900      Cheb3D(double, int, double, double, Matrix, Matrix, Matrix) [13]
+-----------------------------------------------
+                0.00    0.00     138/421824      MeasUpdate(Matrix&, double, double, double, Matrix&, Matrix&, int) [38]
+                0.00    0.00    3618/421824      DEInteg(Matrix (*)(double, Matrix), double, double, double, double, int, Matrix) [2]
+                0.00    0.00   28440/421824      AccelPointMass(Matrix&, Matrix&, double) [31]
+                0.00    0.00   34128/421824      JPL_Eph_DE430(double) [9]
+                0.00    0.00  355500/421824      Cheb3D(double, int, double, double, Matrix, Matrix, Matrix) [13]
+-----------------------------------------------
+                0.00    0.00   28440/28440       Accel(double, Matrix) [3]
+[31]     0.3    0.00    0.00   28440         AccelPointMass(Matrix&, Matrix&, double) [31]
+                0.00    0.00   56880/76388       norm(Matrix&) [37]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[32]     0.3    0.00    0.00       1         DE430Coeff() [32]
+                0.00    0.00       1/63256       zeros(int, int) [14]
+-----------------------------------------------
+                0.00    0.00    2374/5218        VarEqn(double, Matrix) [4]
+                0.00    0.00    2844/5218        Accel(double, Matrix) [3]
+[33]     0.3    0.00    0.00    5218         PrecMatrix(double, double) [33]
+                0.00    0.00   10436/20919       R_z(double) [40]
+                0.00    0.00    5218/10437       R_y(double) [43]
+-----------------------------------------------
+                0.00    0.00      46/78384       main [1]
+                0.00    0.00      92/78384       AzElPa(Matrix&) [57]
+                0.00    0.00   21366/78384       G_AccelHarmonic(Matrix, Matrix, int, int) [8]
+                0.00    0.00   56880/78384       AccelPointMass(Matrix&, Matrix&, double) [31]
+-----------------------------------------------
+                0.00    0.00     140/89452       main [1]
+                0.00    0.00     184/89452       AzElPa(Matrix&) [57]
+                0.00    0.00    2374/89452       VarEqn(double, Matrix) [4]
+                0.00    0.00    5688/89452       JPL_Eph_DE430(double) [9]
+                0.00    0.00    7122/89452       G_AccelHarmonic(Matrix, Matrix, int, int) [8]
+                0.00    0.00   73944/89452       Cheb3D(double, int, double, double, Matrix, Matrix, Matrix) [13]
+[35]     0.1    0.00    0.00   89452         zeros(int) [35]
+-----------------------------------------------
+                0.00    0.00      46/54082       TimeUpdate(Matrix, Matrix, double) [49]
+                0.00    0.00   54036/54082       JPL_Eph_DE430(double) [9]
+-----------------------------------------------
+                0.00    0.00      46/76388       main [1]
+                0.00    0.00   19462/76388       AccelHarmonic(Matrix, Matrix, int, int) [7]
+                0.00    0.00   56880/76388       AccelPointMass(Matrix&, Matrix&, double) [31]
+[37]     0.1    0.00    0.00   76388         norm(Matrix&) [37]
+-----------------------------------------------
+                0.00    0.00     138/138         main [1]
+[38]     0.0    0.00    0.00     138         MeasUpdate(Matrix&, double, double, double, Matrix&, Matrix&, int) [38]
+                0.00    0.00     138/63256       zeros(int, int) [14]
+                0.00    0.00     276/90493       transpose(Matrix&) [24]
+                0.00    0.00     138/138         eye(int) [59]
+                0.00    0.00     138/138         inv(Matrix&) [61]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[39]     0.0    0.00    0.00       1         eop19620101(int) [39]
+                0.00    0.00       1/63256       zeros(int, int) [14]
+-----------------------------------------------
+                0.00    0.00       1/20919       LTC(double, double) [64]
+                0.00    0.00      46/20919       main [1]
+                0.00    0.00    5218/20919       GHAMatrix(double) [44]
+                0.00    0.00    5218/20919       NutMatrix(double) [23]
+                0.00    0.00   10436/20919       PrecMatrix(double, double) [33]
+[40]     0.0    0.00    0.00   20919         R_z(double) [40]
+-----------------------------------------------
+                0.00    0.00     276/21642       main [1]
+                0.00    0.00    7122/21642       G_AccelHarmonic(Matrix, Matrix, int, int) [8]
+                0.00    0.00   14244/21642       VarEqn(double, Matrix) [4]
+[41]     0.0    0.00    0.00   21642         assign_column(Matrix&, int, Matrix&) [41]
+-----------------------------------------------
+                0.00    0.00       1/74137       Position(double, double, double) [65]
+                0.00    0.00       4/74137       main [1]
+                0.00    0.00     188/74137       DEInteg(Matrix (*)(double, Matrix), double, double, double, double, int, Matrix) [2]
+                0.00    0.00   73944/74137       Cheb3D(double, int, double, double, Matrix, Matrix, Matrix) [13]
+-----------------------------------------------
+                0.00    0.00       1/10437       LTC(double, double) [64]
+                0.00    0.00    5218/10437       PoleMatrix(double, double) [28]
+                0.00    0.00    5218/10437       PrecMatrix(double, double) [33]
+[43]     0.0    0.00    0.00   10437         R_y(double) [43]
+-----------------------------------------------
+                0.00    0.00    2374/5218        VarEqn(double, Matrix) [4]
+                0.00    0.00    2844/5218        Accel(double, Matrix) [3]
+[44]     0.0    0.00    0.00    5218         GHAMatrix(double) [44]
+                0.00    0.00    5218/20919       R_z(double) [40]
+                0.00    0.00    5218/5218        gast(double) [217]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[45]     0.0    0.00    0.00       1         GGM03S() [45]
+                0.00    0.00       2/63256       zeros(int, int) [14]
+-----------------------------------------------
+-----------------------------------------------
+                0.00    0.00     138/138         main [1]
+-----------------------------------------------
+-----------------------------------------------
+                0.00    0.00      46/46          main [1]
+[49]     0.0    0.00    0.00      46         TimeUpdate(Matrix, Matrix, double) [49]
+                0.00    0.00      46/90493       transpose(Matrix&) [24]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I_AuxParam [51]
+[50]     0.0    0.00    0.00       1         __static_initialization_and_destruction_0() [50]
+-----------------------------------------------
+                                                 <spontaneous>
+[51]     0.0    0.00    0.00                 _GLOBAL__sub_I_AuxParam [51]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0() [50]
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+                0.00    0.00      92/92          main [1]
+-----------------------------------------------
+-----------------------------------------------
+                0.00    0.00      92/92          main [1]
+[57]     0.0    0.00    0.00      92         AzElPa(Matrix&) [57]
+                0.00    0.00     184/89452       zeros(int) [35]
+                0.00    0.00      92/92          dot(Matrix&, Matrix&) [63]
+-----------------------------------------------
+-----------------------------------------------
+                0.00    0.00     138/138         MeasUpdate(Matrix&, double, double, double, Matrix&, Matrix&, int) [38]
+[59]     0.0    0.00    0.00     138         eye(int) [59]
+-----------------------------------------------
+                0.00    0.00    2844/2844        DEInteg(Matrix (*)(double, Matrix), double, double, double, double, int, Matrix) [2]
+[60]     0.0    0.00    0.00    2844         sign_(double, double) [60]
+-----------------------------------------------
+                0.00    0.00     138/138         MeasUpdate(Matrix&, double, double, double, Matrix&, Matrix&, int) [38]
+[61]     0.0    0.00    0.00     138         inv(Matrix&) [61]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[62]     0.0    0.00    0.00       1         GEOS3(int) [62]
+                0.00    0.00       1/63256       zeros(int, int) [14]
+                0.00    0.00      46/47          Mjday(int, int, int, int, int, int) [400]
+-----------------------------------------------
+                0.00    0.00      92/92          AzElPa(Matrix&) [57]
+[63]     0.0    0.00    0.00      92         dot(Matrix&, Matrix&) [63]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[64]     0.0    0.00    0.00       1         LTC(double, double) [64]
+                0.00    0.00       1/10437       R_y(double) [43]
+                0.00    0.00       1/20919       R_z(double) [40]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[65]     0.0    0.00    0.00       1         Position(double, double, double) [65]
+-----------------------------------------------
+                0.00    0.00       3/3306576     Position(double, double, double) [65]
+                0.00    0.00      24/3306576     main [1]
+                0.00    0.00    1748/3306576     AzElPa(Matrix&) [57]
+                0.00    0.00    7122/3306576     G_AccelHarmonic(Matrix, Matrix, int, int) [8]
+                0.00    0.00   11530/3306576     DEInteg(Matrix (*)(double, Matrix), double, double, double, double, int, Matrix) [2]
+                0.00    0.00  113952/3306576     VarEqn(double, Matrix) [4]
+                0.00    0.00  131625/3306576     IERS(Matrix&, double, char) [5]
+                0.00    0.00  233544/3306576     AccelHarmonic(Matrix, Matrix, int, int) [7]
+                0.00    0.00  674028/3306576     JPL_Eph_DE430(double) [9]
+                0.00    0.00 2133000/3306576     Cheb3D(double, int, double, double, Matrix, Matrix, Matrix) [13]
+-----------------------------------------------
+                0.00    0.00   38924/38924       Legendre(int, int, double) [10]
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+                0.00    0.00   19462/19462       AccelHarmonic(Matrix, Matrix, int, int) [7]
+-----------------------------------------------
+                0.00    0.00   19462/19462       AccelHarmonic(Matrix, Matrix, int, int) [7]
+-----------------------------------------------
+                0.00    0.00   19462/19462       Legendre(int, int, double) [10]
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+                0.00    0.00    5218/10436       EqnEquinox(double) [216]
+                0.00    0.00    5218/10436       NutMatrix(double) [23]
+[105]    0.0    0.00    0.00   10436         MeanObliquity(double) [105]
+-----------------------------------------------
+                0.00    0.00    5218/10436       EqnEquinox(double) [216]
+                0.00    0.00    5218/10436       NutMatrix(double) [23]
+[106]    0.0    0.00    0.00   10436         NutAngles(double) [106]
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+                0.00    0.00   10436/10436       NutAngles(double) [106]
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+                0.00    0.00    5218/10436       EqnEquinox(double) [216]
+                0.00    0.00    5218/10436       NutMatrix(double) [23]
+-----------------------------------------------
+                0.00    0.00    5218/10436       EqnEquinox(double) [216]
+                0.00    0.00    5218/10436       NutMatrix(double) [23]
+-----------------------------------------------
+                0.00    0.00   10436/10436       NutAngles(double) [106]
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+                0.00    0.00      47/5312        main [1]
+                0.00    0.00    5265/5312        timediff(double, double) [175]
+-----------------------------------------------
+                0.00    0.00      47/5312        main [1]
+                0.00    0.00    5265/5312        IERS(Matrix&, double, char) [5]
+-----------------------------------------------
+                0.00    0.00      47/5265        main [1]
+                0.00    0.00    2374/5265        VarEqn(double, Matrix) [4]
+                0.00    0.00    2844/5265        Accel(double, Matrix) [3]
+[175]    0.0    0.00    0.00    5265         timediff(double, double) [175]
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+                0.00    0.00    5265/5265        timediff(double, double) [175]
+-----------------------------------------------
+                0.00    0.00    5265/5265        IERS(Matrix&, double, char) [5]
+-----------------------------------------------
+                0.00    0.00    5264/5264        gmst(double) [215]
+[214]    0.0    0.00    0.00    5264         Frac(double) [214]
+-----------------------------------------------
+                0.00    0.00      46/5264        main [1]
+                0.00    0.00    5218/5264        gast(double) [217]
+[215]    0.0    0.00    0.00    5264         gmst(double) [215]
+                0.00    0.00    5264/5264        Frac(double) [214]
+-----------------------------------------------
+                0.00    0.00    5218/5218        gast(double) [217]
+[216]    0.0    0.00    0.00    5218         EqnEquinox(double) [216]
+                0.00    0.00    5218/10436       NutAngles(double) [106]
+                0.00    0.00    5218/10436       MeanObliquity(double) [105]
+-----------------------------------------------
+                0.00    0.00    5218/5218        GHAMatrix(double) [44]
+[217]    0.0    0.00    0.00    5218         gast(double) [217]
+                0.00    0.00    5218/5264        gmst(double) [215]
+                0.00    0.00    5218/5218        EqnEquinox(double) [216]
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+                0.00    0.00    2374/5218        VarEqn(double, Matrix) [4]
+                0.00    0.00    2844/5218        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2374/5218        VarEqn(double, Matrix) [4]
+                0.00    0.00    2844/5218        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2374/5218        VarEqn(double, Matrix) [4]
+                0.00    0.00    2844/5218        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2374/5218        VarEqn(double, Matrix) [4]
+                0.00    0.00    2844/5218        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2374/5218        VarEqn(double, Matrix) [4]
+                0.00    0.00    2844/5218        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2374/5218        VarEqn(double, Matrix) [4]
+                0.00    0.00    2844/5218        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2374/5218        VarEqn(double, Matrix) [4]
+                0.00    0.00    2844/5218        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2374/5218        VarEqn(double, Matrix) [4]
+                0.00    0.00    2844/5218        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2374/5218        VarEqn(double, Matrix) [4]
+                0.00    0.00    2844/5218        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2374/5218        VarEqn(double, Matrix) [4]
+                0.00    0.00    2844/5218        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2374/5218        VarEqn(double, Matrix) [4]
+                0.00    0.00    2844/5218        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2374/5218        VarEqn(double, Matrix) [4]
+                0.00    0.00    2844/5218        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2374/5218        VarEqn(double, Matrix) [4]
+                0.00    0.00    2844/5218        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2374/5218        VarEqn(double, Matrix) [4]
+                0.00    0.00    2844/5218        Accel(double, Matrix) [3]
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+                0.00    0.00    2844/2844        Accel(double, Matrix) [3]
+[250]    0.0    0.00    0.00    2844         Mjday_TDB(double) [250]
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+                0.00    0.00    2844/2844        JPL_Eph_DE430(double) [9]
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+                0.00    0.00    2844/2844        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2844/2844        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2844/2844        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2844/2844        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2844/2844        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2844/2844        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2844/2844        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2844/2844        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2844/2844        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2844/2844        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2844/2844        Accel(double, Matrix) [3]
+-----------------------------------------------
+                0.00    0.00    2844/2844        JPL_Eph_DE430(double) [9]
+-----------------------------------------------
+                0.00    0.00    2716/2716        DEInteg(Matrix (*)(double, Matrix), double, double, double, double, int, Matrix) [2]
+-----------------------------------------------
+                0.00    0.00    1904/1904        DEInteg(Matrix (*)(double, Matrix), double, double, double, double, int, Matrix) [2]
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+                0.00    0.00     138/276         main [1]
+                0.00    0.00     138/276         MeasUpdate(Matrix&, double, double, double, Matrix&, Matrix&, int) [38]
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+                0.00    0.00      92/184         AzElPa(Matrix&) [57]
+                0.00    0.00      92/184         main [1]
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+                0.00    0.00      92/92          AzElPa(Matrix&) [57]
+-----------------------------------------------
+                0.00    0.00       1/47          main [1]
+                0.00    0.00      46/47          GEOS3(int) [62]
+[400]    0.0    0.00    0.00      47         Mjday(int, int, int, int, int, int) [400]
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+-----------------------------------------------
+                0.00    0.00      47/47          main [1]
+-----------------------------------------------
+                0.00    0.00      47/47          main [1]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2025 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+

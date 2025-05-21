@@ -1,0 +1,450 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cppcheck - HTML report - [project name]</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+    <script>
+      function getStyle(el, styleProp) {
+        var y;
+
+        if (el.currentStyle) {
+          y = el.currentStyle[styleProp];
+        } else if (window.getComputedStyle) {
+          y = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+        }
+
+        return y;
+      }
+
+      function toggle() {
+        var el = this.expandable_content;
+        var mark = this.expandable_marker;
+
+        if (el.style.display === "block") {
+          el.style.display = "none";
+          mark.textContent = "[+]";
+        } else {
+          el.style.display = "block";
+          mark.textContent = "[-]";
+        }
+      }
+
+      function initExpandables() {
+        var elements = document.querySelectorAll(".expandable");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var el = elements[i];
+          var clickable = el.querySelector("span");
+          var marker = clickable.querySelector(".marker");
+          var content = el.querySelector(".content");
+          var width = clickable.clientWidth - parseInt(getStyle(content, "padding-left")) - parseInt(getStyle(content, "padding-right"));
+          content.style.width = width + "px";
+          clickable.expandable_content = content;
+          clickable.expandable_marker = marker;
+          clickable.addEventListener("click", toggle);
+        }
+      }
+
+      function toggleDisplay(cb) {
+        var elements = document.querySelectorAll("." + cb.id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("id-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleSeverity(cb) {
+        cb.parentElement.classList.toggle("unchecked", !cb.checked);
+        var elements = document.querySelectorAll(".sev_" + cb.id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("severity-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleTool(cb) {
+        cb.parentElement.classList.toggle("unchecked", !cb.checked);
+
+        var elements;
+        if (cb.id == "clang-tidy")
+            elements = document.querySelectorAll("[class^=clang-tidy-]");
+        else
+            elements = document.querySelectorAll(".issue:not([class^=clang-tidy-])");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("tool-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleAll() {
+        var elements = document.querySelectorAll(".idToggle");
+
+        // starting from 1 since 0 is the "toggle all" input
+        for (var i = 1, len = elements.length; i < len; i++) {
+          var changed = elements[i].checked != elements[0].checked;
+          if (changed) {
+            elements[i].checked = elements[0].checked;
+            toggleDisplay(elements[i]);
+          }
+        }
+      }
+
+      function filterFile(filter) {
+        var elements = document.querySelectorAll(".fileEntry");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = elements[i].querySelector("tr").querySelector("td").textContent.toLowerCase().includes(filter.toLowerCase());
+          elements[i].classList.toggle("text-filtered", !visible);
+        }
+      }
+
+      function filterText(text) {
+        filter = text.toLowerCase();
+        var elements = document.querySelectorAll(".issue");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = false;
+          var fields = elements[i].querySelectorAll("td");
+          for (var n = 0, num = fields.length; n < num; n++) {
+            if (fields[n].textContent.toLowerCase().includes(filter)) {
+              visible = true;
+              break;
+            }
+          }
+          elements[i].classList.toggle("text-filtered", !visible);
+        }
+
+        updateFileRows();
+      }
+
+      function updateFileRows(element) {
+        var elements = document.querySelectorAll(".fileEntry");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = elements[i].querySelector(".issue:not(.id-filtered):not(.severity-filtered):not(.tool-filtered):not(.text-filtered)");
+          elements[i].classList.toggle("file-filtered", !visible);
+        }
+      }
+
+      window.addEventListener("load", initExpandables);
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+    <div id="header" class="header">
+      <h1>Cppcheck report - [project name]</h1>
+      <div id="filters">
+
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="error"checked/>error</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="warning"checked/>warning</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleSeverity(this)" id="portability"disabled/>portability</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleSeverity(this)" id="performance"disabled/>performance</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="style"checked/>style</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="information"checked/>information</label>
+        | 
+        <label class="checkBtn"><input type="checkbox" onclick="toggleTool(this)" id="cppcheck"checked/>cppcheck</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleTool(this)" id="clang-tidy"disabled/>clang-tidy</label>
+        | 
+        <label class="severityHeader">File: <input type="search" oninput="filterFile(this.value)"/></label>
+        <label class="severityHeader">Filter: <input type="search" oninput="filterText(this.value)"/></label>
+      </div>
+
+    </div>
+
+    <div id="menu_index">
+     <p><a href="index.html">Defect summary</a> </p>
+
+       <label><input type="checkbox" class="idToggle" onclick="toggleAll()" checked> Toggle all</label>
+       <table>
+           <tr><th>Show</th><th>#</th><th>Defect ID</th></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="returnDanglingLifetime" name="returnDanglingLifetime" checked></td><td>31</td><td>returnDanglingLifetime</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unreadVariable" name="unreadVariable" checked></td><td>31</td><td>unreadVariable</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="missingIncludeSystem" name="missingIncludeSystem" checked></td><td>27</td><td>missingIncludeSystem</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="shadowVariable" name="shadowVariable" checked></td><td>24</td><td>shadowVariable</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="variableScope" name="variableScope" checked></td><td>19</td><td>variableScope</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="redundantAssignment" name="redundantAssignment" checked></td><td>6</td><td>redundantAssignment</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="danglingTempReference" name="danglingTempReference" checked></td><td>5</td><td>danglingTempReference</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="normalCheckLevelMaxBranches" name="normalCheckLevelMaxBranches" checked></td><td>5</td><td>normalCheckLevelMaxBranches</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="cstyleCast" name="cstyleCast" checked></td><td>4</td><td>cstyleCast</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unusedFunction" name="unusedFunction" checked></td><td>4</td><td>unusedFunction</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="knownConditionTrueFalse" name="knownConditionTrueFalse" checked></td><td>3</td><td>knownConditionTrueFalse</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="legacyUninitvar" name="legacyUninitvar" checked></td><td>3</td><td>legacyUninitvar</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="uninitvar" name="uninitvar" checked></td><td>3</td><td>uninitvar</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="mismatchAllocDealloc" name="mismatchAllocDealloc" checked></td><td>2</td><td>mismatchAllocDealloc</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="checkersReport" name="checkersReport" checked></td><td>1</td><td>checkersReport</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="constParameterReference" name="constParameterReference" checked></td><td>1</td><td>constParameterReference</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="constVariable" name="constVariable" checked></td><td>1</td><td>constVariable</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="constVariableReference" name="constVariableReference" checked></td><td>1</td><td>constVariableReference</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="noExplicitConstructor" name="noExplicitConstructor" checked></td><td>1</td><td>noExplicitConstructor</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="returnTempReference" name="returnTempReference" checked></td><td>1</td><td>returnTempReference</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="shadowArgument" name="shadowArgument" checked></td><td>1</td><td>shadowArgument</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unsafeClassCanLeak" name="unsafeClassCanLeak" checked></td><td>1</td><td>unsafeClassCanLeak</td></tr>
+           <tr><td></td><td>175</td><td>total</td></tr>
+       </table>
+       <p><a href="stats.html">Statistics</a></p>
+    </div>
+    <div id="content_index">
+
+       <table class="summaryTable">
+       <tr><th>Line</th><th>Id</th><th>CWE</th><th>Severity</th><th>Message</th></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="31.html"></a></td></tr>
+         <tr class="checkersReport sev_information issue"><td></td><td>checkersReport</td><td></td><td>information</td><td>Active checkers: 167/856 (use --checkers-report=&lt;filename&gt; to see details)</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="1.html">include/AccelPointMass.hpp</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="1.html#line-20">20</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="5.html">include/EqnEquinox.hpp</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="5.html#line-21">21</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="4.html">include/Frac.hpp</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="4.html#line-22">22</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="3.html">include/R_x.hpp</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="3.html#line-19">19</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="6.html">include/constants.hpp</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="6.html#line-19">19</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="6.html#line-20">20</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;limits&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="2.html">include/global.hpp</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="2.html#line-20">20</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="2.html#line-22">22</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="0.html">include/matrix.hpp</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="0.html#line-20">20</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;cstdio&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="0.html#line-21">21</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;cstdlib&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="0.html#line-22">22</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="0.html#line-23">23</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="unsafeClassCanLeak sev_style issue"><td><a href="0.html#line-29">29</a></td><td>unsafeClassCanLeak</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Class &apos;Matrix&apos; is unsafe, &apos;Matrix::data&apos; can leak by wrong usage.</td></tr>
+         <tr class="noExplicitConstructor sev_style issue"><td><a href="0.html#line-49">49</a></td><td>noExplicitConstructor</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Class &apos;Matrix&apos; has a constructor with 1 argument that is not explicit.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="7.html">src/AccelHarmonic.cpp</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="7.html#line-17">17</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="8.html">src/AccelPointMass.cpp</a></td></tr>
+         <tr class="constParameterReference sev_style issue"><td><a href="8.html#line-18">18</a></td><td>constParameterReference</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;r&apos; can be declared as reference to const</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="9.html">src/AzElPa.cpp</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="9.html#line-18">18</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="9.html#line-48">48</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;Az&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="9.html#line-48">48</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;El&apos; that will be invalid when returning.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="10.html">src/Cheb3D.cpp</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="10.html#line-19">19</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdexcept&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="11.html">src/DEInteg.cpp</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="11.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="11.html#line-24">24</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="knownConditionTrueFalse sev_style issue"><td><a href="11.html#line-74">74</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/570.html">570</a></td><td>style</td><td>Condition &apos;State_&gt;DE_INVPARAM&apos; is always false</td></tr>
+         <tr class="knownConditionTrueFalse sev_style issue"><td><a href="11.html#line-75">75</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The comparison &apos;State_ != DE_INIT&apos; is always false because &apos;State_&apos; and &apos;DE_INIT&apos; represent the same value.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-77">77</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;State_&apos; is assigned a value that is never used.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="11.html#line-92">92</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;stiff&apos; can be reduced.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-92">92</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;stiff&apos; is assigned a value that is never used.</td></tr>
+         <tr class="shadowArgument sev_style issue"><td><a href="11.html#line-98">98</a></td><td>shadowArgument</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;x&apos; shadows outer argument</td></tr>
+         <tr class="knownConditionTrueFalse sev_style issue"><td><a href="11.html#line-102">102</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/571.html">571</a></td><td>style</td><td>Condition &apos;!OldPermit&apos; is always true</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-107">107</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;delsgn&apos; is assigned a value that is never used.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="11.html#line-112">112</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;crash&apos; can be reduced.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-158">158</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;State_&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-160">160</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;told&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-161">161</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;OldPermit&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-173">173</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;State_&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-175">175</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;told&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-176">176</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;OldPermit&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-189">189</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;h&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-190">190</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;crash&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-209">209</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;epsilon&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-210">210</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;crash&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-235">235</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;hnew&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-239">239</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;phase1&apos; is assigned a value that is never used.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="11.html#line-249">249</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;nsp1&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="11.html#line-249">249</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;km2&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="11.html#line-250">250</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;xold&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="11.html#line-253">253</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;erkm2&apos; can be reduced.</td></tr>
+         <tr class="uninitvar sev_warning issue"><td><a href="11.html#line-262">262</a></td><td>uninitvar</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>warning</td><td class="warning">Uninitialized variable: k</td></tr>
+         <tr class="uninitvar sev_warning issue"><td><a href="11.html#line-270">270</a></td><td>uninitvar</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>warning</td><td class="warning">Uninitialized variable: hold</td></tr>
+         <tr class="uninitvar sev_warning issue"><td><a href="11.html#line-273">273</a></td><td>uninitvar</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>warning</td><td class="warning">Uninitialized variable: ns</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="11.html#line-355">355</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;temp1&apos; shadows outer variable</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="11.html#line-371">371</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;temp2&apos; shadows outer variable</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="11.html#line-399">399</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;temp3&apos; shadows outer variable</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="11.html#line-400">400</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;temp4&apos; shadows outer variable</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="11.html#line-420">420</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;temp5&apos; shadows outer variable</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="11.html#line-460">460</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;temp1&apos; shadows outer variable</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="11.html#line-476">476</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;temp2&apos; shadows outer variable</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-492">492</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;crash&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-493">493</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;h&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-494">494</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;epsilon&apos; is assigned a value that is never used.</td></tr>
+         <tr class="legacyUninitvar sev_error issue"><td><a href="11.html#line-513">513</a></td><td>legacyUninitvar</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Uninitialized variable: k</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-514">514</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;hold&apos; is assigned a value that is never used.</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="11.html#line-597">597</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;temp2&apos; shadows outer variable</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-610">610</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;State_&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-619">619</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;told&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-620">620</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;OldPermit&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="11.html#line-634">634</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;stiff&apos; is assigned a value that is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="12.html">src/EKF_GEOS3.cpp</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="12.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="12.html#line-12">12</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="12.html#line-13">13</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;chrono&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="12.html#line-53">53</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;Mjd1&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="12.html#line-54">54</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;Mjd2&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="12.html#line-55">55</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;Mjd3&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="12.html#line-68">68</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;n_eqn&apos; is assigned a value that is never used.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="12.html#line-88">88</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;t_old&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="12.html#line-90">90</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;Mjd_UT1&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="12.html#line-96">96</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;theta&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="30.html">src/EccAnom.cpp</a></td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="30.html#line-23">23</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;EccAnom&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="13.html">src/IERS.cpp</a></td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="13.html#line-85">85</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;x_pole&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="13.html#line-85">85</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;y_pole&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="13.html#line-85">85</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;UT1_UTC&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="13.html#line-85">85</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;LOD&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="13.html#line-85">85</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;dpsi&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="13.html#line-85">85</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;deps&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="13.html#line-85">85</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;dx_pole&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="13.html#line-85">85</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;dy_pole&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="13.html#line-85">85</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;TAI_UTC&apos; that will be invalid when returning.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="14.html">src/JPL_Eph_DE430.cpp</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="14.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+         <tr class="legacyUninitvar sev_error issue"><td><a href="14.html#line-62">62</a></td><td>legacyUninitvar</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Uninitialized variable: j</td></tr>
+         <tr class="legacyUninitvar sev_error issue"><td><a href="14.html#line-62">62</a></td><td>legacyUninitvar</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Uninitialized variable: Mjd0</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="14.html#line-66">66</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;j&apos; shadows outer variable</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="14.html#line-72">72</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;i&apos; shadows outer variable</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="14.html#line-112">112</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;j&apos; shadows outer variable</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="14.html#line-139">139</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;j&apos; shadows outer variable</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="14.html#line-145">145</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;i&apos; shadows outer variable</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="14.html#line-171">171</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;j&apos; shadows outer variable</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="14.html#line-197">197</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;j&apos; shadows outer variable</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="14.html#line-209">209</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;j&apos; shadows outer variable</td></tr>
+         <tr class="redundantAssignment sev_style issue"><td><a href="14.html#line-216">216</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;Mjd0&apos; is assigned an expression that holds the same value.</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="14.html#line-221">221</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;j&apos; shadows outer variable</td></tr>
+         <tr class="redundantAssignment sev_style issue"><td><a href="14.html#line-228">228</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;Mjd0&apos; is assigned an expression that holds the same value.</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="14.html#line-233">233</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;j&apos; shadows outer variable</td></tr>
+         <tr class="redundantAssignment sev_style issue"><td><a href="14.html#line-240">240</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;Mjd0&apos; is assigned an expression that holds the same value.</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="14.html#line-245">245</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;j&apos; shadows outer variable</td></tr>
+         <tr class="redundantAssignment sev_style issue"><td><a href="14.html#line-252">252</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;Mjd0&apos; is assigned an expression that holds the same value.</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="14.html#line-257">257</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;j&apos; shadows outer variable</td></tr>
+         <tr class="redundantAssignment sev_style issue"><td><a href="14.html#line-264">264</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;Mjd0&apos; is assigned an expression that holds the same value.</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="14.html#line-269">269</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;j&apos; shadows outer variable</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="14.html#line-274">274</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;i&apos; shadows outer variable</td></tr>
+         <tr class="redundantAssignment sev_style issue"><td><a href="14.html#line-283">283</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;Mjd0&apos; is assigned an expression that holds the same value.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="14.html#line-295">295</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;r_Nutations&apos; is assigned a value that is never used.</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="14.html#line-299">299</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;j&apos; shadows outer variable</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="14.html#line-305">305</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;i&apos; shadows outer variable</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="14.html#line-328">328</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;r_Librations&apos; is assigned a value that is never used.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="14.html#line-344">344</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;r_Mercury&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="14.html#line-344">344</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;r_Venus&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="14.html#line-344">344</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;r_Earth&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="14.html#line-344">344</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;r_Mars&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="14.html#line-344">344</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;r_Jupiter&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="14.html#line-344">344</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;r_Saturn&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="14.html#line-344">344</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;r_Uranus&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="14.html#line-344">344</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;r_Neptune&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="14.html#line-344">344</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;r_Pluto&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="14.html#line-344">344</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;r_Moon&apos; that will be invalid when returning.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="15.html">src/Legendre.cpp</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="15.html#line-14">14</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="16.html">src/MeasUpdate.cpp</a></td></tr>
+         <tr class="danglingTempReference sev_error issue"><td><a href="16.html#line-34">34</a></td><td>danglingTempReference</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Using reference to dangling temporary.</td></tr>
+         <tr class="danglingTempReference sev_error issue"><td><a href="16.html#line-36">36</a></td><td>danglingTempReference</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Using reference to dangling temporary.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="16.html#line-38">38</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="16.html#line-38">38</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="16.html#line-38">38</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that will be invalid when returning.</td></tr>
+         <tr class="danglingTempReference sev_error issue"><td><a href="16.html#line-38">38</a></td><td>danglingTempReference</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Using reference to dangling temporary.</td></tr>
+         <tr class="danglingTempReference sev_error issue"><td><a href="16.html#line-38">38</a></td><td>danglingTempReference</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Using reference to dangling temporary.</td></tr>
+         <tr class="danglingTempReference sev_error issue"><td><a href="16.html#line-38">38</a></td><td>danglingTempReference</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Using reference to dangling temporary.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="17.html">src/Mjday.cpp</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="17.html#line-17">17</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="18.html">src/Mjday_TDB.cpp</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="18.html#line-18">18</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="19.html">src/NutAngles.cpp</a></td></tr>
+         <tr class="constVariable sev_style issue"><td><a href="19.html#line-31">31</a></td><td>constVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;C&apos; can be declared as const array</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="19.html#line-146">146</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;arg&apos; can be reduced.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="19.html#line-156">156</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;dpsi&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="19.html#line-156">156</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;deps&apos; that will be invalid when returning.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="20.html">src/Position.cpp</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="20.html#line-20">20</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="21.html">src/R_y.cpp</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="21.html#line-17">17</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="22.html">src/R_z.cpp</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="22.html#line-17">17</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="23.html">src/VarEqn.cpp</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="23.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="24.html">src/gast.cpp</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="24.html#line-19">19</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="25.html">src/global.cpp</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="25.html#line-93">93</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;Y&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="25.html#line-93">93</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;MO&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="25.html#line-93">93</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;D&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="25.html#line-93">93</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;H&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="25.html#line-93">93</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;MI&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="25.html#line-93">93</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;S&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="25.html#line-94">94</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;AZ&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="25.html#line-94">94</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;EL&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="25.html#line-94">94</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;DIST&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="26.html">src/gmst.cpp</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="26.html#line-17">17</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="27.html">src/matrix.cpp</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="27.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+         <tr class="cstyleCast sev_style issue"><td><a href="27.html#line-29">29</a></td><td>cstyleCast</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>C-style pointer casting</td></tr>
+         <tr class="cstyleCast sev_style issue"><td><a href="27.html#line-37">37</a></td><td>cstyleCast</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>C-style pointer casting</td></tr>
+         <tr class="constVariableReference sev_style issue"><td><a href="27.html#line-121">121</a></td><td>constVariableReference</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;m_inv&apos; can be declared as reference to const</td></tr>
+         <tr class="returnTempReference sev_error issue"><td><a href="27.html#line-124">124</a></td><td>returnTempReference</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Reference to temporary returned.</td></tr>
+         <tr class="mismatchAllocDealloc sev_error issue"><td><a href="27.html#line-133">133</a></td><td>mismatchAllocDealloc</td><td><a href="https://cwe.mitre.org/data/definitions/762.html">762</a></td><td>error</td><td class="error">Mismatching allocation and deallocation: Matrix::data</td></tr>
+         <tr class="mismatchAllocDealloc sev_error issue"><td><a href="27.html#line-135">135</a></td><td>mismatchAllocDealloc</td><td><a href="https://cwe.mitre.org/data/definitions/762.html">762</a></td><td>error</td><td class="error">Mismatching allocation and deallocation: Matrix::data</td></tr>
+         <tr class="cstyleCast sev_style issue"><td><a href="27.html#line-135">135</a></td><td>cstyleCast</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>C-style pointer casting</td></tr>
+         <tr class="cstyleCast sev_style issue"><td><a href="27.html#line-143">143</a></td><td>cstyleCast</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>C-style pointer casting</td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="27.html#line-340">340</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;assign_row&apos; is never used.</td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="27.html#line-377">377</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;equals&apos; is never used.</td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="27.html#line-438">438</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;cross&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="28.html">src/sign_.cpp</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="28.html#line-17">17</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="29.html">src/timediff.cpp</a></td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="29.html#line-23">23</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;TT_GPS&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="29.html#line-24">24</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;TAI_GPS&apos; is assigned a value that is never used.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="29.html#line-32">32</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;UT1_TAI&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="29.html#line-32">32</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;UTC_GPS&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="29.html#line-32">32</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;UT1_GPS&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="29.html#line-32">32</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;TT_UTC&apos; that will be invalid when returning.</td></tr>
+         <tr class="returnDanglingLifetime sev_error issue"><td><a href="29.html#line-32">32</a></td><td>returnDanglingLifetime</td><td><a href="https://cwe.mitre.org/data/definitions/562.html">562</a></td><td>error</td><td class="error">Returning object that points to local variable &apos;GPS_UTC&apos; that will be invalid when returning.</td></tr>
+      </tbody>
+       </table>
+    </div>
+    <div id="footer" class="footer">
+      <p>
+        Created by Cppcheck 2.17.1 (<a href="https://cppcheck.sourceforge.io">Sourceforge</a>, <a href="irc://irc.freenode.net/cppcheck">IRC</a>)
+      </p>
+    </div>
+    </div>
+  </body>
+</html>

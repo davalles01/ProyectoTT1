@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="2.17.1"/>
+    <errors>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cstdio&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cstdio&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="include/matrix.hpp" line="20" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cstdlib&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cstdlib&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="include/matrix.hpp" line="21" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="include/matrix.hpp" line="22" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="include/matrix.hpp" line="23" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="include/AccelPointMass.hpp" line="20" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="include/global.hpp" line="20" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="include/global.hpp" line="22" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="include/R_x.hpp" line="19" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="include/Frac.hpp" line="22" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="include/EqnEquinox.hpp" line="21" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="include/constants.hpp" line="19" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;limits&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;limits&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="include/constants.hpp" line="20" column="0"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Matrix&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Matrix&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions." cwe="398" file0="src/Accel.cpp">
+            <location file="include/matrix.hpp" line="49" column="3"/>
+            <symbol>Matrix</symbol>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/AccelHarmonic.cpp" line="17" column="0"/>
+        </error>
+        <error id="constParameterReference" severity="style" msg="Parameter &apos;r&apos; can be declared as reference to const" verbose="Parameter &apos;r&apos; can be declared as reference to const" cwe="398" file0="src/AccelPointMass.cpp">
+            <location file="src/AccelPointMass.cpp" line="18" column="31" info="Parameter &apos;r&apos; can be declared as reference to const"/>
+            <symbol>r</symbol>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/AzElPa.cpp" line="18" column="0"/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;Az&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;Az&apos; that will be invalid when returning." cwe="562" file0="src/AzElPa.cpp">
+            <location file="src/AzElPa.cpp" line="48" column="15"/>
+            <location file="src/AzElPa.cpp" line="28" column="12" info="Variable created here."/>
+            <location file="src/AzElPa.cpp" line="48" column="16" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;El&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;El&apos; that will be invalid when returning." cwe="562" file0="src/AzElPa.cpp">
+            <location file="src/AzElPa.cpp" line="48" column="15"/>
+            <location file="src/AzElPa.cpp" line="34" column="12" info="Variable created here."/>
+            <location file="src/AzElPa.cpp" line="48" column="20" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdexcept&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdexcept&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/Cheb3D.cpp" line="19" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/DEInteg.cpp" line="24" column="0"/>
+        </error>
+        <error id="normalCheckLevelMaxBranches" severity="information" msg="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." verbose="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="0" column="0"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;State_&gt;DE_INVPARAM&apos; is always false" verbose="Condition &apos;State_&gt;DE_INVPARAM&apos; is always false" cwe="570" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="74" column="13" info="Condition &apos;State_&gt;DE_INVPARAM&apos; is always false"/>
+            <location file="src/DEInteg.cpp" line="65" column="9" info="Assuming condition is false"/>
+            <location file="src/DEInteg.cpp" line="40" column="23" info="Assignment &apos;State_=DE_INIT&apos;, assigned value is 1"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;!OldPermit&apos; is always true" verbose="Condition &apos;!OldPermit&apos; is always true" cwe="571" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="102" column="34" info="Condition &apos;!OldPermit&apos; is always true"/>
+            <location file="src/DEInteg.cpp" line="97" column="22" info="Assignment &apos;OldPermit=false&apos;, assigned value is 0"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="The comparison &apos;State_ != DE_INIT&apos; is always false because &apos;State_&apos; and &apos;DE_INIT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="75" column="14"/>
+            <location file="src/DEInteg.cpp" line="40" column="23" info="&apos;State_&apos; is assigned value &apos;DE_INIT&apos; here."/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;stiff&apos; can be reduced." verbose="The scope of the variable &apos;stiff&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="92" column="10"/>
+            <symbol>stiff</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;crash&apos; can be reduced." verbose="The scope of the variable &apos;crash&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="112" column="10"/>
+            <symbol>crash</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;nsp1&apos; can be reduced." verbose="The scope of the variable &apos;nsp1&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="249" column="17"/>
+            <symbol>nsp1</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;km2&apos; can be reduced." verbose="The scope of the variable &apos;km2&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="249" column="38"/>
+            <symbol>km2</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;xold&apos; can be reduced." verbose="The scope of the variable &apos;xold&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="250" column="16"/>
+            <symbol>xold</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;erkm2&apos; can be reduced." verbose="The scope of the variable &apos;erkm2&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="253" column="28"/>
+            <symbol>erkm2</symbol>
+        </error>
+        <error id="shadowArgument" severity="style" msg="Local variable &apos;x&apos; shadows outer argument" verbose="Local variable &apos;x&apos; shadows outer argument" cwe="398" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="98" column="12" info="Shadow variable"/>
+            <location file="src/DEInteg.cpp" line="26" column="32" info="Shadowed declaration"/>
+            <symbol>x</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;temp5&apos; shadows outer variable" verbose="Local variable &apos;temp5&apos; shadows outer variable" cwe="398" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="420" column="20" info="Shadow variable"/>
+            <location file="src/DEInteg.cpp" line="251" column="52" info="Shadowed declaration"/>
+            <symbol>temp5</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;temp1&apos; shadows outer variable" verbose="Local variable &apos;temp1&apos; shadows outer variable" cwe="398" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="355" column="28" info="Shadow variable"/>
+            <location file="src/DEInteg.cpp" line="251" column="24" info="Shadowed declaration"/>
+            <symbol>temp1</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;temp2&apos; shadows outer variable" verbose="Local variable &apos;temp2&apos; shadows outer variable" cwe="398" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="371" column="24" info="Shadow variable"/>
+            <location file="src/DEInteg.cpp" line="251" column="31" info="Shadowed declaration"/>
+            <symbol>temp2</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;temp3&apos; shadows outer variable" verbose="Local variable &apos;temp3&apos; shadows outer variable" cwe="398" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="399" column="24" info="Shadow variable"/>
+            <location file="src/DEInteg.cpp" line="251" column="38" info="Shadowed declaration"/>
+            <symbol>temp3</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;temp4&apos; shadows outer variable" verbose="Local variable &apos;temp4&apos; shadows outer variable" cwe="398" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="400" column="24" info="Shadow variable"/>
+            <location file="src/DEInteg.cpp" line="251" column="45" info="Shadowed declaration"/>
+            <symbol>temp4</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;temp2&apos; shadows outer variable" verbose="Local variable &apos;temp2&apos; shadows outer variable" cwe="398" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="476" column="24" info="Shadow variable"/>
+            <location file="src/DEInteg.cpp" line="251" column="31" info="Shadowed declaration"/>
+            <symbol>temp2</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;temp1&apos; shadows outer variable" verbose="Local variable &apos;temp1&apos; shadows outer variable" cwe="398" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="460" column="28" info="Shadow variable"/>
+            <location file="src/DEInteg.cpp" line="251" column="24" info="Shadowed declaration"/>
+            <symbol>temp1</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;temp2&apos; shadows outer variable" verbose="Local variable &apos;temp2&apos; shadows outer variable" cwe="398" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="597" column="20" info="Shadow variable"/>
+            <location file="src/DEInteg.cpp" line="251" column="31" info="Shadowed declaration"/>
+            <symbol>temp2</symbol>
+        </error>
+        <error id="uninitvar" severity="warning" msg="Uninitialized variable: k" verbose="Uninitialized variable: k" cwe="457" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="262" column="19"/>
+            <location file="src/DEInteg.cpp" line="217" column="13" info="Assuming condition is false"/>
+            <symbol>k</symbol>
+        </error>
+        <error id="uninitvar" severity="warning" msg="Uninitialized variable: hold" verbose="Uninitialized variable: hold" cwe="457" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="270" column="22"/>
+            <location file="src/DEInteg.cpp" line="217" column="13" info="Assuming condition is false"/>
+            <symbol>hold</symbol>
+        </error>
+        <error id="uninitvar" severity="warning" msg="Uninitialized variable: ns" verbose="Uninitialized variable: ns" cwe="457" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="273" column="17"/>
+            <location file="src/DEInteg.cpp" line="270" column="19" info="Assuming condition is false"/>
+            <symbol>ns</symbol>
+        </error>
+        <error id="legacyUninitvar" severity="error" msg="Uninitialized variable: k" verbose="Uninitialized variable: k" cwe="457" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="513" column="16"/>
+            <symbol>k</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;State_&apos; is assigned a value that is never used." verbose="Variable &apos;State_&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="77" column="16"/>
+            <symbol>State_</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;stiff&apos; is assigned a value that is never used." verbose="Variable &apos;stiff&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="92" column="17"/>
+            <symbol>stiff</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;delsgn&apos; is assigned a value that is never used." verbose="Variable &apos;delsgn&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="107" column="16"/>
+            <symbol>delsgn</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;State_&apos; is assigned a value that is never used." verbose="Variable &apos;State_&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="158" column="20"/>
+            <symbol>State_</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;told&apos; is assigned a value that is never used." verbose="Variable &apos;told&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="160" column="18"/>
+            <symbol>told</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;OldPermit&apos; is assigned a value that is never used." verbose="Variable &apos;OldPermit&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="161" column="23"/>
+            <symbol>OldPermit</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;State_&apos; is assigned a value that is never used." verbose="Variable &apos;State_&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="173" column="20"/>
+            <symbol>State_</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;told&apos; is assigned a value that is never used." verbose="Variable &apos;told&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="175" column="18"/>
+            <symbol>told</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;OldPermit&apos; is assigned a value that is never used." verbose="Variable &apos;OldPermit&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="176" column="23"/>
+            <symbol>OldPermit</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;h&apos; is assigned a value that is never used." verbose="Variable &apos;h&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="189" column="15"/>
+            <symbol>h</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;crash&apos; is assigned a value that is never used." verbose="Variable &apos;crash&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="190" column="19"/>
+            <symbol>crash</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;epsilon&apos; is assigned a value that is never used." verbose="Variable &apos;epsilon&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="209" column="21"/>
+            <symbol>epsilon</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;crash&apos; is assigned a value that is never used." verbose="Variable &apos;crash&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="210" column="19"/>
+            <symbol>crash</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;hnew&apos; is assigned a value that is never used." verbose="Variable &apos;hnew&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="235" column="25"/>
+            <symbol>hnew</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;phase1&apos; is assigned a value that is never used." verbose="Variable &apos;phase1&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="239" column="25"/>
+            <symbol>phase1</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;crash&apos; is assigned a value that is never used." verbose="Variable &apos;crash&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="492" column="27"/>
+            <symbol>crash</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;h&apos; is assigned a value that is never used." verbose="Variable &apos;h&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="493" column="23"/>
+            <symbol>h</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;epsilon&apos; is assigned a value that is never used." verbose="Variable &apos;epsilon&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="494" column="29"/>
+            <symbol>epsilon</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;hold&apos; is assigned a value that is never used." verbose="Variable &apos;hold&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="514" column="14"/>
+            <symbol>hold</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;State_&apos; is assigned a value that is never used." verbose="Variable &apos;State_&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="610" column="20"/>
+            <symbol>State_</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;told&apos; is assigned a value that is never used." verbose="Variable &apos;told&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="619" column="18"/>
+            <symbol>told</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;OldPermit&apos; is assigned a value that is never used." verbose="Variable &apos;OldPermit&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="620" column="23"/>
+            <symbol>OldPermit</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;stiff&apos; is assigned a value that is never used." verbose="Variable &apos;stiff&apos; is assigned a value that is never used." cwe="563" file0="src/DEInteg.cpp">
+            <location file="src/DEInteg.cpp" line="634" column="19"/>
+            <symbol>stiff</symbol>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;iostream&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/EKF_GEOS3.cpp" line="12" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;chrono&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;chrono&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/EKF_GEOS3.cpp" line="13" column="0"/>
+        </error>
+        <error id="normalCheckLevelMaxBranches" severity="information" msg="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." verbose="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." file0="src/EKF_GEOS3.cpp">
+            <location file="src/EKF_GEOS3.cpp" line="0" column="0"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;t_old&apos; can be reduced." verbose="The scope of the variable &apos;t_old&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/EKF_GEOS3.cpp">
+            <location file="src/EKF_GEOS3.cpp" line="88" column="9"/>
+            <symbol>t_old</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;Mjd_UT1&apos; can be reduced." verbose="The scope of the variable &apos;Mjd_UT1&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/EKF_GEOS3.cpp">
+            <location file="src/EKF_GEOS3.cpp" line="90" column="17"/>
+            <symbol>Mjd_UT1</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;theta&apos; can be reduced." verbose="The scope of the variable &apos;theta&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/EKF_GEOS3.cpp">
+            <location file="src/EKF_GEOS3.cpp" line="96" column="9"/>
+            <symbol>theta</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;Mjd1&apos; is assigned a value that is never used." verbose="Variable &apos;Mjd1&apos; is assigned a value that is never used." cwe="563" file0="src/EKF_GEOS3.cpp">
+            <location file="src/EKF_GEOS3.cpp" line="53" column="14"/>
+            <symbol>Mjd1</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;Mjd2&apos; is assigned a value that is never used." verbose="Variable &apos;Mjd2&apos; is assigned a value that is never used." cwe="563" file0="src/EKF_GEOS3.cpp">
+            <location file="src/EKF_GEOS3.cpp" line="54" column="14"/>
+            <symbol>Mjd2</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;Mjd3&apos; is assigned a value that is never used." verbose="Variable &apos;Mjd3&apos; is assigned a value that is never used." cwe="563" file0="src/EKF_GEOS3.cpp">
+            <location file="src/EKF_GEOS3.cpp" line="55" column="14"/>
+            <symbol>Mjd3</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;n_eqn&apos; is assigned a value that is never used." verbose="Variable &apos;n_eqn&apos; is assigned a value that is never used." cwe="563" file0="src/EKF_GEOS3.cpp">
+            <location file="src/EKF_GEOS3.cpp" line="68" column="13"/>
+            <symbol>n_eqn</symbol>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;x_pole&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;x_pole&apos; that will be invalid when returning." cwe="562" file0="src/IERS.cpp">
+            <location file="src/IERS.cpp" line="85" column="15"/>
+            <location file="src/IERS.cpp" line="23" column="12" info="Variable created here."/>
+            <location file="src/IERS.cpp" line="85" column="16" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;y_pole&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;y_pole&apos; that will be invalid when returning." cwe="562" file0="src/IERS.cpp">
+            <location file="src/IERS.cpp" line="85" column="15"/>
+            <location file="src/IERS.cpp" line="23" column="20" info="Variable created here."/>
+            <location file="src/IERS.cpp" line="85" column="24" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;UT1_UTC&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;UT1_UTC&apos; that will be invalid when returning." cwe="562" file0="src/IERS.cpp">
+            <location file="src/IERS.cpp" line="85" column="15"/>
+            <location file="src/IERS.cpp" line="23" column="28" info="Variable created here."/>
+            <location file="src/IERS.cpp" line="85" column="32" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;LOD&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;LOD&apos; that will be invalid when returning." cwe="562" file0="src/IERS.cpp">
+            <location file="src/IERS.cpp" line="85" column="15"/>
+            <location file="src/IERS.cpp" line="23" column="37" info="Variable created here."/>
+            <location file="src/IERS.cpp" line="85" column="41" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;dpsi&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;dpsi&apos; that will be invalid when returning." cwe="562" file0="src/IERS.cpp">
+            <location file="src/IERS.cpp" line="85" column="15"/>
+            <location file="src/IERS.cpp" line="23" column="42" info="Variable created here."/>
+            <location file="src/IERS.cpp" line="85" column="46" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;deps&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;deps&apos; that will be invalid when returning." cwe="562" file0="src/IERS.cpp">
+            <location file="src/IERS.cpp" line="85" column="15"/>
+            <location file="src/IERS.cpp" line="23" column="48" info="Variable created here."/>
+            <location file="src/IERS.cpp" line="85" column="52" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;dx_pole&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;dx_pole&apos; that will be invalid when returning." cwe="562" file0="src/IERS.cpp">
+            <location file="src/IERS.cpp" line="85" column="15"/>
+            <location file="src/IERS.cpp" line="23" column="54" info="Variable created here."/>
+            <location file="src/IERS.cpp" line="85" column="58" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;dy_pole&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;dy_pole&apos; that will be invalid when returning." cwe="562" file0="src/IERS.cpp">
+            <location file="src/IERS.cpp" line="85" column="15"/>
+            <location file="src/IERS.cpp" line="23" column="63" info="Variable created here."/>
+            <location file="src/IERS.cpp" line="85" column="67" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;TAI_UTC&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;TAI_UTC&apos; that will be invalid when returning." cwe="562" file0="src/IERS.cpp">
+            <location file="src/IERS.cpp" line="85" column="15"/>
+            <location file="src/IERS.cpp" line="23" column="72" info="Variable created here."/>
+            <location file="src/IERS.cpp" line="85" column="76" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="normalCheckLevelMaxBranches" severity="information" msg="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." verbose="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="0" column="0"/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;r_Mercury&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;r_Mercury&apos; that will be invalid when returning." cwe="562" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="344" column="15"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="167" column="12" info="Variable created here."/>
+            <location file="src/JPL_Eph_DE430.cpp" line="344" column="16" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;r_Venus&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;r_Venus&apos; that will be invalid when returning." cwe="562" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="344" column="15"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="193" column="12" info="Variable created here."/>
+            <location file="src/JPL_Eph_DE430.cpp" line="344" column="26" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;r_Earth&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;r_Earth&apos; that will be invalid when returning." cwe="562" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="344" column="15"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="62" column="12" info="Variable created here."/>
+            <location file="src/JPL_Eph_DE430.cpp" line="344" column="34" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;r_Mars&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;r_Mars&apos; that will be invalid when returning." cwe="562" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="344" column="15"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="205" column="12" info="Variable created here."/>
+            <location file="src/JPL_Eph_DE430.cpp" line="344" column="42" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;r_Jupiter&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;r_Jupiter&apos; that will be invalid when returning." cwe="562" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="344" column="15"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="217" column="12" info="Variable created here."/>
+            <location file="src/JPL_Eph_DE430.cpp" line="344" column="49" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;r_Saturn&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;r_Saturn&apos; that will be invalid when returning." cwe="562" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="344" column="15"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="229" column="12" info="Variable created here."/>
+            <location file="src/JPL_Eph_DE430.cpp" line="344" column="59" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;r_Uranus&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;r_Uranus&apos; that will be invalid when returning." cwe="562" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="344" column="15"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="241" column="12" info="Variable created here."/>
+            <location file="src/JPL_Eph_DE430.cpp" line="344" column="68" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;r_Neptune&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;r_Neptune&apos; that will be invalid when returning." cwe="562" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="344" column="15"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="253" column="12" info="Variable created here."/>
+            <location file="src/JPL_Eph_DE430.cpp" line="344" column="78" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;r_Pluto&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;r_Pluto&apos; that will be invalid when returning." cwe="562" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="344" column="15"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="265" column="12" info="Variable created here."/>
+            <location file="src/JPL_Eph_DE430.cpp" line="344" column="88" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;r_Moon&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;r_Moon&apos; that will be invalid when returning." cwe="562" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="344" column="15"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="108" column="12" info="Variable created here."/>
+            <location file="src/JPL_Eph_DE430.cpp" line="344" column="96" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="redundantAssignment" severity="style" msg="Variable &apos;Mjd0&apos; is assigned an expression that holds the same value." verbose="Variable &apos;Mjd0&apos; is assigned an expression that holds the same value." cwe="563" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="216" column="5"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="204" column="10" info="Mjd0 is assigned &apos;t1&apos; here."/>
+            <symbol>Mjd0</symbol>
+        </error>
+        <error id="redundantAssignment" severity="style" msg="Variable &apos;Mjd0&apos; is assigned an expression that holds the same value." verbose="Variable &apos;Mjd0&apos; is assigned an expression that holds the same value." cwe="563" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="228" column="5"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="216" column="10" info="Mjd0 is assigned &apos;t1&apos; here."/>
+            <symbol>Mjd0</symbol>
+        </error>
+        <error id="redundantAssignment" severity="style" msg="Variable &apos;Mjd0&apos; is assigned an expression that holds the same value." verbose="Variable &apos;Mjd0&apos; is assigned an expression that holds the same value." cwe="563" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="240" column="5"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="228" column="10" info="Mjd0 is assigned &apos;t1&apos; here."/>
+            <symbol>Mjd0</symbol>
+        </error>
+        <error id="redundantAssignment" severity="style" msg="Variable &apos;Mjd0&apos; is assigned an expression that holds the same value." verbose="Variable &apos;Mjd0&apos; is assigned an expression that holds the same value." cwe="563" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="252" column="5"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="240" column="10" info="Mjd0 is assigned &apos;t1&apos; here."/>
+            <symbol>Mjd0</symbol>
+        </error>
+        <error id="redundantAssignment" severity="style" msg="Variable &apos;Mjd0&apos; is assigned an expression that holds the same value." verbose="Variable &apos;Mjd0&apos; is assigned an expression that holds the same value." cwe="563" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="264" column="5"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="252" column="10" info="Mjd0 is assigned &apos;t1&apos; here."/>
+            <symbol>Mjd0</symbol>
+        </error>
+        <error id="redundantAssignment" severity="style" msg="Variable &apos;Mjd0&apos; is assigned an expression that holds the same value." verbose="Variable &apos;Mjd0&apos; is assigned an expression that holds the same value." cwe="563" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="283" column="9"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="264" column="10" info="Mjd0 is assigned &apos;t1&apos; here."/>
+            <symbol>Mjd0</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;j&apos; shadows outer variable" verbose="Local variable &apos;j&apos; shadows outer variable" cwe="398" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="66" column="13" info="Shadow variable"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="50" column="9" info="Shadowed declaration"/>
+            <symbol>j</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;i&apos; shadows outer variable" verbose="Local variable &apos;i&apos; shadows outer variable" cwe="398" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="72" column="13" info="Shadow variable"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="22" column="9" info="Shadowed declaration"/>
+            <symbol>i</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;j&apos; shadows outer variable" verbose="Local variable &apos;j&apos; shadows outer variable" cwe="398" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="112" column="13" info="Shadow variable"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="50" column="9" info="Shadowed declaration"/>
+            <symbol>j</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;j&apos; shadows outer variable" verbose="Local variable &apos;j&apos; shadows outer variable" cwe="398" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="139" column="13" info="Shadow variable"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="50" column="9" info="Shadowed declaration"/>
+            <symbol>j</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;i&apos; shadows outer variable" verbose="Local variable &apos;i&apos; shadows outer variable" cwe="398" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="145" column="13" info="Shadow variable"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="22" column="9" info="Shadowed declaration"/>
+            <symbol>i</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;j&apos; shadows outer variable" verbose="Local variable &apos;j&apos; shadows outer variable" cwe="398" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="171" column="13" info="Shadow variable"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="50" column="9" info="Shadowed declaration"/>
+            <symbol>j</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;j&apos; shadows outer variable" verbose="Local variable &apos;j&apos; shadows outer variable" cwe="398" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="197" column="13" info="Shadow variable"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="50" column="9" info="Shadowed declaration"/>
+            <symbol>j</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;j&apos; shadows outer variable" verbose="Local variable &apos;j&apos; shadows outer variable" cwe="398" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="209" column="13" info="Shadow variable"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="50" column="9" info="Shadowed declaration"/>
+            <symbol>j</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;j&apos; shadows outer variable" verbose="Local variable &apos;j&apos; shadows outer variable" cwe="398" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="221" column="13" info="Shadow variable"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="50" column="9" info="Shadowed declaration"/>
+            <symbol>j</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;j&apos; shadows outer variable" verbose="Local variable &apos;j&apos; shadows outer variable" cwe="398" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="233" column="13" info="Shadow variable"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="50" column="9" info="Shadowed declaration"/>
+            <symbol>j</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;j&apos; shadows outer variable" verbose="Local variable &apos;j&apos; shadows outer variable" cwe="398" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="245" column="13" info="Shadow variable"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="50" column="9" info="Shadowed declaration"/>
+            <symbol>j</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;j&apos; shadows outer variable" verbose="Local variable &apos;j&apos; shadows outer variable" cwe="398" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="257" column="13" info="Shadow variable"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="50" column="9" info="Shadowed declaration"/>
+            <symbol>j</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;j&apos; shadows outer variable" verbose="Local variable &apos;j&apos; shadows outer variable" cwe="398" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="269" column="13" info="Shadow variable"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="50" column="9" info="Shadowed declaration"/>
+            <symbol>j</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;i&apos; shadows outer variable" verbose="Local variable &apos;i&apos; shadows outer variable" cwe="398" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="274" column="13" info="Shadow variable"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="22" column="9" info="Shadowed declaration"/>
+            <symbol>i</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;j&apos; shadows outer variable" verbose="Local variable &apos;j&apos; shadows outer variable" cwe="398" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="299" column="13" info="Shadow variable"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="50" column="9" info="Shadowed declaration"/>
+            <symbol>j</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;i&apos; shadows outer variable" verbose="Local variable &apos;i&apos; shadows outer variable" cwe="398" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="305" column="13" info="Shadow variable"/>
+            <location file="src/JPL_Eph_DE430.cpp" line="22" column="9" info="Shadowed declaration"/>
+            <symbol>i</symbol>
+        </error>
+        <error id="legacyUninitvar" severity="error" msg="Uninitialized variable: j" verbose="Uninitialized variable: j" cwe="457" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="62" column="87"/>
+            <symbol>j</symbol>
+        </error>
+        <error id="legacyUninitvar" severity="error" msg="Uninitialized variable: Mjd0" verbose="Uninitialized variable: Mjd0" cwe="457" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="62" column="42"/>
+            <symbol>Mjd0</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;r_Nutations&apos; is assigned a value that is never used." verbose="Variable &apos;r_Nutations&apos; is assigned a value that is never used." cwe="563" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="295" column="24"/>
+            <symbol>r_Nutations</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;r_Librations&apos; is assigned a value that is never used." verbose="Variable &apos;r_Librations&apos; is assigned a value that is never used." cwe="563" file0="src/JPL_Eph_DE430.cpp">
+            <location file="src/JPL_Eph_DE430.cpp" line="328" column="25"/>
+            <symbol>r_Librations</symbol>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/Legendre.cpp" line="14" column="0"/>
+        </error>
+        <error id="danglingTempReference" severity="error" msg="Using reference to dangling temporary." verbose="Using reference to dangling temporary." cwe="562" file0="src/MeasUpdate.cpp">
+            <location file="src/MeasUpdate.cpp" line="34" column="27"/>
+            <location file="src/MeasUpdate.cpp" line="32" column="15" info="Assigned to reference."/>
+        </error>
+        <error id="danglingTempReference" severity="error" msg="Using reference to dangling temporary." verbose="Using reference to dangling temporary." cwe="562" file0="src/MeasUpdate.cpp">
+            <location file="src/MeasUpdate.cpp" line="36" column="25"/>
+            <location file="src/MeasUpdate.cpp" line="32" column="15" info="Assigned to reference."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that will be invalid when returning." verbose="Returning object that will be invalid when returning." cwe="562" file0="src/MeasUpdate.cpp">
+            <location file="src/MeasUpdate.cpp" line="38" column="15"/>
+            <location file="src/MeasUpdate.cpp" line="38" column="16" info="Passed to &apos;tie&apos;."/>
+            <location file="src/MeasUpdate.cpp" line="32" column="15" info="Assigned to reference."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that will be invalid when returning." verbose="Returning object that will be invalid when returning." cwe="562" file0="src/MeasUpdate.cpp">
+            <location file="src/MeasUpdate.cpp" line="38" column="15"/>
+            <location file="src/MeasUpdate.cpp" line="38" column="18" info="Passed to &apos;tie&apos;."/>
+            <location file="src/MeasUpdate.cpp" line="34" column="15" info="Assigned to reference."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that will be invalid when returning." verbose="Returning object that will be invalid when returning." cwe="562" file0="src/MeasUpdate.cpp">
+            <location file="src/MeasUpdate.cpp" line="38" column="15"/>
+            <location file="src/MeasUpdate.cpp" line="38" column="20" info="Passed to &apos;tie&apos;."/>
+            <location file="src/MeasUpdate.cpp" line="36" column="15" info="Assigned to reference."/>
+        </error>
+        <error id="danglingTempReference" severity="error" msg="Using reference to dangling temporary." verbose="Using reference to dangling temporary." cwe="562" file0="src/MeasUpdate.cpp">
+            <location file="src/MeasUpdate.cpp" line="38" column="16"/>
+            <location file="src/MeasUpdate.cpp" line="32" column="15" info="Assigned to reference."/>
+        </error>
+        <error id="danglingTempReference" severity="error" msg="Using reference to dangling temporary." verbose="Using reference to dangling temporary." cwe="562" file0="src/MeasUpdate.cpp">
+            <location file="src/MeasUpdate.cpp" line="38" column="18"/>
+            <location file="src/MeasUpdate.cpp" line="34" column="15" info="Assigned to reference."/>
+        </error>
+        <error id="danglingTempReference" severity="error" msg="Using reference to dangling temporary." verbose="Using reference to dangling temporary." cwe="562" file0="src/MeasUpdate.cpp">
+            <location file="src/MeasUpdate.cpp" line="38" column="20"/>
+            <location file="src/MeasUpdate.cpp" line="36" column="15" info="Assigned to reference."/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/Mjday.cpp" line="17" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/Mjday_TDB.cpp" line="18" column="0"/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;dpsi&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;dpsi&apos; that will be invalid when returning." cwe="562" file0="src/NutAngles.cpp">
+            <location file="src/NutAngles.cpp" line="156" column="15"/>
+            <location file="src/NutAngles.cpp" line="26" column="12" info="Variable created here."/>
+            <location file="src/NutAngles.cpp" line="156" column="16" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;deps&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;deps&apos; that will be invalid when returning." cwe="562" file0="src/NutAngles.cpp">
+            <location file="src/NutAngles.cpp" line="156" column="15"/>
+            <location file="src/NutAngles.cpp" line="27" column="12" info="Variable created here."/>
+            <location file="src/NutAngles.cpp" line="156" column="22" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;arg&apos; can be reduced." verbose="The scope of the variable &apos;arg&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/NutAngles.cpp">
+            <location file="src/NutAngles.cpp" line="146" column="12"/>
+            <symbol>arg</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;C&apos; can be declared as const array" verbose="Variable &apos;C&apos; can be declared as const array" cwe="398" file0="src/NutAngles.cpp">
+            <location file="src/NutAngles.cpp" line="31" column="12" info="Variable &apos;C&apos; can be declared as const array"/>
+            <symbol>C</symbol>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/Position.cpp" line="20" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/R_y.cpp" line="17" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/R_z.cpp" line="17" column="0"/>
+        </error>
+        <error id="normalCheckLevelMaxBranches" severity="information" msg="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." verbose="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." file0="src/VarEqn.cpp">
+            <location file="src/VarEqn.cpp" line="0" column="0"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/gast.cpp" line="19" column="0"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;Y&apos; can be reduced." verbose="The scope of the variable &apos;Y&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/global.cpp">
+            <location file="src/global.cpp" line="93" column="9"/>
+            <symbol>Y</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;MO&apos; can be reduced." verbose="The scope of the variable &apos;MO&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/global.cpp">
+            <location file="src/global.cpp" line="93" column="12"/>
+            <symbol>MO</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;D&apos; can be reduced." verbose="The scope of the variable &apos;D&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/global.cpp">
+            <location file="src/global.cpp" line="93" column="16"/>
+            <symbol>D</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;H&apos; can be reduced." verbose="The scope of the variable &apos;H&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/global.cpp">
+            <location file="src/global.cpp" line="93" column="19"/>
+            <symbol>H</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;MI&apos; can be reduced." verbose="The scope of the variable &apos;MI&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/global.cpp">
+            <location file="src/global.cpp" line="93" column="22"/>
+            <symbol>MI</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;S&apos; can be reduced." verbose="The scope of the variable &apos;S&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/global.cpp">
+            <location file="src/global.cpp" line="93" column="26"/>
+            <symbol>S</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;AZ&apos; can be reduced." verbose="The scope of the variable &apos;AZ&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/global.cpp">
+            <location file="src/global.cpp" line="94" column="12"/>
+            <symbol>AZ</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;EL&apos; can be reduced." verbose="The scope of the variable &apos;EL&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/global.cpp">
+            <location file="src/global.cpp" line="94" column="16"/>
+            <symbol>EL</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;DIST&apos; can be reduced." verbose="The scope of the variable &apos;DIST&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="src/global.cpp">
+            <location file="src/global.cpp" line="94" column="20"/>
+            <symbol>DIST</symbol>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/gmst.cpp" line="17" column="0"/>
+        </error>
+        <error id="normalCheckLevelMaxBranches" severity="information" msg="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." verbose="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." file0="src/matrix.cpp">
+            <location file="src/matrix.cpp" line="0" column="0"/>
+        </error>
+        <error id="returnTempReference" severity="error" msg="Reference to temporary returned." verbose="Reference to temporary returned." cwe="562" file0="src/matrix.cpp">
+            <location file="src/matrix.cpp" line="124" column="9"/>
+            <location file="src/matrix.cpp" line="122" column="17" info="Assigned to reference."/>
+        </error>
+        <error id="mismatchAllocDealloc" severity="error" msg="Mismatching allocation and deallocation: Matrix::data" verbose="Mismatching allocation and deallocation: Matrix::data" cwe="762" file0="src/matrix.cpp">
+            <location file="src/matrix.cpp" line="133" column="2"/>
+            <symbol>Matrix::data</symbol>
+        </error>
+        <error id="mismatchAllocDealloc" severity="error" msg="Mismatching allocation and deallocation: Matrix::data" verbose="Mismatching allocation and deallocation: Matrix::data" cwe="762" file0="src/matrix.cpp">
+            <location file="src/matrix.cpp" line="135" column="8"/>
+            <symbol>Matrix::data</symbol>
+        </error>
+        <error id="unsafeClassCanLeak" severity="style" msg="Class &apos;Matrix&apos; is unsafe, &apos;Matrix::data&apos; can leak by wrong usage." verbose="The class &apos;Matrix&apos; is unsafe, wrong usage can cause memory/resource leaks for &apos;Matrix::data&apos;. This can for instance be fixed by adding proper cleanup in the destructor." cwe="398" file0="src/matrix.cpp">
+            <location file="include/matrix.hpp" line="29" column="12"/>
+            <symbol>Matrix</symbol>
+            <symbol>Matrix::data</symbol>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected." cwe="398" file0="src/matrix.cpp">
+            <location file="src/matrix.cpp" line="29" column="15"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected." cwe="398" file0="src/matrix.cpp">
+            <location file="src/matrix.cpp" line="37" column="19"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected." cwe="398" file0="src/matrix.cpp">
+            <location file="src/matrix.cpp" line="135" column="15"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected." cwe="398" file0="src/matrix.cpp">
+            <location file="src/matrix.cpp" line="143" column="19"/>
+        </error>
+        <error id="constVariableReference" severity="style" msg="Variable &apos;m_inv&apos; can be declared as reference to const" verbose="Variable &apos;m_inv&apos; can be declared as reference to const" cwe="398" file0="src/matrix.cpp">
+            <location file="src/matrix.cpp" line="121" column="10" info="Variable &apos;m_inv&apos; can be declared as reference to const"/>
+            <symbol>m_inv</symbol>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;cmath&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="src/sign_.cpp" line="17" column="0"/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;UT1_TAI&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;UT1_TAI&apos; that will be invalid when returning." cwe="562" file0="src/timediff.cpp">
+            <location file="src/timediff.cpp" line="32" column="15"/>
+            <location file="src/timediff.cpp" line="25" column="12" info="Variable created here."/>
+            <location file="src/timediff.cpp" line="32" column="16" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;UTC_GPS&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;UTC_GPS&apos; that will be invalid when returning." cwe="562" file0="src/timediff.cpp">
+            <location file="src/timediff.cpp" line="32" column="15"/>
+            <location file="src/timediff.cpp" line="27" column="12" info="Variable created here."/>
+            <location file="src/timediff.cpp" line="32" column="24" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;UT1_GPS&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;UT1_GPS&apos; that will be invalid when returning." cwe="562" file0="src/timediff.cpp">
+            <location file="src/timediff.cpp" line="32" column="15"/>
+            <location file="src/timediff.cpp" line="28" column="12" info="Variable created here."/>
+            <location file="src/timediff.cpp" line="32" column="32" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;TT_UTC&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;TT_UTC&apos; that will be invalid when returning." cwe="562" file0="src/timediff.cpp">
+            <location file="src/timediff.cpp" line="32" column="15"/>
+            <location file="src/timediff.cpp" line="29" column="12" info="Variable created here."/>
+            <location file="src/timediff.cpp" line="32" column="40" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="returnDanglingLifetime" severity="error" msg="Returning object that points to local variable &apos;GPS_UTC&apos; that will be invalid when returning." verbose="Returning object that points to local variable &apos;GPS_UTC&apos; that will be invalid when returning." cwe="562" file0="src/timediff.cpp">
+            <location file="src/timediff.cpp" line="32" column="15"/>
+            <location file="src/timediff.cpp" line="30" column="12" info="Variable created here."/>
+            <location file="src/timediff.cpp" line="32" column="47" info="Passed to &apos;tie&apos;."/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;TT_GPS&apos; is assigned a value that is never used." verbose="Variable &apos;TT_GPS&apos; is assigned a value that is never used." cwe="563" file0="src/timediff.cpp">
+            <location file="src/timediff.cpp" line="23" column="20"/>
+            <symbol>TT_GPS</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;TAI_GPS&apos; is assigned a value that is never used." verbose="Variable &apos;TAI_GPS&apos; is assigned a value that is never used." cwe="563" file0="src/timediff.cpp">
+            <location file="src/timediff.cpp" line="24" column="20"/>
+            <symbol>TAI_GPS</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;EccAnom&apos; is never used." verbose="The function &apos;EccAnom&apos; is never used." cwe="561">
+            <location file="src/EccAnom.cpp" line="23" column="0"/>
+            <symbol>EccAnom</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;assign_row&apos; is never used." verbose="The function &apos;assign_row&apos; is never used." cwe="561">
+            <location file="src/matrix.cpp" line="340" column="0"/>
+            <symbol>assign_row</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;equals&apos; is never used." verbose="The function &apos;equals&apos; is never used." cwe="561">
+            <location file="src/matrix.cpp" line="377" column="0"/>
+            <symbol>equals</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;cross&apos; is never used." verbose="The function &apos;cross&apos; is never used." cwe="561">
+            <location file="src/matrix.cpp" line="438" column="0"/>
+            <symbol>cross</symbol>
+        </error>
+        <error id="checkersReport" severity="information" msg="Active checkers: 167/856 (use --checkers-report=&lt;filename&gt; to see details)" verbose="Active checkers: 167/856 (use --checkers-report=&lt;filename&gt; to see details)"/>
+    </errors>
+</results>
