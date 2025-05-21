@@ -78,6 +78,196 @@ bool equals(double a, double b, double tol = 1e-12) {
 
 /* --------------- ITERATION 0 FUNCTIONS' TESTS --------------- */
 
+void equals_Matrix_test() {
+    Matrix A(2, 2);
+    A(1,1) = 1.0; A(1,2) = 2.0;
+    A(2,1) = 3.0; A(2,2) = 4.0;
+
+    Matrix B(2, 2);
+    B(1,1) = 1.0; B(1,2) = 2.0;
+    B(2,1) = 3.0; B(2,2) = 4.0;
+
+    Matrix C(2, 2);
+    C(1,1) = 1.0; C(1,2) = 2.1;  // Diferencia aquí
+    C(2,1) = 3.0; C(2,2) = 4.0;
+
+    assert(equals(A, B));
+    assert(!equals(A, C));
+}
+
+void zeros_matrix_test() {
+    Matrix A = zeros(3, 2);
+    Matrix expected(3, 2);
+    for (int i = 1; i <= 3; ++i)
+        for (int j = 1; j <= 2; ++j)
+            expected(i,j) = 0.0;
+    assert(equals(A, expected));
+}
+
+void eye_test() {
+    Matrix I = eye(3);
+    Matrix expected(3, 3);
+    for (int i = 1; i <= 3; ++i)
+        for (int j = 1; j <= 3; ++j)
+            expected(i,j) = (i == j) ? 1.0 : 0.0;
+    assert(equals(I, expected));
+}
+
+void transpose_test() {
+    Matrix A(2, 3);
+    A(1,1) = 1; A(1,2) = 2; A(1,3) = 3;
+    A(2,1) = 4; A(2,2) = 5; A(2,3) = 6;
+
+    Matrix T = transpose(A);
+    Matrix expected(3, 2);
+    expected(1,1) = 1; expected(1,2) = 4;
+    expected(2,1) = 2; expected(2,2) = 5;
+    expected(3,1) = 3; expected(3,2) = 6;
+
+    assert(equals(T, expected));
+}
+
+void assign_column_test() {
+    Matrix A = zeros(3, 2);
+    Matrix col(3);
+    col(1) = 1; col(2) = 2; col(3) = 3;
+    assign_column(A, 2, col);
+
+    Matrix expected = zeros(3, 2);
+    expected(1,2) = 1;
+    expected(2,2) = 2;
+    expected(3,2) = 3;
+
+    assert(equals(A, expected));
+}
+
+void assign_row_test() {
+    Matrix A = zeros(2, 3);
+    Matrix row(1, 3);
+    row(1,1) = 4; row(1,2) = 5; row(1,3) = 6;
+    assign_row(A, 2, row);
+
+    Matrix expected = zeros(2, 3);
+    expected(2,1) = 4;
+    expected(2,2) = 5;
+    expected(2,3) = 6;
+
+    assert(equals(A, expected));
+}
+
+void extract_column_test() {
+    Matrix A(3,2);
+    A(1,1)=1; A(2,1)=2; A(3,1)=3;
+    A(1,2)=4; A(2,2)=5; A(3,2)=6;
+
+    Matrix col = extract_column(A, 2);
+    Matrix expected(3);
+    expected(1) = 4;
+    expected(2) = 5;
+    expected(3) = 6;
+
+    assert(equals(col, expected));
+}
+
+void extract_row_test() {
+    Matrix A(2,3);
+    A(1,1)=1; A(1,2)=2; A(1,3)=3;
+    A(2,1)=4; A(2,2)=5; A(2,3)=6;
+
+    Matrix row = extract_row(A, 2);
+    Matrix expected(1, 3);
+    expected(1,1) = 4;
+    expected(1,2) = 5;
+    expected(1,3) = 6;
+
+    assert(equals(row, expected));
+}
+
+void inv_test() {
+    Matrix m(2,2);
+    m(1,1) = 4; m(1,2) = 7;
+    m(2,1) = 2; m(2,2) = 6;
+
+    Matrix inv_m = inv(m);
+    Matrix identity = m * inv_m;
+    Matrix e = eye(2);
+    assert(equals(identity, e));
+}
+
+void zeros_vector_test() {
+    Matrix v = zeros(4);
+    assert(v.n_row == 1);
+    assert(v.n_column == 4);
+    for (int i = 1; i <= 4; i++) {
+        assert(v(i) == 0.0);
+    }
+}
+
+void norm_test() {
+    Matrix v(3);
+    v(1) = 3.0;
+    v(2) = 4.0;
+    v(3) = 0.0;
+    assert(equals(norm(v), 5.0));
+}
+
+void dot_test() {
+    Matrix v(3);
+    v(1) = 1.0; v(2) = 2.0; v(3) = 3.0;
+
+    Matrix w(3);
+    w(1) = 4.0; w(2) = -5.0; w(3) = 6.0;
+
+    double expected = 1*4 + 2*(-5) + 3*6;  // = 4 -10 + 18 = 12
+    assert(equals(dot(v, w), expected));
+}
+
+void cross_test() {
+    Matrix v(3), w(3);
+    v(1) = 1.0; v(2) = 0.0; v(3) = 0.0;
+    w(1) = 0.0; w(2) = 1.0; w(3) = 0.0;
+
+    Matrix expected(3);
+    expected(1) = 0.0; expected(2) = 0.0; expected(3) = 1.0;
+
+    Matrix result = cross(v, w);
+    assert(equals(result, expected));
+}
+
+void extract_vector_test() {
+    Matrix v(5);
+    v(1) = 10; v(2) = 20; v(3) = 30; v(4) = 40; v(5) = 50;
+
+    Matrix result = extract_vector(v, 2, 4);
+
+    Matrix expected(3);
+    expected(1) = 20;
+    expected(2) = 30;
+    expected(3) = 40;
+
+    assert(equals(result, expected));
+}
+
+void union_vector_test() {
+    Matrix v(2);
+    v(1) = 1.0;
+    v(2) = 2.0;
+
+    Matrix w(3);
+    w(1) = 3.0;
+    w(2) = 4.0;
+    w(3) = 5.0;
+
+    Matrix expected(5);
+    expected(1) = 1.0;
+    expected(2) = 2.0;
+    expected(3) = 3.0;
+    expected(4) = 4.0;
+    expected(5) = 5.0;
+
+    Matrix result = union_vector(v, w);
+    assert(equals(result, expected));
+}
 
 
 /* --------------- ITERATION 1 FUNCTIONS' TESTS --------------- */
@@ -839,7 +1029,22 @@ void DEInteg_test2(){
 
 void It0_tests(){
     
-    
+    equals_Matrix_test();
+    zeros_matrix_test();
+    eye_test();
+    transpose_test();
+    inv_test();
+    assign_column_test();
+    assign_row_test();
+    extract_column_test();
+    extract_row_test();
+    zeros_vector_test();
+    norm_test();
+    dot_test();
+    cross_test();
+    extract_vector_test();
+    union_vector_test();
+
     cout << "All Iteration 0 tests passed successfully.\n";
 
 }
@@ -926,6 +1131,7 @@ int main(){
 	AuxParam.moon = 1;
 	AuxParam.planets = 1;
 
+    It0_tests();
     It1_tests();
     It2_tests();
     It3_tests();
