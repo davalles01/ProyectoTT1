@@ -1,0 +1,5 @@
+<map id="Mjday" name="Mjday">
+<area shape="rect" id="Node000001" title="Computes the Modified Julian Date (MJD) from calendar date and time." alt="" coords="120,5,176,32"/>
+<area shape="rect" id="Node000002" href="$global_8cpp.html#a4eb2c87949d7faa807f6b9f9acb21a92" title="Extracts data from the GEOS3.txt file." alt="" coords="5,5,72,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,21,72,21,72,16,104,16"/>
+</map>

@@ -1,0 +1,24 @@
+<map id="include/NutMatrix.hpp" name="include/NutMatrix.hpp">
+<area shape="rect" id="Node000001" title="NutMatrix function declaration. Transformation from mean to true equator and equinox." alt="" coords="193,5,341,32"/>
+<area shape="rect" id="Node000002" href="$MeanObliquity_8hpp.html" title="Computes the mean obliquity of the ecliptic from the Modified Julian Date (TT)." alt="" coords="5,80,134,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,35,119,77,118,72,232,30"/>
+<area shape="rect" id="Node000003" href="$NutAngles_8hpp.html" title="Header for the NutAngles function." alt="" coords="157,80,264,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="259,34,232,69,228,66,255,31"/>
+<area shape="rect" id="Node000009" href="$R__x_8hpp.html" title="R_x function declaration." alt="" coords="384,80,454,107"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="294,30,380,70,377,75,292,35"/>
+<area shape="rect" id="Node000010" href="$R__z_8hpp.html" title="R_z function declaration." alt="" coords="289,80,359,107"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="279,31,307,66,303,69,275,34"/>
+<area shape="rect" id="Node000004" href="$matrix_8hpp.html" title="Matrix and vector class declaration with basic operations." alt="" coords="283,155,365,181"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="232,105,293,144,290,148,229,109"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="132,229,188,256"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="297,184,204,225,202,220,295,179"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="212,229,271,256"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="312,184,269,221,265,217,308,180"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="390,229,448,256"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="342,180,392,218,389,222,339,184"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="295,229,366,256"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="328,182,331,213,326,214,323,182"/>
+<area shape="poly" id="edge9_Node000009_Node000004" title=" " alt="" coords="404,109,354,147,351,143,401,105"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="422,107,422,214,416,214,416,107"/>
+<area shape="poly" id="edge12_Node000010_Node000004" title=" " alt="" coords="327,107,327,139,322,139,322,107"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Matrix::Matrix" name="Matrix::Matrix">
+<area shape="rect" id="Node000001" title="Constructor for creating a vector of size n (1 row, n columns)." alt="" coords="5,5,107,32"/>
+<area shape="rect" id="Node000002" href="$classMatrix.html#a025f8b6a2384b2b54d6049e49351770c" title="Constructor for creating a matrix with the given number of rows and columns." alt="" coords="155,5,256,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,16,139,16,139,21,107,21"/>
+</map>

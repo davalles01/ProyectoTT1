@@ -1,0 +1,13 @@
+<map id="GHAMatrix" name="GHAMatrix">
+<area shape="rect" id="Node000001" title="Computes the transformation matrix from the true equator and equinox system to the Earth equator and ..." alt="" coords="5,56,92,83"/>
+<area shape="rect" id="Node000002" href="$gast_8cpp.html#a4eb2d09c87615520077aec1005b8e0ad" title="Computes Greenwich Apparent Sidereal Time." alt="" coords="140,31,186,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,57,124,50,125,55,93,62"/>
+<area shape="rect" id="Node000006" href="$R__z_8cpp.html#a6da83e42a1643db663785ca9e7291a79" title="Computes the rotation matrix around the Z&#45;axis." alt="" coords="140,81,186,108"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="93,76,126,84,124,89,91,82"/>
+<area shape="rect" id="Node000003" href="$EqnEquinox_8cpp.html#a1178917cf376ea4f15cea33c59028635" title="Computes the equation of the equinoxe." alt="" coords="234,31,325,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="186,41,219,41,219,47,186,47"/>
+<area shape="rect" id="Node000004" href="$MeanObliquity_8cpp.html#a11f057ac4e8a0c5a7958f77379e30d40" title="Computes the mean obliquity of the ecliptic." alt="" coords="373,5,478,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="325,33,357,28,358,33,326,39"/>
+<area shape="rect" id="Node000005" href="$NutAngles_8cpp.html#a8028f5f2ac1a0a2126d8edf6a5ed80c6" title="Computes the Nutation in longitude and obliquity." alt="" coords="384,56,467,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="326,49,369,57,368,62,325,55"/>
+</map>

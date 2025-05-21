@@ -1,0 +1,5 @@
+<map id="dot" name="dot">
+<area shape="rect" id="Node000001" title="Computes the dot product with another vector." alt="" coords="119,5,158,32"/>
+<area shape="rect" id="Node000002" href="$AzElPa_8cpp.html#ae89a6c135135b96ec7057c45dced4159" title="Computes azimuth, elevation and partial derivatives from local tangent coordinates." alt="" coords="5,5,71,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,21,71,21,71,16,103,16"/>
+</map>

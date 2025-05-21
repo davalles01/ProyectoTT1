@@ -1,0 +1,20 @@
+<map id="src/EccAnom.cpp" name="src/EccAnom.cpp">
+<area shape="rect" id="Node000001" title="Implementation of EccAnom function to compute the eccentric anomaly." alt="" coords="174,5,299,32"/>
+<area shape="rect" id="Node000002" href="$EccAnom_8hpp.html" title="EccAnom function declaration, which computes the eccentric anomaly for elliptic orbits." alt="" coords="64,80,224,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,35,173,73,170,68,218,30"/>
+<area shape="rect" id="Node000008" href="$constants_8hpp_source.html" title=" " alt="" coords="248,80,408,107"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="254,30,302,68,299,73,251,35"/>
+<area shape="rect" id="Node000003" href="$matrix_8hpp.html" title="Matrix and vector class declaration with basic operations." alt="" coords="99,155,189,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="147,107,147,139,142,139,142,107"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,229,62,256"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="126,184,67,223,64,218,123,180"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="85,229,144,256"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="142,183,128,216,123,214,137,181"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="264,229,321,256"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="171,179,254,220,251,224,169,184"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="168,229,240,256"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="157,180,186,216,182,219,153,184"/>
+<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="328,108,301,215,296,214,323,107"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="330,155,382,181"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="336,106,348,139,343,141,331,108"/>
+</map>

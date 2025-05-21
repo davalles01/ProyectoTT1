@@ -1,0 +1,88 @@
+<map id="include/VarEqn.hpp" name="include/VarEqn.hpp">
+<area shape="rect" id="Node000001" title="Header file for the VarEqn function. Computes the time derivative of the combined state vector and st..." alt="" coords="854,5,988,32"/>
+<area shape="rect" id="Node000002" href="$matrix_8hpp.html" title="Matrix and vector class declaration with basic operations." alt="" coords="1013,379,1096,405"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="988,21,1126,34,1206,45,1285,59,1358,78,1418,102,1441,115,1459,131,1470,148,1474,166,1474,244,1471,259,1463,273,1433,297,1389,319,1335,338,1216,367,1112,386,1111,380,1215,362,1333,333,1387,314,1430,293,1459,269,1466,257,1469,244,1469,167,1465,150,1455,134,1438,120,1416,106,1356,83,1284,64,1205,50,1125,39,988,26"/>
+<area shape="rect" id="Node000007" href="$global_8hpp.html" title="eop function declaration to extract data from the eop matrix" alt="" coords="1064,229,1144,256"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="979,30,1022,48,1043,62,1060,78,1081,111,1095,147,1102,183,1106,213,1100,214,1097,184,1090,149,1077,113,1056,82,1039,66,1020,53,977,35"/>
+<area shape="rect" id="Node000010" href="$SAT__Const_8hpp.html" title="Definition of astronomical and mathematical constants." alt="" coords="774,304,887,331"/>
+<area shape="poly" id="edge56_Node000001_Node000010" title=" " alt="" coords="920,33,841,290,836,289,915,32"/>
+<area shape="rect" id="Node000011" href="$IERS_8hpp.html" title="Header for the IERS function." alt="" coords="904,155,983,181"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="926,32,942,139,937,140,920,33"/>
+<area shape="rect" id="Node000012" href="$timediff_8hpp.html" title="Computes time differences between various time scales." alt="" coords="958,80,1046,107"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="937,31,979,68,975,72,933,35"/>
+<area shape="rect" id="Node000013" href="$AccelHarmonic_8hpp.html" title="AccelHarmonic function declaration. Computes the acceleration due to the harmonic gravity field of th..." alt="" coords="1151,155,1286,181"/>
+<area shape="poly" id="edge16_Node000001_Node000013" title=" " alt="" coords="974,30,1037,49,1104,78,1154,109,1195,142,1192,146,1151,114,1101,82,1036,55,973,35"/>
+<area shape="rect" id="Node000015" href="$G__AccelHarmonic_8hpp.html" title="Header file for the G_AccelHarmonic function." alt="" coords="1172,80,1324,107"/>
+<area shape="poly" id="edge22_Node000001_Node000015" title=" " alt="" coords="979,30,1176,73,1175,79,978,35"/>
+<area shape="rect" id="Node000016" href="$NutMatrix_8hpp.html" title="NutMatrix function declaration. Transformation from mean to true equator and equinox." alt="" coords="305,229,409,256"/>
+<area shape="poly" id="edge25_Node000001_Node000016" title=" " alt="" coords="890,35,404,226,402,221,888,30"/>
+<area shape="rect" id="Node000021" href="$PoleMatrix_8hpp.html" title="PoleMatrix function declaration. Transformation from pseudo Earth&#45;fixed to Earth&#45;fixed coordinates fo..." alt="" coords="588,229,696,256"/>
+<area shape="poly" id="edge34_Node000001_Node000021" title=" " alt="" coords="900,35,828,82,738,156,668,221,664,217,734,152,825,78,897,30"/>
+<area shape="rect" id="Node000023" href="$PrecMatrix_8hpp.html" title="PrecMatrix function declaration. Precession transformation of equatorial coordinates." alt="" coords="721,229,830,256"/>
+<area shape="poly" id="edge38_Node000001_Node000023" title=" " alt="" coords="903,34,877,55,851,82,829,115,811,152,786,216,781,214,806,149,824,113,847,78,873,51,900,30"/>
+<area shape="rect" id="Node000024" href="$GHAMatrix_8hpp.html" title="Header file for the GHAMatrix function." alt="" coords="351,80,462,107"/>
+<area shape="poly" id="edge42_Node000001_Node000024" title=" " alt="" coords="854,31,481,83,478,83,477,78,481,77,853,26"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="945,453,1001,480"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1042,408,1000,445,996,441,1038,404"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="1025,453,1084,480"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="1057,406,1057,438,1052,438,1052,406"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="460,453,518,480"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="1014,405,995,408,734,443,534,464,533,459,733,438,994,403,1013,399"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="1108,453,1179,480"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="1072,404,1118,441,1115,445,1068,408"/>
+<area shape="poly" id="edge7_Node000007_Node000002" title=" " alt="" coords="1145,250,1187,261,1226,278,1241,289,1250,302,1253,316,1246,332,1218,359,1183,377,1147,387,1111,392,1110,387,1145,382,1181,372,1215,354,1241,329,1247,316,1245,304,1237,293,1223,283,1185,266,1144,255"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="1077,259,901,333,696,404,533,455,532,450,694,399,899,328,1075,254"/>
+<area shape="rect" id="Node000008" href="$Mjday_8hpp.html" title="Computes the Modified Julian Date from a calendar date and time." alt="" coords="1064,304,1144,331"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="1106,257,1106,288,1101,288,1101,257"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="1168,304,1232,331"/>
+<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="1122,254,1172,292,1169,297,1119,259"/>
+<area shape="poly" id="edge11_Node000007_Node000010" title=" " alt="" coords="1064,257,893,302,892,297,1063,252"/>
+<area shape="poly" id="edge13_Node000011_Node000002" title=" " alt="" coords="950,181,972,246,989,288,1010,329,1035,365,1031,368,1005,332,984,290,967,248,945,182"/>
+<area shape="poly" id="edge15_Node000012_Node000002" title=" " alt="" coords="1007,107,1052,363,1047,364,1002,107"/>
+<area shape="poly" id="edge17_Node000013_Node000002" title=" " alt="" coords="1256,180,1288,198,1304,212,1315,228,1320,241,1320,257,1313,288,1301,316,1290,333,1248,361,1202,379,1154,389,1111,393,1110,388,1153,384,1200,374,1246,356,1286,329,1296,313,1308,287,1315,256,1314,242,1311,231,1300,215,1285,203,1253,184"/>
+<area shape="poly" id="edge21_Node000013_Node000007" title=" " alt="" coords="1200,184,1138,223,1135,218,1197,180"/>
+<area shape="poly" id="edge20_Node000013_Node000010" title=" " alt="" coords="1183,184,1053,232,877,300,875,295,1051,227,1182,179"/>
+<area shape="rect" id="Node000014" href="$Legendre_8hpp.html" title="Header for the Legendre function." alt="" coords="1202,229,1301,256"/>
+<area shape="poly" id="edge18_Node000013_Node000014" title=" " alt="" coords="1227,181,1242,214,1237,216,1222,183"/>
+<area shape="poly" id="edge19_Node000014_Node000002" title=" " alt="" coords="1261,256,1274,292,1275,313,1267,332,1242,350,1203,365,1112,385,1110,380,1201,360,1240,345,1263,329,1270,312,1269,293,1256,257"/>
+<area shape="poly" id="edge23_Node000015_Node000002" title=" " alt="" coords="1262,105,1303,156,1323,191,1337,229,1343,259,1343,285,1335,309,1316,333,1281,352,1228,367,1112,387,1111,382,1227,362,1279,347,1313,329,1330,306,1338,284,1338,260,1332,230,1318,193,1298,159,1258,109"/>
+<area shape="poly" id="edge24_Node000015_Node000013" title=" " alt="" coords="1245,108,1232,141,1227,139,1240,106"/>
+<area shape="rect" id="Node000017" href="$MeanObliquity_8hpp.html" title="Computes the mean obliquity of the ecliptic from the Modified Julian Date (TT)." alt="" coords="289,304,417,331"/>
+<area shape="poly" id="edge26_Node000016_Node000017" title=" " alt="" coords="359,257,357,289,352,288,354,256"/>
+<area shape="rect" id="Node000018" href="$NutAngles_8hpp.html" title="Header for the NutAngles function." alt="" coords="158,304,265,331"/>
+<area shape="poly" id="edge27_Node000016_Node000018" title=" " alt="" coords="333,259,252,299,249,294,331,254"/>
+<area shape="rect" id="Node000019" href="$R__x_8hpp.html" title="R_x function declaration." alt="" coords="491,304,562,331"/>
+<area shape="poly" id="edge29_Node000016_Node000019" title=" " alt="" coords="388,254,484,295,482,300,385,259"/>
+<area shape="rect" id="Node000020" href="$R__z_8hpp.html" title="R_z function declaration." alt="" coords="586,304,656,331"/>
+<area shape="poly" id="edge32_Node000016_Node000020" title=" " alt="" coords="404,254,571,300,570,305,402,259"/>
+<area shape="poly" id="edge28_Node000018_Node000002" title=" " alt="" coords="266,326,277,328,485,351,690,368,998,386,998,391,690,373,485,356,277,333,265,332"/>
+<area shape="poly" id="edge30_Node000019_Node000002" title=" " alt="" coords="562,325,575,328,692,347,810,363,998,383,997,388,809,368,691,353,574,333,561,331"/>
+<area shape="poly" id="edge31_Node000019_Node000005" title=" " alt="" coords="526,332,498,439,493,438,521,331"/>
+<area shape="poly" id="edge33_Node000020_Node000002" title=" " alt="" coords="657,326,668,328,848,360,998,381,997,386,848,365,667,333,656,331"/>
+<area shape="poly" id="edge35_Node000021_Node000019" title=" " alt="" coords="624,259,561,298,558,293,621,254"/>
+<area shape="rect" id="Node000022" href="$R__y_8hpp.html" title="Generates a rotation matrix around the Y axis." alt="" coords="680,304,749,331"/>
+<area shape="poly" id="edge36_Node000021_Node000022" title=" " alt="" coords="657,255,693,291,689,295,653,258"/>
+<area shape="poly" id="edge37_Node000022_Node000002" title=" " alt="" coords="750,325,763,328,998,377,997,382,762,333,749,330"/>
+<area shape="poly" id="edge41_Node000023_Node000010" title=" " alt="" coords="787,255,814,290,810,293,783,258"/>
+<area shape="poly" id="edge39_Node000023_Node000020" title=" " alt="" coords="750,259,663,299,661,295,748,254"/>
+<area shape="poly" id="edge40_Node000023_Node000022" title=" " alt="" coords="767,258,737,294,733,290,763,255"/>
+<area shape="poly" id="edge43_Node000024_Node000020" title=" " alt="" coords="420,105,601,291,597,295,417,109"/>
+<area shape="rect" id="Node000025" href="$gast_8hpp.html" title="Header file for the gast function." alt="" coords="280,155,351,181"/>
+<area shape="poly" id="edge44_Node000024_Node000025" title=" " alt="" coords="392,109,345,147,341,143,389,105"/>
+<area shape="rect" id="Node000026" href="$gmst_8hpp_source.html" title=" " alt="" coords="433,229,508,256"/>
+<area shape="poly" id="edge45_Node000025_Node000026" title=" " alt="" coords="344,179,431,220,429,225,341,184"/>
+<area shape="rect" id="Node000028" href="$EqnEquinox_8hpp.html" title="EqnEquinox function declaration, which computes the equation of the equinoxe." alt="" coords="162,229,278,256"/>
+<area shape="poly" id="edge49_Node000025_Node000028" title=" " alt="" coords="301,184,250,222,247,218,297,180"/>
+<area shape="rect" id="Node000029" href="$constants_8hpp_source.html" title=" " alt="" coords="5,229,109,256"/>
+<area shape="poly" id="edge53_Node000025_Node000029" title=" " alt="" coords="280,182,117,227,116,222,279,177"/>
+<area shape="poly" id="edge46_Node000026_Node000010" title=" " alt="" coords="509,249,759,299,758,304,508,254"/>
+<area shape="rect" id="Node000027" href="$Frac_8hpp.html" title="Header file for the Frac function." alt="" coords="417,379,489,405"/>
+<area shape="poly" id="edge47_Node000026_Node000027" title=" " alt="" coords="472,257,459,363,454,363,466,256"/>
+<area shape="poly" id="edge48_Node000027_Node000005" title=" " alt="" coords="462,405,478,438,474,440,457,407"/>
+<area shape="poly" id="edge52_Node000028_Node000005" title=" " alt="" coords="197,259,175,273,155,291,145,310,144,320,149,329,177,363,212,390,252,412,293,429,376,451,445,460,445,466,375,456,292,434,249,417,210,395,174,367,144,332,139,321,139,309,151,287,172,269,194,254"/>
+<area shape="poly" id="edge51_Node000028_Node000017" title=" " alt="" coords="244,254,318,294,315,299,242,259"/>
+<area shape="poly" id="edge50_Node000028_Node000018" title=" " alt="" coords="221,257,217,289,212,288,216,256"/>
+<area shape="poly" id="edge54_Node000029_Node000005" title=" " alt="" coords="46,258,33,273,21,292,16,311,21,329,47,354,91,377,147,397,210,415,340,441,445,457,444,463,339,447,208,420,145,402,89,382,44,359,16,332,11,311,16,290,28,270,42,255"/>
+<area shape="rect" id="Node000030" title=" " alt="" coords="31,304,83,331"/>
+<area shape="poly" id="edge55_Node000029_Node000030" title=" " alt="" coords="60,257,60,288,54,288,54,257"/>
+</map>

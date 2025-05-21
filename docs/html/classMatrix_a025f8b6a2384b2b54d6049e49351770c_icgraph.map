@@ -1,0 +1,25 @@
+<map id="Matrix::Matrix" name="Matrix::Matrix">
+<area shape="rect" id="Node000001" title="Constructor for creating a matrix with the given number of rows and columns." alt="" coords="182,259,283,285"/>
+<area shape="rect" id="Node000002" href="$classMatrix.html#a1664c2d8e4f339facb149d4f7896bd9a" title="Constructor for creating a vector of size n (1 row, n columns)." alt="" coords="19,5,120,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,244,213,201,195,148,169,94,152,68,132,46,116,35,119,30,135,42,156,65,173,91,200,146,218,199,229,243"/>
+<area shape="rect" id="Node000003" href="$classMatrix.html#ab7b6bd2a11d0a4c5ae370f19418c23ec" title="Multiplies all elements in the matrix by a scalar value." alt="" coords="11,56,128,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="220,245,188,172,163,132,132,97,115,85,118,81,135,93,167,128,193,169,225,243"/>
+<area shape="rect" id="Node000004" href="$classMatrix.html#ae1bc7e1fda06dab52353ac01b3196efd" title="Multiplies two matrices." alt="" coords="11,107,128,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="214,247,180,197,158,170,132,147,113,136,116,132,135,143,161,167,184,193,218,244"/>
+<area shape="rect" id="Node000005" href="$classMatrix.html#ae624e77970786cd84704be0f45f508e7" title="Adds a scalar value to all elements in the matrix." alt="" coords="9,157,130,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="203,250,170,224,132,198,109,187,111,182,135,194,174,220,207,246"/>
+<area shape="rect" id="Node000006" href="$classMatrix.html#a7cc7127ce96c997c9d14f1f8874ed742" title="Adds two matrices." alt="" coords="9,208,130,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="172,256,114,238,116,233,173,251"/>
+<area shape="rect" id="Node000007" href="$classMatrix.html#a5c79574adc18bba9aa4f580df4e2fc31" title="Subtracts a scalar value from all elements in the matrix." alt="" coords="11,259,128,285"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="166,275,128,275,128,269,166,269"/>
+<area shape="rect" id="Node000008" href="$classMatrix.html#ac13e11282bf8fb3e88eb4e743c6dc019" title="Subtracts one matrix from another." alt="" coords="11,309,128,336"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="173,293,116,311,114,306,172,288"/>
+<area shape="rect" id="Node000009" href="$classMatrix.html#af3449a7e9a892c560cdf33b7d47facf6" title="Divides all elements in the matrix by a scalar value." alt="" coords="11,360,128,387"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="207,298,174,324,135,350,111,362,109,357,132,346,170,320,203,294"/>
+<area shape="rect" id="Node000010" href="$classMatrix.html#afa8805316703c98abf5fefd7788b92ef" title="Divides one matrix by another (i.e., multiplies by the inverse)." alt="" coords="11,411,128,437"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="218,300,184,351,161,377,135,401,116,412,113,408,132,397,158,374,180,347,214,297"/>
+<area shape="rect" id="Node000011" href="$classMatrix.html#a6ce0bc529fe2ee6fb2d0eb8acbdc1e92" title="Prints the matrix to the output stream." alt="" coords="5,461,134,488"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="225,301,193,375,167,416,135,451,118,463,115,459,132,447,163,412,188,372,220,299"/>
+<area shape="rect" id="Node000012" href="$classMatrix.html#ade03836bffb81664225dc544b5d5e6db" title="Assigns the values of one matrix to another." alt="" coords="9,512,130,539"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="229,301,218,345,200,398,173,453,156,479,135,502,119,514,116,509,132,498,152,476,169,450,195,396,213,343,224,300"/>
+</map>

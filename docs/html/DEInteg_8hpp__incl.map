@@ -1,0 +1,30 @@
+<map id="include/DEInteg.hpp" name="include/DEInteg.hpp">
+<area shape="rect" id="Node000001" title="DEInteg function header." alt="" coords="349,5,488,32"/>
+<area shape="rect" id="Node000002" href="$matrix_8hpp.html" title="Matrix and vector class declaration with basic operations." alt="" coords="118,155,200,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="397,35,311,82,195,149,192,144,308,78,394,30"/>
+<area shape="rect" id="Node000007" href="$global_8hpp.html" title="eop function declaration to extract data from the eop matrix" alt="" coords="321,80,402,107"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="411,34,383,69,379,66,407,31"/>
+<area shape="rect" id="Node000011" href="$constants_8hpp_source.html" title=" " alt="" coords="519,80,622,107"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="446,30,532,70,529,75,444,35"/>
+<area shape="rect" id="Node000013" href="$sign___8hpp.html" title="Declaration of the sign_ function." alt="" coords="647,80,724,107"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="466,30,633,75,631,80,465,35"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,229,62,256"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="138,184,70,224,67,219,136,180"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="85,229,144,256"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="153,183,133,217,128,215,149,180"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="264,229,321,256"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="183,180,257,219,255,224,181,184"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="168,229,240,256"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="169,180,190,215,186,217,164,183"/>
+<area shape="poly" id="edge7_Node000007_Node000002" title=" " alt="" coords="327,110,210,151,208,146,325,105"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="324,110,291,128,277,141,265,156,261,170,262,186,276,216,271,218,257,187,256,170,260,153,273,137,288,124,322,105"/>
+<area shape="rect" id="Node000008" href="$Mjday_8hpp.html" title="Computes the Modified Julian Date from a calendar date and time." alt="" coords="275,155,355,181"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="356,109,333,143,329,140,351,106"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="379,155,443,181"/>
+<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="372,106,396,140,392,143,368,109"/>
+<area shape="rect" id="Node000010" href="$SAT__Const_8hpp.html" title="Definition of astronomical and mathematical constants." alt="" coords="468,155,581,181"/>
+<area shape="poly" id="edge11_Node000007_Node000010" title=" " alt="" coords="391,105,483,145,481,150,389,110"/>
+<area shape="poly" id="edge13_Node000011_Node000005" title=" " alt="" coords="583,106,601,142,603,164,596,183,578,197,551,209,482,226,404,236,336,242,336,237,403,231,481,221,550,204,575,193,591,180,598,163,596,144,578,109"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="657,155,709,181"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="592,105,652,144,649,148,589,109"/>
+</map>

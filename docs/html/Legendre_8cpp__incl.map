@@ -1,0 +1,16 @@
+<map id="src/Legendre.cpp" name="src/Legendre.cpp">
+<area shape="rect" id="Node000001" title="Implementation of the Legendre function." alt="" coords="173,5,294,32"/>
+<area shape="rect" id="Node000002" href="$Legendre_8hpp.html" title="Header for the Legendre function." alt="" coords="98,80,254,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,34,198,69,193,66,221,31"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="264,229,321,256"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="244,31,257,53,269,79,286,151,293,213,288,214,281,152,264,81,253,55,240,34"/>
+<area shape="rect" id="Node000003" href="$matrix_8hpp.html" title="Matrix and vector class declaration with basic operations." alt="" coords="135,155,217,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="179,107,179,139,174,139,174,107"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,229,62,256"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="153,184,73,224,71,219,150,179"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="85,229,144,256"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="168,184,137,219,133,216,163,180"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="198,180,260,218,257,223,195,184"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="168,229,240,256"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="184,181,196,214,191,216,179,183"/>
+</map>

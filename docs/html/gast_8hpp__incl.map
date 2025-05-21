@@ -1,0 +1,32 @@
+<map id="include/gast.hpp" name="include/gast.hpp">
+<area shape="rect" id="Node000001" title="Header file for the gast function." alt="" coords="403,5,520,32"/>
+<area shape="rect" id="Node000002" href="$gmst_8hpp_source.html" title=" " alt="" coords="424,80,499,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="464,33,464,64,459,64,459,33"/>
+<area shape="rect" id="Node000006" href="$EqnEquinox_8hpp.html" title="EqnEquinox function declaration, which computes the equation of the equinoxe." alt="" coords="191,80,308,107"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="425,35,302,77,300,72,424,30"/>
+<area shape="rect" id="Node000013" href="$constants_8hpp_source.html" title=" " alt="" coords="539,80,642,107"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="485,30,556,70,554,74,483,35"/>
+<area shape="rect" id="Node000003" href="$SAT__Const_8hpp.html" title="Definition of astronomical and mathematical constants." alt="" coords="389,155,502,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="461,108,454,140,449,139,456,107"/>
+<area shape="rect" id="Node000004" href="$Frac_8hpp.html" title="Header file for the Frac function." alt="" coords="369,229,442,256"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="481,105,497,120,513,139,521,161,517,182,505,198,490,211,457,229,455,224,487,206,501,194,512,180,516,161,508,142,494,124,477,109"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="321,304,378,331"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="398,258,370,293,366,290,394,255"/>
+<area shape="poly" id="edge13_Node000006_Node000005" title=" " alt="" coords="243,108,227,142,224,161,227,180,245,214,269,245,321,292,317,296,265,249,240,217,222,182,218,161,222,140,238,106"/>
+<area shape="rect" id="Node000007" href="$NutAngles_8hpp.html" title="Header for the NutAngles function." alt="" coords="54,155,162,181"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="226,110,148,150,145,145,224,105"/>
+<area shape="rect" id="Node000012" href="$MeanObliquity_8hpp.html" title="Computes the mean obliquity of the ecliptic from the Modified Julian Date (TT)." alt="" coords="236,155,364,181"/>
+<area shape="poly" id="edge12_Node000006_Node000012" title=" " alt="" coords="261,106,285,141,281,144,256,109"/>
+<area shape="rect" id="Node000008" href="$matrix_8hpp.html" title="Matrix and vector class declaration with basic operations." alt="" coords="74,229,156,256"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="112,182,115,213,110,214,107,182"/>
+<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="156,254,307,300,305,305,155,259"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="5,304,62,331"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="102,259,60,296,57,292,99,255"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="85,304,144,331"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="118,257,118,288,112,288,112,257"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="168,304,240,331"/>
+<area shape="poly" id="edge11_Node000008_Node000011" title=" " alt="" coords="132,254,179,292,175,296,129,259"/>
+<area shape="poly" id="edge15_Node000013_Node000005" title=" " alt="" coords="587,108,567,143,538,183,500,224,455,258,389,299,387,294,452,254,496,220,534,180,562,140,582,106"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="629,155,681,181"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="604,105,636,141,632,145,600,109"/>
+</map>

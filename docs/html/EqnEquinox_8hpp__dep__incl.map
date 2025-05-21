@@ -1,0 +1,25 @@
+<map id="include/EqnEquinox.hpp" name="include/EqnEquinox.hpp">
+<area shape="rect" id="Node000001" title="EqnEquinox function declaration, which computes the equation of the equinoxe." alt="" coords="346,5,507,32"/>
+<area shape="rect" id="Node000002" href="$gast_8hpp.html" title="Header file for the gast function." alt="" coords="254,80,370,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="395,43,334,82,331,77,392,38"/>
+<area shape="rect" id="Node000006" href="$tests_8cpp.html" title="Tests for all functions." alt="" coords="288,304,389,331"/>
+<area shape="poly" id="edge13_Node000001_Node000006" title=" " alt="" coords="426,47,409,141,395,200,376,257,350,305,345,302,371,255,390,198,404,140,421,46"/>
+<area shape="rect" id="Node000010" href="$EqnEquinox_8cpp.html" title="EqnEquinox function implementation, which computes the equation of the equinoxe." alt="" coords="464,80,602,107"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="459,39,516,77,513,82,456,43"/>
+<area shape="rect" id="Node000003" href="$GHAMatrix_8hpp.html" title="Header file for the GHAMatrix function." alt="" coords="64,155,221,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="270,116,173,156,171,152,267,111"/>
+<area shape="poly" id="edge11_Node000002_Node000006" title=" " alt="" coords="335,118,353,154,360,197,358,239,345,304,340,303,353,239,355,197,348,155,330,120"/>
+<area shape="rect" id="Node000009" href="$gast_8cpp.html" title="Source file for the gast function implementation." alt="" coords="245,155,339,181"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="307,122,298,155,293,154,302,121"/>
+<area shape="rect" id="Node000004" href="$Accel_8hpp.html" title="Header file for the Accel function." alt="" coords="163,229,288,256"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="170,190,213,227,209,231,167,194"/>
+<area shape="poly" id="edge9_Node000003_Node000006" title=" " alt="" coords="223,184,265,201,302,227,317,246,327,266,339,303,334,304,322,268,312,248,298,231,262,206,221,189"/>
+<area shape="rect" id="Node000007" href="$VarEqn_8hpp.html" title="Header file for the VarEqn function. Computes the time derivative of the combined state vector and st..." alt="" coords="5,229,139,256"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="122,194,86,231,82,227,118,191"/>
+<area shape="rect" id="Node000005" href="$Accel_8cpp.html" title="Source file for the Accel function implementation." alt="" coords="163,304,264,331"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="223,272,218,304,213,303,218,271"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="259,262,320,301,317,306,256,267"/>
+<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="134,258,293,301,291,306,132,263"/>
+<area shape="rect" id="Node000008" href="$VarEqn_8cpp.html" title="Header file for the VarEqn function. Computes the time derivative of the combined state vector and st..." alt="" coords="17,304,127,331"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="75,272,75,304,69,304,69,272"/>
+</map>

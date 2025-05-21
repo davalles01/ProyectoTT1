@@ -1,0 +1,35 @@
+<map id="src/gast.cpp" name="src/gast.cpp">
+<area shape="rect" id="Node000001" title="Source file for the gast function implementation." alt="" coords="544,5,638,32"/>
+<area shape="rect" id="Node000002" href="$gast_8hpp.html" title="Header file for the gast function." alt="" coords="455,80,583,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="580,34,544,71,540,67,576,31"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="373,379,430,405"/>
+<area shape="poly" id="edge18_Node000001_Node000006" title=" " alt="" coords="615,30,647,52,681,82,709,121,717,143,720,166,720,244,718,266,712,285,689,318,656,343,615,362,571,376,525,384,446,392,445,387,524,379,569,370,613,357,653,339,685,314,707,283,713,265,715,244,715,167,712,144,704,124,677,86,643,56,612,35"/>
+<area shape="rect" id="Node000003" href="$gmst_8hpp_source.html" title=" " alt="" coords="537,155,612,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="531,106,558,141,554,144,526,109"/>
+<area shape="rect" id="Node000007" href="$EqnEquinox_8hpp.html" title="EqnEquinox function declaration, which computes the equation of the equinoxe." alt="" coords="191,155,308,181"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="473,110,312,153,311,148,471,105"/>
+<area shape="rect" id="Node000014" href="$constants_8hpp_source.html" title=" " alt="" coords="410,155,513,181"/>
+<area shape="poly" id="edge15_Node000002_Node000014" title=" " alt="" coords="511,109,483,144,479,141,507,106"/>
+<area shape="rect" id="Node000004" href="$SAT__Const_8hpp.html" title="Definition of astronomical and mathematical constants." alt="" coords="516,229,629,256"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="577,182,576,214,571,214,572,182"/>
+<area shape="rect" id="Node000005" href="$Frac_8hpp.html" title="Header file for the Frac function." alt="" coords="524,304,596,331"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="598,180,618,194,636,212,647,234,647,245,644,257,626,280,604,298,600,294,622,277,639,255,642,245,642,235,632,216,614,198,595,184"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="534,334,444,374,442,369,531,329"/>
+<area shape="poly" id="edge14_Node000007_Node000006" title=" " alt="" coords="243,183,226,217,223,236,227,255,253,293,287,325,325,351,360,370,357,375,322,355,284,329,249,297,222,257,217,236,221,215,238,180"/>
+<area shape="rect" id="Node000008" href="$NutAngles_8hpp.html" title="Header for the NutAngles function." alt="" coords="54,229,162,256"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="226,184,148,224,145,219,224,179"/>
+<area shape="rect" id="Node000013" href="$MeanObliquity_8hpp.html" title="Computes the mean obliquity of the ecliptic from the Modified Julian Date (TT)." alt="" coords="236,229,364,256"/>
+<area shape="poly" id="edge13_Node000007_Node000013" title=" " alt="" coords="261,180,285,215,281,218,256,183"/>
+<area shape="rect" id="Node000009" href="$matrix_8hpp.html" title="Matrix and vector class declaration with basic operations." alt="" coords="74,304,156,331"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="112,256,115,288,110,289,107,257"/>
+<area shape="poly" id="edge11_Node000009_Node000006" title=" " alt="" coords="157,327,358,377,357,382,156,332"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="5,379,62,405"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="102,333,60,370,57,366,99,329"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="85,379,144,405"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="118,331,118,363,112,363,112,331"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="168,379,240,405"/>
+<area shape="poly" id="edge12_Node000009_Node000012" title=" " alt="" coords="132,329,179,367,175,371,129,333"/>
+<area shape="poly" id="edge16_Node000014_Node000006" title=" " alt="" coords="455,183,441,205,429,230,412,301,405,363,400,363,407,300,424,228,437,202,450,181"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="439,229,492,256"/>
+<area shape="poly" id="edge17_Node000014_Node000015" title=" " alt="" coords="465,182,467,214,461,214,460,182"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="EqnEquinox" name="EqnEquinox">
+<area shape="rect" id="Node000001" title="Computes the equation of the equinoxe." alt="" coords="234,5,325,32"/>
+<area shape="rect" id="Node000002" href="$gast_8cpp.html#a4eb2d09c87615520077aec1005b8e0ad" title="Computes Greenwich Apparent Sidereal Time." alt="" coords="140,5,186,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,21,186,21,186,16,219,16"/>
+<area shape="rect" id="Node000003" href="$GHAMatricx_8cpp.html#a9699d3dfbd482534e86059e5613f8b8c" title="Computes the transformation matrix from the true equator and equinox system to the Earth equator and ..." alt="" coords="5,5,92,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="124,21,92,21,92,16,124,16"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="include/Accel.hpp" name="include/Accel.hpp">
+<area shape="rect" id="Node000001" title="Header file for the Accel function." alt="" coords="56,5,181,32"/>
+<area shape="rect" id="Node000002" href="$Accel_8cpp.html" title="Source file for the Accel function implementation." alt="" coords="5,80,107,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,46,69,81,65,78,96,42"/>
+<area shape="rect" id="Node000003" href="$tests_8cpp.html" title="Tests for all functions." alt="" coords="131,80,232,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="142,42,173,78,169,81,138,46"/>
+</map>

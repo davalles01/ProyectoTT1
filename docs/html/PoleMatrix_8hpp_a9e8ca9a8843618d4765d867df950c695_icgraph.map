@@ -1,0 +1,7 @@
+<map id="PoleMatrix" name="PoleMatrix">
+<area shape="rect" id="Node000001" title="Transformation from pseudo Earth&#45;fixed to Earth&#45;fixed coordinates for a given date." alt="" coords="117,31,200,57"/>
+<area shape="rect" id="Node000002" href="$Accel_8cpp.html#aac2a5457676008162640a0248495dc8f" title="Computes the acceleration of an Earth&#45;orbiting satellite." alt="" coords="10,5,64,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,35,64,27,65,22,102,30"/>
+<area shape="rect" id="Node000003" href="$VarEqn_8cpp.html#a0754aa8f2bf330e4467874c5bdc65e58" title="Computes the time derivative of the combined state vector and state transition matrix for an Earth&#45;or..." alt="" coords="5,56,69,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="102,58,70,65,69,60,101,53"/>
+</map>

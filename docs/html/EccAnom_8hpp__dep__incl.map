@@ -1,0 +1,7 @@
+<map id="include/EccAnom.hpp" name="include/EccAnom.hpp">
+<area shape="rect" id="Node000001" title="EccAnom function declaration, which computes the eccentric anomaly for elliptic orbits." alt="" coords="62,5,210,32"/>
+<area shape="rect" id="Node000002" href="$EccAnom_8cpp.html" title="Implementation of EccAnom function to compute the eccentric anomaly." alt="" coords="5,80,131,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,45,82,81,78,78,112,42"/>
+<area shape="rect" id="Node000003" href="$tests_8cpp.html" title="Tests for all functions." alt="" coords="155,80,256,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,41,195,78,191,81,156,45"/>
+</map>

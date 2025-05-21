@@ -1,0 +1,9 @@
+<map id="PoleMatrix" name="PoleMatrix">
+<area shape="rect" id="Node000001" title="Transformation from pseudo Earth&#45;fixed to Earth&#45;fixed coordinates for a given date." alt="" coords="5,31,89,57"/>
+<area shape="rect" id="Node000002" href="$R__x_8cpp.html#a9ddfb0a29d5d5a665c90840e28d0f9e8" title="Computes the vector from a given angle of rotation." alt="" coords="137,5,182,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,32,121,24,122,30,90,37"/>
+<area shape="rect" id="Node000004" href="$R__y_8cpp.html#aa0e372366355a27f28ad58272b2a9a15" title="Returns the rotation matrix around the Y axis." alt="" coords="137,56,182,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="90,51,122,58,121,64,89,56"/>
+<area shape="rect" id="Node000003" href="$matrix_8cpp.html#a56d60ea1f08402246a7cfd477d69a618" title="Creates a matrix of given dimensions filled with zeros." alt="" coords="230,5,283,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="183,16,214,16,214,21,183,21"/>
+</map>
